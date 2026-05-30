@@ -8,8 +8,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Raphael Evan Wijayanto",
+  title: "Portfolio 2026 - Raphael Evan Wijayanto",
   description: "Personal portfolio of Raphael Evan Wijayanto.",
+  icons: {
+    icon: "logos/R_Dark_Theme.svg"
+  }
 };
 
 export default function RootLayout({
