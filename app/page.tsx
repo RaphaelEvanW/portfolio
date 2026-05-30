@@ -1,6 +1,9 @@
+import Navbar from "@/components/Navbar";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <Navbar />
       <section className="mx-auto max-w-6xl px-8 py-32">
         <span className="text-sm text-[var(--blue-soft)]">
           Raphael Evan Wijayanto
