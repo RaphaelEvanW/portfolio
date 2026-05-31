@@ -25,7 +25,7 @@ export default function ProjectSection() {
     >
       <div className="max-w-2xl">
         <p className="text-sm font-medium tracking-wide text-[var(--blue-soft)]">
-          Selected Projects
+          Personal Projects
         </p>
 
         <h2 className="mt-3 text-4xl font-semibold tracking-tight text-white md:text-5xl">

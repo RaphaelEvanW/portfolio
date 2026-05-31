@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import ProjectSection from "@/components/Project";
+import Experience from "@/components/Experience";
 
 const cvDownloadUrl = "https://docs.google.com/document/d/1sE3iVw4tDQXasHTtrjlYV9iAkNZH3syEk4LLC9J9JSs/export?format=pdf";
 
@@ -56,7 +57,7 @@ export default function Home() {
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
-                href="#work"
+                href="#project"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[var(--blue)] px-7 text-sm font-medium text-white transition hover:bg-[var(--blue-hover)]"
               >
                 <span>Check My Projects</span>
@@ -142,6 +143,7 @@ export default function Home() {
           </div>
         </section>
         <ProjectSection/>
+        <Experience/>
       </div>
     </main>
   );
