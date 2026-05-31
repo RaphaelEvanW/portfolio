@@ -3,6 +3,8 @@ import Navbar from "@/components/Navbar";
 import ProjectSection from "@/components/Project";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 const cvDownloadUrl = "https://docs.google.com/document/d/1sE3iVw4tDQXasHTtrjlYV9iAkNZH3syEk4LLC9J9JSs/export?format=pdf";
 
@@ -146,6 +148,8 @@ export default function Home() {
         <ProjectSection/>
         <Experience/>
         <Skills/>
+        <Contact/>
+        <Footer/>
       </div>
     </main>
   );
