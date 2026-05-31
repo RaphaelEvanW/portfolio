@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const navItems = [
   { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
+  { label: "Project", href: "#Project" },
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
@@ -10,7 +10,7 @@ const navItems = [
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-[var(--border)] bg-background/80 backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full border-b border-white/[0.05] bg-[#06090F]/90 backdrop-blur-md">
       <nav className="flex h-16 w-full items-center justify-between px-8">
         <a href="#" aria-label="Go to homepage" className="z-10">
           <Image
@@ -23,7 +23,7 @@ export default function Navbar() {
           />
         </a>
 
-        <div className="hidden items-center gap-8 text-sm md:flex">
+        <div className="hidden items-center gap-8 text-[16px] md:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
