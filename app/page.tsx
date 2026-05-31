@@ -2,6 +2,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import ProjectSection from "@/components/Project";
 import Experience from "@/components/Experience";
+import Skills from "@/components/Skills";
 
 const cvDownloadUrl = "https://docs.google.com/document/d/1sE3iVw4tDQXasHTtrjlYV9iAkNZH3syEk4LLC9J9JSs/export?format=pdf";
 
@@ -144,6 +145,7 @@ export default function Home() {
         </section>
         <ProjectSection/>
         <Experience/>
+        <Skills/>
       </div>
     </main>
   );
