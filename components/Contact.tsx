@@ -39,9 +39,8 @@ export default function Contact() {
             </h2>
 
             <p className="mt-5 max-w-xl text-base leading-7 text-[var(--muted)]">
-              I’m open to fresh graduate opportunities around software / web
-              development, automation, data analyst, and
-              AI-related engineering work.
+              I’m open to fresh graduate opportunities around software development,
+              workflow automation, reporting systems, and AI-related engineering work.
             </p>
           </div>
 

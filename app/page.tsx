@@ -61,7 +61,7 @@ export default function Home() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#project"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[var(--blue)] px-7 text-sm font-medium text-white transition hover:bg-[var(--blue-hover)]"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[var(--blue)] px-7 text-sm font-medium text-white transition hover:bg-[var(--blue-hover)] hover:shadow-[0_0_24px_rgba(59,130,246,0.22)]"
               >
                 <span>Check My Projects</span>
                 <Image
@@ -91,7 +91,7 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex items-center gap-4 text-sm font-medium text-[var(--muted)]">
-            <span>Let’s connect</span>
+            <span>Find me here :</span>
 
             <div className="flex items-center gap-3">
               {socialLinks.map((item) => (
@@ -116,7 +116,7 @@ export default function Home() {
 
           {/* RIGHT */}
           <div className="relative hidden h-[720px] translate-x-20 items-end justify-center lg:flex">
-            <div className="absolute bottom-16 h-[560px] w-[560px] rounded-full bg-[var(--blue)]/10 blur-3xl" />
+            <div className="absolute bottom-16 h-[600px] w-[600px] rounded-full bg-[var(--blue)]/15 blur-3xl" />
 
             <div className="absolute bottom-16 h-[580px] w-[430px] rotate-[-12deg] rounded-[50%] border border-white/[0.055]" />
             <div className="absolute bottom-24 h-[520px] w-[380px] rotate-[18deg] rounded-[50%] border border-white/[0.04]" />

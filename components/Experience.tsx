@@ -116,8 +116,8 @@ export default function Experience() {
               <div className="mt-8 flex flex-wrap gap-2">
                 {professionalStacks.map((stack) => (
                     <span
-                        key={stack.name}
-                        className="inline-flex items-center gap-2 rounded-lg border border-[var(--blue)]/20 bg-[#172554]/70 px-3 py-1.5 text-xs font-medium text-[#93C5FD]"
+                      key={stack.name}
+                      className="group inline-flex items-center gap-2 rounded-lg border border-white/[0.08] bg-white/[0.035] px-3 py-1.5 text-xs font-medium text-[var(--tag-text)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--blue)]/10 hover:text-white"
                     >
                         {stack.icon ? (
                         <Image
@@ -125,7 +125,7 @@ export default function Experience() {
                             alt=""
                             width={14}
                             height={14}
-                            className="h-3.5 w-3.5"
+                            className="h-3.5 w-3.5 object-contain opacity-85 transition group-hover:opacity-100"
                         />
                         ) : null}
 

@@ -1,18 +1,3 @@
-const footerLinks = [
-  {
-    label: "GitHub",
-    href: "https://github.com/RaphaelEvanW",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/raphael-e-wijayanto/",
-  },
-  {
-    label: "Email",
-    href: "mailto:raphael.wijayanto@gmail.com",
-  },
-];
-
 export default function Footer() {
   return (
     <footer className="relative mx-auto max-w-[1440px] border-t border-white/[0.08] px-6 py-8 sm:px-10 lg:px-14 xl:px-16">
@@ -22,24 +7,17 @@ export default function Footer() {
             Raphael Evan Wijayanto
           </p>
           <p className="mt-1 text-sm text-[var(--muted)]">
-            Built with Next.js, TypeScript, and Tailwind CSS.
+            Portfolio 2026 
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[var(--muted)]">
-          {footerLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith("http") ? "_blank" : undefined}
-              rel={
-                link.href.startsWith("http") ? "noopener noreferrer" : undefined
-              }
-              className="transition hover:text-white"
-            >
-              {link.label}
-            </a>
-          ))}
+          <a
+            href="#about"
+            className="transition hover:text-white"
+          >
+            Back to top
+          </a>
 
           <span className="hidden h-4 w-px bg-white/[0.12] md:block" />
 

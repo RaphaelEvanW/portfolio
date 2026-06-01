@@ -123,7 +123,7 @@ const skillGroups: SkillGroup[] = [
 
 function SkillChip({ skill }: { skill: Skill }) {
   return (
-    <div className="group inline-flex items-center gap-2 rounded-lg border border-white/[0.07] bg-[#111827]/55 px-3 py-2 text-sm font-medium text-[#CBD5E1] transition hover:border-[var(--blue)]/40 hover:bg-[var(--blue)]/10 hover:text-white">
+    <div className="group inline-flex items-center gap-2 rounded-lg border border-white/[0.08] bg-white/[0.035] px-3 py-1.5 text-sm font-medium text-[var(--tag-text)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--blue)]/10 hover:text-white">
       {skill.icon ? (
         <Image
           src={skill.icon}
@@ -132,11 +132,7 @@ function SkillChip({ skill }: { skill: Skill }) {
           height={18}
           className="h-[18px] w-[18px] object-contain opacity-85 transition group-hover:opacity-100"
         />
-      ) : (
-        <span className="flex h-[18px] min-w-[18px] items-center justify-center rounded-md border border-[var(--blue)]/30 bg-[var(--blue)]/10 px-1 text-[9px] font-semibold text-[var(--blue-soft)]">
-          {skill.name === "REST API" ? "API" : "•"}
-        </span>
-      )}
+      ) : null}
 
       <span>{skill.name}</span>
     </div>
@@ -169,7 +165,7 @@ export default function Skills() {
           {skillGroups.map((group) => (
             <article
               key={group.title}
-              className={`rounded-2xl border border-white/[0.07] bg-white/[0.025] p-6 transition hover:border-[var(--blue)]/30 md:p-7 ${
+              className={`rounded-2xl border border-white/[0.08] bg-[var(--card)]/45 p-6 transition hover:-translate-y-0.5 hover:border-[var(--blue)]/30 hover:bg-[var(--card)]/65 md:p-7 ${
                 group.title === "Data, Tools & Platforms" ? "lg:col-span-2" : ""
               }`}
             >
@@ -187,11 +183,11 @@ export default function Skills() {
                 </div>
               </div>
 
-              <div className="mt-7 divide-y divide-white/[0.07]">
+              <div className="mt-6 divide-y divide-white/[0.07]">
                 {group.subGroups.map((subGroup) => (
                   <div
                     key={`${group.title}-${subGroup.label}`}
-                    className="grid gap-3 py-5 first:pt-0 last:pb-0 md:grid-cols-[120px_1fr]"
+                    className="grid gap-2.5 py-4 first:pt-0 last:pb-0 md:grid-cols-[120px_1fr]"
                   >
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue-soft)]">
                       {subGroup.label}

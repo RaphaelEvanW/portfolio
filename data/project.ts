@@ -13,16 +13,21 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Automation Workflow",
+    title: "Automation Onboarding & Offboarding Karyawan",
     shortDescription:
-      "Workflow automation project built during internship to support task execution and process tracking.",
+      "Proyek workflow automation untuk onboarding dan offboarding karyawan yang saya buat semasa saya dalam masa internship saya.",
     description:
-      "A practical automation workflow project focused on translating operational requirements into structured process flows, worker execution, and technical documentation.",
-    images: ["/projects/automation-workflow.png"],
+      "Proyek ini dikembangkan semasa saya  magang pada PT Jababeka Tbk, Saya berkesempatan untuk membangun workflow automation yang membantu proses onboarding karyawan. Saya ikut andil dalam membangun form - membuat alur workflow BPMN - integrasikan dengan sistem OsTicket, dan saya juga berkesempatan untuk mendesign offboarding workflow automation",
+    images: ["/projects/onboarding/onboarding3.png",
+      "/projects/onboarding/onboarding1.png",
+      "/projects/onboarding/onboarding2.png",
+      "/projects/offboarding/offboarding.png",
+    ],
     stacks: [
       { name: "Python", icon: "/logos/icon/stack/python.png" },
       { name: "Camunda", icon: "/logos/icon/stack/camunda.png" },
       { name: "Docker", icon: "/logos/icon/stack/docker.png" },
+      { name: "OsTicket"},
     ],
   },
   {
@@ -43,16 +48,19 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "AI-Based Fall Detection Research",
+    title: "Implementasi OpenPose dengan Long Short-Term Memory (LSTM) untuk Deteksi Kejadian Jatuh Berbasis Keypoints.",
     shortDescription:
-      "Academic AI research using pose keypoints and LSTM for fall detection.",
+      "Tugas skripsi berbasis Deep Learning LSTM dan OpenPose untuk ekstraksi pose.",
     description:
-      "An academic research project focused on fall detection using pose-estimation keypoints and LSTM-based temporal classification.",
-    images: ["/projects/fall-detection.png"],
+      "Merupakan proyek skripsi yang saya selesaikan untuk memperoleh gelar saya semasa kuliah, berbasis LSTM untuk temporal klasifikasi dan OpenPose untuk mengekstraksi Keypoints dari Video.",
+    images: ["/projects/Skripsi/fall.png"],
     stacks: [
       { name: "Python", icon: "/logos/icon/stack/python.png" },
       { name: "AI Research" },
       { name: "LSTM" },
+      { name: "PyTorch"},
+      { name: "NumPy"},
+      { name: "Deep Learning"},
     ],
   },
 ];

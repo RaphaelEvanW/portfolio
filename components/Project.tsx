@@ -45,7 +45,7 @@ export default function ProjectSection() {
             key={project.title}
             type="button"
             onClick={() => openProject(project)}
-            className="group cursor-pointer overflow-hidden rounded-2xl border border-white/[0.07] bg-[var(--card)]/55 text-left transition hover:-translate-y-1 hover:border-[var(--blue)]/50 hover:bg-[var(--card)]/80"
+            className="group cursor-pointer overflow-hidden rounded-2xl border border-white/[0.07] bg-[var(--card)]/55 text-left transition hover:-translate-y-0.5 hover:border-[var(--blue)]/50 hover:bg-[var(--card)]/80"
           >
             <div className="relative h-52 w-full overflow-hidden bg-[#080D18]">
               <Image
