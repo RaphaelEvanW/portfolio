@@ -31,15 +31,46 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Reporting Pipeline",
+    title: "Nessus Auto Report",
     shortDescription:
-      "Automated reporting pipeline for transforming raw scan data into structured reports.",
+      "Proyek workflow automation untuk memproses Data Nessus dan menghasilkan PDF & XLSX Reports yang terstruktur",
     description:
-      "A reporting automation project that processes raw data, applies transformation logic, and generates structured PDF and spreadsheet reports for operational use.",
+      "Pada proyek ini saya berhasil menerapkan proses ETL menggunakan KNIME, serta menghasilkan PDF dan XLSX reports untuk kepentingan operasional serta decision making, dengan total menghasilkan 3 files yaitu 2 PDF dan 1 XLSX, dimana 1 PDF untuk Management Team dan 1 PDF, 1XLSX untuk Team Internal dimana isinya lebih mendetail .",
     images: [
-      "/projects/reporting-pipeline-1.png",
-      "/projects/reporting-pipeline-2.png",
-      "/projects/reporting-pipeline-3.png",
+      "/projects/nessus/nessuswf.png",
+      "/projects/nessus/nessusinput1.png",
+      "/projects/nessus/nessusinput2.png",
+      "/projects/nessus/nessusinput3.png",
+      "/projects/nessus/nessusinput4.png",
+      "/projects/nessus/nessuspdf1.png",
+      "/projects/nessus/nessuspdf2.png",
+      "/projects/nessus/detailednessus.png",
+      "/projects/nessus/detailednessus2.png",
+      "/projects/nessus/detailednessus3.png",
+      "/projects/nessus/detailedsummaryxlsx.png",
+    ],
+    stacks: [
+      { name: "Python", icon: "/logos/icon/stack/python.png" },
+      { name: "KNIME", icon: "/logos/icon/stack/knime.png" },
+      { name: "PostgreSQL", icon: "/logos/icon/stack/postgresql.png" },
+    ],
+  },
+  {
+    title: "Kalilinux Auto Report",
+    shortDescription:
+      "Proyek workflow automation untuk memproses Data Kalilinux dan menghasilkan PDF & XLSX Reports yang terstruktur",
+    description:
+      "Pada proyek ini saya berhasil menerapkan proses ETL menggunakan KNIME, serta menghasilkan PDF dan XLSX reports untuk kepentingan operasional serta decision making, dengan total menghasilkan 3 files yaitu 2 PDF dan 1 XLSX, dimana 1 PDF untuk Management Team dan 1 PDF, 1XLSX untuk Team Internal dimana isinya lebih mendetail .",
+    images: [
+      "/projects/kalilinux/kalilinuxwf.png",
+      "/projects/kalilinux/kalilinuxinput1.png",
+      "/projects/kalilinux/kalilinuxinput2.png",
+      "/projects/kalilinux/kalilinuxpdf1.png",
+      "/projects/kalilinux/kalilinuxpdf2.png",
+      "/projects/kalilinux/detailedkalilinux1.png",
+      "/projects/kalilinux/detailedkalilinux2.png",
+      "/projects/kalilinux/detailedkalilinux3.png",
+      "/projects/kalilinux/detailedxlsx.png",
     ],
     stacks: [
       { name: "Python", icon: "/logos/icon/stack/python.png" },
@@ -53,7 +84,10 @@ export const projects: Project[] = [
       "Tugas skripsi berbasis Deep Learning LSTM dan OpenPose untuk ekstraksi pose.",
     description:
       "Merupakan proyek skripsi yang saya selesaikan untuk memperoleh gelar saya semasa kuliah, berbasis LSTM untuk temporal klasifikasi dan OpenPose untuk mengekstraksi Keypoints dari Video.",
-    images: ["/projects/Skripsi/fall.png"],
+    images: [
+      "/projects/Skripsi/fall.png",
+      "/projects/Skripsi/summary.png"
+    ],
     stacks: [
       { name: "Python", icon: "/logos/icon/stack/python.png" },
       { name: "AI Research" },

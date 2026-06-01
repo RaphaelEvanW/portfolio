@@ -75,3 +75,48 @@ body {
     0 0 36px rgba(29, 78, 216, 0.35);
   transform: translateY(1px);
 }
+
+.project-modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(96, 165, 250, 0.35) rgba(255, 255, 255, 0.04);
+}
+
+.project-modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.project-modal-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.project-modal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(96, 165, 250, 0.35);
+  border-radius: 999px;
+}
+
+.project-modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(96, 165, 250, 0.6);
+}
+
+.project-thumbnail-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(96, 165, 250, 0.42) rgba(255, 255, 255, 0.06);
+}
+
+.project-thumbnail-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.project-thumbnail-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+}
+
+.project-thumbnail-scroll::-webkit-scrollbar-thumb {
+  background: rgba(96, 165, 250, 0.42);
+  border-radius: 999px;
+}
+
+.project-thumbnail-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(96, 165, 250, 0.68);
+}

@@ -18,6 +18,10 @@ export default function ProjectSection() {
     setActiveImageIndex(0);
   }
 
+  const selectedImage = selectedProject
+    ? selectedProject.images[activeImageIndex]
+    : "";
+
   return (
     <section
       id="project"
@@ -94,90 +98,107 @@ export default function ProjectSection() {
 
       {selectedProject ? (
         <div
-          className="fixed inset-0 z-[80] flex items-center justify-center bg-black/70 px-6 backdrop-blur-sm"
+          className="fixed inset-0 z-[80] flex items-center justify-center bg-black/75 px-4 py-6 backdrop-blur-sm sm:px-6"
           onClick={closeProject}
         >
           <div
-            className="relative max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0B1120] shadow-2xl"
+            className="relative max-h-[90vh] w-full max-w-[1180px] overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0B1120] shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
             <button
               type="button"
               onClick={closeProject}
               aria-label="Close project detail"
-              className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-white/[0.08] bg-black/40 text-xl text-white transition hover:border-[var(--blue)] hover:bg-[var(--blue)]/20"
+              className="absolute right-4 top-4 z-20 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-white/[0.08] bg-black/45 text-xl text-white transition hover:border-[var(--blue)] hover:bg-[var(--blue)]/20"
             >
               ×
             </button>
 
-            <div className="relative h-72 w-full bg-[#080D18]">
-              <Image
-                src={selectedProject.images[activeImageIndex]}
-                alt={selectedProject.title}
-                fill
-                className="object-cover"
-              />
+            <div className="project-modal-scroll max-h-[90vh] overflow-y-auto overflow-x-hidden">
+              <div className="grid min-w-0 lg:grid-cols-[390px_minmax(0,1fr)]">
+                {/* LEFT: Project Information */}
+                <div className="min-w-0 border-b border-white/[0.08] p-6 pt-16 md:p-8 md:pt-16 lg:border-b-0 lg:border-r lg:border-white/[0.08]">
+                  <p className="text-sm font-medium tracking-wide text-[var(--blue-soft)]">
+                    Project Detail
+                  </p>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/25 to-transparent" />
-            </div>
+                  <h3 className="mt-3 text-2xl font-semibold leading-tight tracking-tight text-white md:text-3xl">
+                    {selectedProject.title}
+                  </h3>
 
-            {selectedProject.images.length > 1 ? (
-              <div className="border-t border-white/[0.06] bg-[#0B1120] px-6 py-4 md:px-8">
-                <div className="flex gap-3 overflow-x-auto">
-                  {selectedProject.images.map((image, index) => (
-                    <button
-                      key={image}
-                      type="button"
-                      onClick={() => setActiveImageIndex(index)}
-                      className={`relative h-16 w-28 shrink-0 cursor-pointer overflow-hidden rounded-lg border transition ${
-                        activeImageIndex === index
-                          ? "border-[var(--blue)]"
-                          : "border-white/[0.08] hover:border-white/[0.2]"
-                      }`}
-                    >
-                      <Image
-                        src={image}
-                        alt={`${selectedProject.title} preview ${index + 1}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </button>
-                  ))}
+                  <p className="mt-5 text-sm leading-7 text-[var(--muted)] md:text-[15px] md:leading-8">
+                    {selectedProject.description}
+                  </p>
+
+                  <div className="mt-8 border-t border-white/[0.08] pt-6">
+                    <p className="text-sm font-medium text-white">
+                      Tech stack
+                    </p>
+
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {selectedProject.stacks.map((stack) => (
+                        <span
+                          key={stack.name}
+                          className="inline-flex items-center gap-2 rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-sm font-medium text-[var(--tag-text)]"
+                        >
+                          {stack.icon ? (
+                            <Image
+                              src={stack.icon}
+                              alt=""
+                              width={16}
+                              height={16}
+                              className="h-4 w-4"
+                            />
+                          ) : null}
+
+                          {stack.name}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ) : null}
 
-            <div className="p-6 md:p-8">
-              <h3 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
-                {selectedProject.title}
-              </h3>
+                {/* RIGHT: Image Preview */}
+                <div className="min-w-0 bg-[#070B14] p-4 md:p-6 lg:pt-16">
+                  <div className="relative flex h-[300px] w-full items-center justify-center overflow-hidden rounded-xl border border-white/[0.08] bg-[#05070D] md:h-[430px]">
+                    <Image
+                      src={selectedImage}
+                      alt={selectedProject.title}
+                      fill
+                      className="object-contain p-3"
+                      sizes="(min-width: 1024px) 720px, 100vw"
+                    />
+                  </div>
 
-              <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--muted)] md:text-base md:leading-8">
-                {selectedProject.description}
-              </p>
-
-              <div className="mt-7">
-                <p className="text-sm font-medium text-white">Tech stack</p>
-
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {selectedProject.stacks.map((stack) => (
-                    <span
-                      key={stack.name}
-                      className="inline-flex items-center gap-2 rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-sm font-medium text-[var(--tag-text)]"
-                    >
-                      {stack.icon ? (
-                        <Image
-                          src={stack.icon}
-                          alt=""
-                          width={16}
-                          height={16}
-                          className="h-4 w-4"
-                        />
-                      ) : null}
-
-                      {stack.name}
-                    </span>
-                  ))}
+                  {selectedProject.images.length > 1 ? (
+                    <div className="mt-5 min-w-0">
+                      <div className="project-thumbnail-scroll flex max-w-full gap-3 overflow-x-auto overflow-y-hidden pb-2">
+                        {selectedProject.images.map((image, index) => (
+                          <button
+                            key={image}
+                            type="button"
+                            onClick={() => setActiveImageIndex(index)}
+                            aria-label={`Show ${selectedProject.title} image ${
+                              index + 1
+                            }`}
+                            className={`relative h-16 w-28 shrink-0 cursor-pointer overflow-hidden rounded-lg border bg-[#05070D] transition ${
+                              activeImageIndex === index
+                                ? "border-[var(--blue)] opacity-100 shadow-[0_0_18px_rgba(29,78,216,0.28)]"
+                                : "border-white/[0.08] opacity-60 hover:border-white/[0.22] hover:opacity-100"
+                            }`}
+                          >
+                            <Image
+                              src={image}
+                              alt=""
+                              fill
+                              className="object-cover"
+                              sizes="112px"
+                            />
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </div>
