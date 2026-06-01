@@ -58,7 +58,15 @@ export default function Home() {
               and fullstack experiments.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/15 bg-emerald-400/8 px-3.5 py-1.5 text-sm text-[#ffffff]">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/45" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+              </span>
+              <span className="font-medium">Currently Open to Work, Hit me Up!</span>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#project"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[var(--blue)] px-7 text-sm font-medium text-white transition hover:bg-[var(--blue-hover)] hover:shadow-[0_0_24px_rgba(59,130,246,0.22)]"
