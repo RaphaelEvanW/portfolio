@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -11,26 +11,18 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
-    const initialTheme = savedTheme ?? "dark";
-
-    setTheme(initialTheme);
-    document.documentElement.classList.toggle("light", initialTheme === "light");
-  }, []);
+  const [theme, setTheme] = useState<"dark" | "light">("light");
 
   const toggleTheme = () => {
     const nextTheme = theme === "dark" ? "light" : "dark";
 
     setTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
-    document.documentElement.classList.toggle("light", nextTheme === "light");
+    document.documentElement.classList.toggle("light", nextTheme === "dark");
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-white/[0.05] bg-[#06090F]/90 backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-md">
       <nav className="flex h-16 w-full items-center justify-between px-8">
         <a href="#" aria-label="Go to homepage" className="z-10">
           <Image
