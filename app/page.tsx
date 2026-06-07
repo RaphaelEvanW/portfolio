@@ -38,10 +38,10 @@ export default function Home() {
 
         <section
           id="about"
-          className="relative mx-auto grid min-h-screen max-w-[1680px] items-center gap-16 px-8 pt-10 md:px-10 lg:grid-cols-[0.92fr_1.08fr] lg:px-14 xl:gap-20"
+          className="relative mx-auto grid min-h-screen max-w-[1920px] items-center gap-16 px-8 pt-10 md:px-10 lg:grid-cols-[0.92fr_1.08fr] lg:px-14 xl:gap-20 2xl:px-20"
         >
           {/* HERO LIGHTING */}
-          <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+          <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-full w-screen -translate-x-1/2 overflow-visible">
             {/* spotlight kiri atas */}
             <div className="absolute -left-24 -top-10 h-[720px] w-[980px] rotate-[18deg] bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.16)_0%,rgba(147,197,253,0.12)_24%,rgba(59,130,246,0.07)_44%,rgba(15,23,42,0.03)_66%,transparent_86%)] blur-[52px]" />
 
@@ -55,13 +55,11 @@ export default function Home() {
             <div className="absolute left-1/2 top-[42%] h-[520px] w-[1080px] -translate-x-1/2 rounded-full bg-[var(--blue)]/7 blur-[120px]" />
 
             {/* oval bawah utama - lebih smooth */}
-            <div className="absolute bottom-[156px] left-1/2 h-[210px] w-[118%] -translate-x-1/2 rounded-[50%] border border-[var(--blue)]/22 bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.16)_0%,rgba(29,78,216,0.09)_36%,rgba(29,78,216,0.035)_64%,transparent_100%)] shadow-[0_0_42px_rgba(29,78,216,0.18),inset_0_0_20px_rgba(96,165,250,0.06)]" />
+            <div className="absolute bottom-[146px] left-1/2 h-[210px] w-[74vw] max-w-[1780px] -translate-x-1/2 rounded-[50%] border border-[var(--blue)]/22 bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.16)_0%,rgba(29,78,216,0.09)_36%,rgba(29,78,216,0.035)_64%,transparent_100%)] shadow-[0_0_42px_rgba(29,78,216,0.18),inset_0_0_20px_rgba(96,165,250,0.06)]" />
 
-            {/* glow atas oval */}
-            <div className="absolute bottom-[134px] left-1/2 h-[180px] w-[98%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.11)_0%,rgba(29,78,216,0.06)_34%,rgba(5,7,13,0.20)_68%,transparent_100%)] blur-[70px]" />
+            <div className="absolute bottom-[134px] left-1/2 h-[180px] w-[66vw] max-w-[1120px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.11)_0%,rgba(29,78,216,0.06)_34%,rgba(5,7,13,0.20)_68%,transparent_100%)] blur-[70px]" />
 
-            {/* haze gelap tipis */}
-            <div className="absolute bottom-[126px] left-1/2 h-[110px] w-[94%] -translate-x-1/2 rounded-full bg-[#05070D]/34 blur-3xl" />
+            <div className="absolute bottom-[176px] left-1/2 h-[110px] w-[60vw] max-w-[980px] -translate-x-1/2 rounded-full bg-[#05070D]/34 blur-3xl" />
           </div>
 
           {/* LEFT */}
