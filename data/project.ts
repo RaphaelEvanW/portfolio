@@ -97,4 +97,23 @@ export const projects: Project[] = [
       { name: "Deep Learning"},
     ],
   },
+  {
+    title: "Automation CV Screening (AI Based) using N8N",
+    shortDescription:
+      "Proyek workflow automation untuk memudahkan CV Screening dengan bantuan AI sebagai reasoning untuk membantu mengambil keputusan",
+    description:
+      "Pada proyek kali ini, saya munggunakan N8N sebagai base untuk membuat workflow Automation CV Screening, Saya mengintegrasikan AI bersama script yang ada, untuk menghasilkan data dan menambahkan reasoning untuk tiap kandidat, hasil dari proses workflow ini adalah file berbentuk PDF yang mudah di baca dengan isi seperti pada gambar, sehingga memudahkan stakeholder / HR untuk mengambil keputusan untuk kandidat yang tepat.",
+    images: [
+      "/projects/cv_screening/Workflow.png",
+      "/projects/cv_screening/result1.png",
+      "/projects/cv_screening/result2.png",
+      "/projects/cv_screening/result3.png",
+      "/projects/cv_screening/dataset.png",
+    ],
+    stacks: [
+      { name: "N8N", icon: "/logos/icon/stack/n8n.png" },
+      { name: "Javascript", icon: "/logos/icon/stack/js.png" },
+      { name: "Docker", icon: "/logos/icon/stack/docker.png" },
+    ],
+  },
 ];
