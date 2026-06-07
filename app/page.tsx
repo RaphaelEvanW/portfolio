@@ -38,8 +38,27 @@ export default function Home() {
           id="about"
           className="relative mx-auto grid min-h-screen max-w-[1760px] items-center gap-24 px-12 pt-10 lg:grid-cols-[0.85fr_1.15fr]"
         >
+          {/* HERO LIGHTING */}
+          <div className="pointer-events-none absolute inset-0 -z-10">
+            {/* spotlight kiri atas ke area foto */}
+            <div className="absolute -left-28 -top-4 h-[760px] w-[1150px] rotate-[20deg] bg-[radial-gradient(ellipse_at_top,rgba(147,197,253,0.20)_0%,rgba(59,130,246,0.105)_32%,rgba(15,23,42,0.045)_62%,transparent_88%)] blur-2xl" />
+
+            {/* spotlight kanan atas ke area text*/}
+            <div className="absolute -right-28 -top-4 h-[740px] w-[1120px] -rotate-[20deg] bg-[radial-gradient(ellipse_at_top,rgba(147,197,253,0.22)_0%,rgba(59,130,246,0.11)_32%,rgba(15,23,42,0.045)_62%,transparent_88%)] blur-2xl" />
+
+            {/* ambient glow tengah */}
+            <div className="absolute left-1/2 top-[40%] h-[520px] w-[1180px] -translate-x-1/2 rounded-full bg-[var(--blue)]/8 blur-[110px]" />
+
+            {/* oval bawah, lebih lebar dan sedikit lebih naik */}
+            <div className="absolute bottom-[192px] left-1/2 h-[220px] w-[126%] -translate-x-1/2 rounded-[50%] border border-[var(--blue)]/42 bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.18)_0%,rgba(29,78,216,0.10)_40%,rgba(29,78,216,0.03)_72%,transparent_100%)] shadow-[0_0_46px_rgba(29,78,216,0.24),inset_0_0_30px_rgba(96,165,250,0.10)]" />
+            {/* glow lembut di atas oval */}
+            <div className="absolute bottom-[148px] left-1/2 h-[210px] w-[102%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.14)_0%,rgba(29,78,216,0.08)_36%,rgba(5,7,13,0.22)_68%,transparent_100%)] blur-[64px]" />
+
+            {/* haze gelap tipis buat nyaruin transisi bawah */}
+            <div className="absolute bottom-[138px] left-1/2 h-[140px] w-[98%] -translate-x-1/2 rounded-full bg-[#05070D]/36 blur-3xl" />
+                      </div>
           {/* LEFT */}
-          <div className="relative max-w-3xl pt-4 lg:-translate-x-20">
+          <div className="relative max-w-3xl pt-4 lg:-translate-x-10">
             <p className="text-3xl text-[var(--muted)] md:text-5xl">
               Hi, I’m
             </p>
@@ -124,11 +143,6 @@ export default function Home() {
 
           {/* RIGHT */}
           <div className="relative hidden h-[720px] translate-x-20 items-end justify-center lg:flex">
-            <div className="absolute bottom-16 h-[600px] w-[600px] rounded-full bg-[var(--blue)]/15 blur-3xl" />
-
-            <div className="absolute bottom-16 h-[580px] w-[430px] rotate-[-12deg] rounded-[50%] border border-white/[0.055]" />
-            <div className="absolute bottom-24 h-[520px] w-[380px] rotate-[18deg] rounded-[50%] border border-white/[0.04]" />
-
             <div className="absolute right-24 top-28 grid grid-cols-4 gap-5 opacity-85">
               {Array.from({ length: 16 }).map((_, i) => (
                 <span
@@ -139,18 +153,28 @@ export default function Home() {
             </div>
 
             <div className="absolute right-32 top-[52%] h-5 w-5 rounded-full bg-[var(--blue)] shadow-[0_0_24px_rgba(29,78,216,0.7)]" />
-            <div className="absolute bottom-8 h-24 w-[460px] rounded-full bg-[black]/45 blur-2xl" />
-            <div className="relative -translate-y-16 h-[760px] w-[600px]">
-            <Image
-              src="/profile_pict.png"
-              alt="Raphael Evan Wijayanto"
-              fill
-              priority
-              className="object-contain object-bottom"
-            />
 
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#05070D] via-[#05070D]/15 to-transparent" />
-          </div>
+            {/* foto */}
+            <div className="relative z-10 h-[780px] w-[610px] -translate-y-22">
+              <Image
+                src="/profile_pict.png"
+                alt="Raphael Evan Wijayanto"
+                fill
+                priority
+                className="object-contain object-bottom"
+                style={{
+                  WebkitMaskImage:
+                    "linear-gradient(to top, transparent 0%, rgba(0,0,0,0.75) 3%, black 8%, black 100%)",
+                  maskImage:
+                    "linear-gradient(to top, transparent 0%, rgba(0,0,0,0.75) 3%, black 8%, black 100%)",
+                }}
+              />
+            </div>
+
+            {/* foreground haze: ini yang bikin badan keliatan keluar dari oval, bukan tembus oval */}
+            <div className="pointer-events-none absolute bottom-[118px] z-20 h-[115px] w-[620px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(7,16,29,0.92)_0%,rgba(7,16,29,0.72)_36%,rgba(7,16,29,0.34)_62%,transparent_100%)] blur-[34px]" />
+
+
           </div>
         </section>
         <ProjectSection/>
