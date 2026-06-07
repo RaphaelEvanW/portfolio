@@ -55,7 +55,7 @@ export default function Home() {
             <div className="absolute left-1/2 top-[42%] h-[520px] w-[1080px] -translate-x-1/2 rounded-full bg-[var(--blue)]/7 blur-[120px]" />
 
             {/* oval bawah utama - lebih smooth */}
-            <div className="absolute bottom-[146px] left-1/2 h-[210px] w-[74vw] max-w-[1780px] -translate-x-1/2 rounded-[50%] border border-[var(--blue)]/22 bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.16)_0%,rgba(29,78,216,0.09)_36%,rgba(29,78,216,0.035)_64%,transparent_100%)] shadow-[0_0_42px_rgba(29,78,216,0.18),inset_0_0_20px_rgba(96,165,250,0.06)]" />
+            <div className="absolute bottom-[206px] left-1/2 h-[210px] w-[74vw] max-w-[1780px] -translate-x-1/2 rounded-[50%] border border-[var(--blue)]/22 bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.16)_0%,rgba(29,78,216,0.09)_36%,rgba(29,78,216,0.035)_64%,transparent_100%)] shadow-[0_0_42px_rgba(29,78,216,0.18),inset_0_0_20px_rgba(96,165,250,0.06)]" />
 
             <div className="absolute bottom-[134px] left-1/2 h-[180px] w-[66vw] max-w-[1120px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.11)_0%,rgba(29,78,216,0.06)_34%,rgba(5,7,13,0.20)_68%,transparent_100%)] blur-[70px]" />
 
