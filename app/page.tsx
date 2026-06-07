@@ -6,7 +6,8 @@ import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
-const cvDownloadUrl = "https://docs.google.com/document/d/1sE3iVw4tDQXasHTtrjlYV9iAkNZH3syEk4LLC9J9JSs/export?format=pdf";
+const cvDownloadUrl =
+  "https://docs.google.com/document/d/1sE3iVw4tDQXasHTtrjlYV9iAkNZH3syEk4LLC9J9JSs/export?format=pdf";
 
 const socialLinks = [
   {
@@ -28,37 +29,43 @@ const socialLinks = [
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#06090F] text-foreground">
+    <main className="relative min-h-screen overflow-x-hidden bg-[#06090F] text-foreground">
       <div className="fixed inset-0 z-0 bg-[radial-gradient(circle_at_72%_18%,rgba(29,78,216,0.045),transparent_30%),radial-gradient(circle_at_18%_8%,rgba(96,165,250,0.018),transparent_26%),linear-gradient(180deg,#05070D_0%,#070B14_48%,#05070D_100%)]" />
       <div className="fixed inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.58)_100%)]" />
+
       <div className="relative z-10">
         <Navbar />
 
         <section
           id="about"
-          className="relative mx-auto grid min-h-screen max-w-[1760px] items-center gap-24 px-12 pt-10 lg:grid-cols-[0.85fr_1.15fr]"
+          className="relative mx-auto grid min-h-screen max-w-[1680px] items-center gap-16 px-8 pt-10 md:px-10 lg:grid-cols-[0.92fr_1.08fr] lg:px-14 xl:gap-20"
         >
           {/* HERO LIGHTING */}
-          <div className="pointer-events-none absolute inset-0 -z-10">
-            {/* spotlight kiri atas ke area foto */}
-            <div className="absolute -left-28 -top-4 h-[760px] w-[1150px] rotate-[20deg] bg-[radial-gradient(ellipse_at_top,rgba(147,197,253,0.20)_0%,rgba(59,130,246,0.105)_32%,rgba(15,23,42,0.045)_62%,transparent_88%)] blur-2xl" />
+          <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+            {/* spotlight kiri atas */}
+            <div className="absolute -left-24 -top-10 h-[720px] w-[980px] rotate-[18deg] bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.16)_0%,rgba(147,197,253,0.12)_24%,rgba(59,130,246,0.07)_44%,rgba(15,23,42,0.03)_66%,transparent_86%)] blur-[52px]" />
 
-            {/* spotlight kanan atas ke area text*/}
-            <div className="absolute -right-28 -top-4 h-[740px] w-[1120px] -rotate-[20deg] bg-[radial-gradient(ellipse_at_top,rgba(147,197,253,0.22)_0%,rgba(59,130,246,0.11)_32%,rgba(15,23,42,0.045)_62%,transparent_88%)] blur-2xl" />
+            {/* spotlight kanan atas */}
+            <div className="absolute -right-24 -top-10 h-[720px] w-[980px] -rotate-[18deg] bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.17)_0%,rgba(147,197,253,0.12)_24%,rgba(59,130,246,0.07)_44%,rgba(15,23,42,0.03)_66%,transparent_86%)] blur-[52px]" />
+
+            {/* soft center fill supaya transisi spotlight kiri-kanan lebih nyambung */}
+            <div className="absolute left-1/2 top-[-60px] h-[320px] w-[820px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.07)_0%,rgba(147,197,253,0.04)_34%,transparent_78%)] blur-[38px]" />
 
             {/* ambient glow tengah */}
-            <div className="absolute left-1/2 top-[40%] h-[520px] w-[1180px] -translate-x-1/2 rounded-full bg-[var(--blue)]/8 blur-[110px]" />
+            <div className="absolute left-1/2 top-[42%] h-[520px] w-[1080px] -translate-x-1/2 rounded-full bg-[var(--blue)]/7 blur-[120px]" />
 
-            {/* oval bawah, lebih lebar dan sedikit lebih naik */}
-            <div className="absolute bottom-[192px] left-1/2 h-[220px] w-[126%] -translate-x-1/2 rounded-[50%] border border-[var(--blue)]/42 bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.18)_0%,rgba(29,78,216,0.10)_40%,rgba(29,78,216,0.03)_72%,transparent_100%)] shadow-[0_0_46px_rgba(29,78,216,0.24),inset_0_0_30px_rgba(96,165,250,0.10)]" />
-            {/* glow lembut di atas oval */}
-            <div className="absolute bottom-[148px] left-1/2 h-[210px] w-[102%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.14)_0%,rgba(29,78,216,0.08)_36%,rgba(5,7,13,0.22)_68%,transparent_100%)] blur-[64px]" />
+            {/* oval bawah utama - lebih smooth */}
+            <div className="absolute bottom-[156px] left-1/2 h-[210px] w-[118%] -translate-x-1/2 rounded-[50%] border border-[var(--blue)]/22 bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.16)_0%,rgba(29,78,216,0.09)_36%,rgba(29,78,216,0.035)_64%,transparent_100%)] shadow-[0_0_42px_rgba(29,78,216,0.18),inset_0_0_20px_rgba(96,165,250,0.06)]" />
 
-            {/* haze gelap tipis buat nyaruin transisi bawah */}
-            <div className="absolute bottom-[138px] left-1/2 h-[140px] w-[98%] -translate-x-1/2 rounded-full bg-[#05070D]/36 blur-3xl" />
-                      </div>
+            {/* glow atas oval */}
+            <div className="absolute bottom-[134px] left-1/2 h-[180px] w-[98%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.11)_0%,rgba(29,78,216,0.06)_34%,rgba(5,7,13,0.20)_68%,transparent_100%)] blur-[70px]" />
+
+            {/* haze gelap tipis */}
+            <div className="absolute bottom-[126px] left-1/2 h-[110px] w-[94%] -translate-x-1/2 rounded-full bg-[#05070D]/34 blur-3xl" />
+          </div>
+
           {/* LEFT */}
-          <div className="relative max-w-3xl pt-4 lg:-translate-x-10">
+          <div className="relative max-w-3xl lg:justify-self-center lg:pl-4 xl:pl-10">
             <p className="text-3xl text-[var(--muted)] md:text-5xl">
               Hi, I’m
             </p>
@@ -72,9 +79,9 @@ export default function Home() {
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)]">
               An Informatics fresh graduate focused on backend development,
-              workflow automation, reporting pipelines, and AI.
-              I build practical projects from internship work, academic projects,
-              and fullstack experiments.
+              workflow automation, reporting pipelines, and AI. I build
+              practical projects from internship work, academic projects, and
+              fullstack experiments.
             </p>
 
             <div className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/15 bg-emerald-400/8 px-3.5 py-1.5 text-sm text-[#ffffff]">
@@ -82,7 +89,9 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/45" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
               </span>
-              <span className="font-medium">Currently Open to Work, Hit me Up!</span>
+              <span className="font-medium">
+                Currently Open to Work, Hit me Up!
+              </span>
             </div>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -118,32 +127,32 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex items-center gap-4 text-sm font-medium text-[var(--muted)]">
-            <span>Find me here :</span>
+              <span>Find me here :</span>
 
-            <div className="flex items-center gap-3">
-              {socialLinks.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  aria-label={item.label}
-                  className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] transition hover:border-[var(--blue)] hover:bg-[var(--blue)]/10"
-                >
-                  <Image
-                    src={item.icon}
-                    alt=""
-                    width={20}
-                    height={20}
-                    className="h-5 w-5 opacity-80 transition group-hover:opacity-100"
-                  />
-                </a>
-              ))}
+              <div className="flex items-center gap-3">
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    aria-label={item.label}
+                    className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] transition hover:border-[var(--blue)] hover:bg-[var(--blue)]/10"
+                  >
+                    <Image
+                      src={item.icon}
+                      alt=""
+                      width={20}
+                      height={20}
+                      className="h-5 w-5 opacity-80 transition group-hover:opacity-100"
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
           </div>
 
           {/* RIGHT */}
-          <div className="relative hidden h-[720px] translate-x-20 items-end justify-center lg:flex">
-            <div className="absolute right-24 top-28 grid grid-cols-4 gap-5 opacity-85">
+          <div className="relative hidden h-[720px] items-end justify-center lg:flex lg:justify-self-center xl:translate-x-2">
+            <div className="absolute right-20 top-24 grid grid-cols-4 gap-5 opacity-85">
               {Array.from({ length: 16 }).map((_, i) => (
                 <span
                   key={i}
@@ -152,10 +161,10 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="absolute right-32 top-[52%] h-5 w-5 rounded-full bg-[var(--blue)] shadow-[0_0_24px_rgba(29,78,216,0.7)]" />
+            <div className="absolute right-28 top-[52%] h-5 w-5 rounded-full bg-[var(--blue)] shadow-[0_0_24px_rgba(29,78,216,0.7)]" />
 
             {/* foto */}
-            <div className="relative z-10 h-[780px] w-[610px] -translate-y-22">
+            <div className="relative z-10 h-[760px] w-[590px] -translate-y-16 xl:h-[790px] xl:w-[620px] xl:-translate-y-18">
               <Image
                 src="/profile_pict.png"
                 alt="Raphael Evan Wijayanto"
@@ -171,17 +180,16 @@ export default function Home() {
               />
             </div>
 
-            {/* foreground haze: ini yang bikin badan keliatan keluar dari oval, bukan tembus oval */}
-            <div className="pointer-events-none absolute bottom-[118px] z-20 h-[115px] w-[620px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(7,16,29,0.92)_0%,rgba(7,16,29,0.72)_36%,rgba(7,16,29,0.34)_62%,transparent_100%)] blur-[34px]" />
-
-
+            {/* foreground haze */}
+            <div className="pointer-events-none absolute bottom-[108px] z-20 h-[105px] w-[600px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(7,16,29,0.90)_0%,rgba(7,16,29,0.70)_36%,rgba(7,16,29,0.30)_62%,transparent_100%)] blur-[32px]" />
           </div>
         </section>
-        <ProjectSection/>
-        <Experience/>
-        <Skills/>
-        <Contact/>
-        <Footer/>
+
+        <ProjectSection />
+        <Experience />
+        <Skills />
+        <Contact />
+        <Footer />
       </div>
     </main>
   );
