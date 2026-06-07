@@ -3,39 +3,62 @@ export type ProjectStack = {
   icon?: string;
 };
 
+export type ProjectMetric = {
+  label: string;
+  value: string;
+};
+
+export type ProjectCategory =
+  | "Workflow & Automation"
+  | "AI Integrated"
+  | "AI Research"
+  | "Fullstack";
+
 export type Project = {
   title: string;
   shortDescription: string;
   description: string;
   images: string[];
   stacks: ProjectStack[];
+  categories: ProjectCategory[];
+  featured?: boolean;
+  metrics: ProjectMetric[];
 };
-
 export const projects: Project[] = [
   {
     title: "Automation Onboarding & Offboarding Karyawan",
+    categories: ["Workflow & Automation"],
+    featured: false,
     shortDescription:
-      "Proyek workflow automation untuk onboarding dan offboarding karyawan yang saya buat semasa saya dalam masa internship saya.",
+      "Workflow automation untuk proses onboarding dan offboarding karyawan menggunakan BPMN, Camunda, dan integrasi osTicket.",
     description:
-      "Proyek ini dikembangkan semasa saya  magang pada PT Jababeka Tbk, Saya berkesempatan untuk membangun workflow automation yang membantu proses onboarding karyawan. Saya ikut andil dalam membangun form - membuat alur workflow BPMN - integrasikan dengan sistem OsTicket, dan saya juga berkesempatan untuk mendesign offboarding workflow automation",
-    images: ["/projects/onboarding/onboarding3.png",
+      "Proyek ini dikembangkan semasa magang di PT Jababeka Tbk. Saya membangun workflow automation untuk membantu proses onboarding karyawan, mulai dari perancangan form, pembuatan alur BPMN, integrasi dengan osTicket, hingga desain workflow offboarding sebagai pengembangan proses lanjutan.",
+    images: [
+      "/projects/onboarding/onboarding3.png",
       "/projects/onboarding/onboarding1.png",
       "/projects/onboarding/onboarding2.png",
       "/projects/offboarding/offboarding.png",
+    ],
+    metrics: [
+      { label: "Scope", value: "Onboarding & Offboarding" },
+      { label: "Flow", value: "BPMN Workflow" },
+      { label: "Integration", value: "osTicket" },
     ],
     stacks: [
       { name: "Python", icon: "/logos/icon/stack/python.png" },
       { name: "Camunda", icon: "/logos/icon/stack/camunda.png" },
       { name: "Docker", icon: "/logos/icon/stack/docker.png" },
-      { name: "OsTicket"},
+      { name: "OsTicket" },
+      { name: "BPMN" },
     ],
   },
   {
     title: "Nessus Auto Report",
+    categories: ["Workflow & Automation", "AI Integrated"],
     shortDescription:
-      "Proyek workflow automation untuk memproses Data Nessus dan menghasilkan PDF & XLSX Reports yang terstruktur",
+      "Workflow ETL untuk memproses data Nessus dan menghasilkan laporan PDF/XLSX yang terstruktur.",
     description:
-      "Pada proyek ini saya berhasil menerapkan proses ETL menggunakan KNIME, serta menghasilkan PDF dan XLSX reports untuk kepentingan operasional serta decision making, dengan total menghasilkan 3 files yaitu 2 PDF dan 1 XLSX, dimana 1 PDF untuk Management Team dan 1 PDF, 1XLSX untuk Team Internal dimana isinya lebih mendetail .",
+      "Pada proyek ini saya menerapkan proses ETL menggunakan KNIME untuk mengolah data Nessus dan menghasilkan output laporan PDF serta XLSX. Output laporan digunakan untuk kebutuhan operasional dan decision making, dengan format berbeda untuk management team dan internal team.",
     images: [
       "/projects/nessus/nessuswf.png",
       "/projects/nessus/nessusinput1.png",
@@ -49,6 +72,11 @@ export const projects: Project[] = [
       "/projects/nessus/detailednessus3.png",
       "/projects/nessus/detailedsummaryxlsx.png",
     ],
+    metrics: [
+      { label: "Output", value: "PDF & XLSX" },
+      { label: "Process", value: "ETL Pipeline" },
+      { label: "Use Case", value: "Security Report" },
+    ],
     stacks: [
       { name: "Python", icon: "/logos/icon/stack/python.png" },
       { name: "KNIME", icon: "/logos/icon/stack/knime.png" },
@@ -57,10 +85,11 @@ export const projects: Project[] = [
   },
   {
     title: "Kalilinux Auto Report",
+    categories: ["Workflow & Automation", "AI Integrated"],
     shortDescription:
-      "Proyek workflow automation untuk memproses Data Kalilinux dan menghasilkan PDF & XLSX Reports yang terstruktur",
+      "Workflow ETL untuk memproses data Kali Linux dan menghasilkan laporan PDF/XLSX yang terstruktur.",
     description:
-      "Pada proyek ini saya berhasil menerapkan proses ETL menggunakan KNIME, serta menghasilkan PDF dan XLSX reports untuk kepentingan operasional serta decision making, dengan total menghasilkan 3 files yaitu 2 PDF dan 1 XLSX, dimana 1 PDF untuk Management Team dan 1 PDF, 1XLSX untuk Team Internal dimana isinya lebih mendetail .",
+      "Pada proyek ini saya menerapkan proses ETL menggunakan KNIME untuk mengolah data Kali Linux dan menghasilkan laporan PDF serta XLSX. Laporan dibuat dalam format management dan internal agar hasil pemrosesan data lebih mudah dianalisis oleh stakeholder terkait.",
     images: [
       "/projects/kalilinux/kalilinuxwf.png",
       "/projects/kalilinux/kalilinuxinput1.png",
@@ -72,6 +101,11 @@ export const projects: Project[] = [
       "/projects/kalilinux/detailedkalilinux3.png",
       "/projects/kalilinux/detailedxlsx.png",
     ],
+    metrics: [
+      { label: "Output", value: "PDF & XLSX" },
+      { label: "Process", value: "ETL Pipeline" },
+      { label: "Use Case", value: "Security Report" },
+    ],
     stacks: [
       { name: "Python", icon: "/logos/icon/stack/python.png" },
       { name: "KNIME", icon: "/logos/icon/stack/knime.png" },
@@ -79,36 +113,47 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Implementasi OpenPose dengan Long Short-Term Memory (LSTM) untuk Deteksi Kejadian Jatuh Berbasis Keypoints.",
+    title:
+      "Implementasi OpenPose dengan Long Short-Term Memory (LSTM) untuk Deteksi Kejadian Jatuh Berbasis Keypoints",
+    categories: ["AI Research"],
+    featured: true,
     shortDescription:
-      "Tugas skripsi berbasis Deep Learning LSTM dan OpenPose untuk ekstraksi pose.",
+      "Proyek skripsi berbasis OpenPose dan LSTM untuk deteksi kejadian jatuh dari keypoints video.",
     description:
-      "Merupakan proyek skripsi yang saya selesaikan untuk memperoleh gelar saya semasa kuliah, berbasis LSTM untuk temporal klasifikasi dan OpenPose untuk mengekstraksi Keypoints dari Video.",
-    images: [
-      "/projects/Skripsi/fall.png",
-      "/projects/Skripsi/summary.png"
+      "Proyek skripsi ini menggunakan OpenPose untuk mengekstraksi keypoints dari video dan LSTM untuk melakukan klasifikasi temporal terhadap kejadian jatuh. Fokus utama proyek ini adalah membangun pipeline deteksi berbasis pose estimation dan deep learning.",
+    images: ["/projects/Skripsi/fall.png", "/projects/Skripsi/summary.png"],
+    metrics: [
+      { label: "Dataset", value: "UR Fall Detection Dataset" },
+      { label: "Method", value: "OpenPose + LSTM" },
+      { label: "Focus", value: "Deep Learning" },
     ],
     stacks: [
       { name: "Python", icon: "/logos/icon/stack/python.png" },
       { name: "AI Research" },
       { name: "LSTM" },
-      { name: "PyTorch"},
-      { name: "NumPy"},
-      { name: "Deep Learning"},
+      { name: "PyTorch" },
+      { name: "NumPy" },
+      { name: "Deep Learning" },
     ],
   },
   {
     title: "Automation CV Screening (AI Based) using N8N",
+    categories: ["Workflow & Automation", "AI Integrated"],
     shortDescription:
-      "Proyek workflow automation untuk memudahkan CV Screening dengan bantuan AI sebagai reasoning untuk membantu mengambil keputusan",
+      "Workflow AI untuk membantu proses CV screening dengan reasoning dan output laporan kandidat.",
     description:
-      "Pada proyek kali ini, saya munggunakan N8N sebagai base untuk membuat workflow Automation CV Screening, Saya mengintegrasikan AI bersama script yang ada, untuk menghasilkan data dan menambahkan reasoning untuk tiap kandidat, hasil dari proses workflow ini adalah file berbentuk PDF yang mudah di baca dengan isi seperti pada gambar, sehingga memudahkan stakeholder / HR untuk mengambil keputusan untuk kandidat yang tepat.",
+      "Pada proyek ini saya menggunakan n8n sebagai base workflow automation untuk CV screening. Workflow mengintegrasikan AI dan script pendukung untuk menghasilkan data kandidat, reasoning, serta output berbentuk PDF yang mudah dibaca oleh stakeholder atau HR.",
     images: [
       "/projects/cv_screening/Workflow.png",
       "/projects/cv_screening/result1.png",
       "/projects/cv_screening/result2.png",
       "/projects/cv_screening/result3.png",
       "/projects/cv_screening/dataset.png",
+    ],
+    metrics: [
+      { label: "Output", value: "PDF Report" },
+      { label: "Flow", value: "AI Screening" },
+      { label: "Tool", value: "n8n Workflow" },
     ],
     stacks: [
       { name: "N8N", icon: "/logos/icon/stack/n8n.png" },
