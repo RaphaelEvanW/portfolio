@@ -393,7 +393,7 @@ function ProjectCard({
         </div>
 
         <div className={`relative flex h-full min-w-0 flex-col ${contentPaddingClass}`}>
-          <CategoryBadges categories={project.categories.slice(0, isFeatured ? 2 : 1)} compact />
+          <CategoryBadges categories={project.categories} compact />
 
           <h3 className={`mt-2 font-semibold tracking-tight text-white sm:mt-4 ${isFeatured ? "text-[13px] leading-tight sm:text-xl" : "text-[11px] leading-tight sm:text-xl"}`}>
             {project.title}
