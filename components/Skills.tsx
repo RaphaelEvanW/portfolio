@@ -59,7 +59,7 @@ const skillGroups: SkillGroup[] = [
   {
     title: "Automation & Reporting",
     description:
-      "The area I explored most during internship work: workflow automation, scheduled execution, and structured reporting.",
+      "Workflow automation, scheduled execution, and structured reporting from internship work.",
     subGroups: [
       {
         label: "Workflow",
@@ -91,7 +91,7 @@ const skillGroups: SkillGroup[] = [
   {
     title: "Data, Tools & Platforms",
     description:
-      "Supporting tools I use for database work, API testing, version control, design, cloud basics, and enterprise-system exposure.",
+      "Database work, API testing, version control, design, cloud basics, and enterprise-system exposure.",
     subGroups: [
       {
         label: "Database",
@@ -123,19 +123,18 @@ const skillGroups: SkillGroup[] = [
 
 function SkillChip({ skill }: { skill: Skill }) {
   return (
-    <div className="group inline-flex items-center gap-2 rounded-lg border border-white/[0.08] bg-white/[0.035] px-3 py-1.5 text-sm font-medium text-[var(--tag-text)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--blue)]/10 hover:text-white">
+    <span className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.035] px-2.5 py-1.5 text-[11px] font-medium text-[var(--tag-text)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--blue)]/10 hover:text-white sm:gap-2 sm:px-3 sm:text-sm">
       {skill.icon ? (
         <Image
           src={skill.icon}
           alt=""
-          width={18}
-          height={18}
-          className="h-[18px] w-[18px] object-contain opacity-85 transition group-hover:opacity-100"
+          width={16}
+          height={16}
+          className="h-3.5 w-3.5 object-contain opacity-85 sm:h-4 sm:w-4"
         />
       ) : null}
-
       <span>{skill.name}</span>
-    </div>
+    </span>
   );
 }
 
@@ -143,57 +142,71 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative mx-auto max-w-[1440px] px-6 py-28 sm:px-10 lg:px-14 xl:px-16"
+      className="relative mx-auto max-w-[1500px] px-4 py-20 sm:px-8 sm:py-24 lg:px-14 xl:px-16"
     >
       <div className="pointer-events-none absolute right-16 top-20 hidden h-80 w-80 rounded-full bg-[var(--blue)]/8 blur-3xl lg:block" />
       <div className="pointer-events-none absolute left-10 bottom-20 hidden h-72 w-72 rounded-full bg-[var(--blue-soft)]/5 blur-3xl lg:block" />
 
       <div className="relative">
         <div className="max-w-3xl">
-
-          <h2 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
+          <h2 className="text-[34px] font-semibold leading-tight tracking-tight text-white sm:text-5xl">
             Skills built through practical work
           </h2>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--muted)]">
+          <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:text-base">
             A focused toolkit shaped by internship work, academic projects, and
             personal experiments — grouped by how I actually use them.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
-          {skillGroups.map((group) => (
+        <div className="mt-8 grid grid-cols-3 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.025]">
+          {skillGroups.map((group, index) => (
+            <div
+              key={group.title}
+              className="border-r border-white/[0.07] px-3 py-3 last:border-r-0 sm:px-5 sm:py-4"
+            >
+              <p className="text-lg font-semibold leading-none text-white sm:text-2xl">
+                0{index + 1}
+              </p>
+              <p className="mt-1 truncate text-[10px] font-medium text-[var(--muted)] sm:text-sm">
+                {group.title.split(" & ")[0]}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-9 space-y-9 lg:grid lg:grid-cols-3 lg:gap-5 lg:space-y-0">
+          {skillGroups.map((group, index) => (
             <article
               key={group.title}
-              className={`rounded-2xl border border-white/[0.08] bg-[var(--card)]/45 p-6 transition hover:-translate-y-0.5 hover:border-[var(--blue)]/30 hover:bg-[var(--card)]/65 md:p-7 ${
-                group.title === "Data, Tools & Platforms" ? "lg:col-span-2" : ""
-              }`}
+              className="border-t border-white/[0.09] pt-5 lg:rounded-2xl lg:border lg:border-white/[0.08] lg:bg-[var(--card)]/38 lg:p-6"
             >
               <div className="flex items-start gap-3">
                 <span className="mt-1 h-6 w-1 shrink-0 rounded-full bg-[var(--blue)]" />
-
                 <div>
-                  <h3 className="text-xl font-semibold tracking-tight text-white">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--blue-soft)]">
+                    0{index + 1} / Skill Area
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold tracking-tight text-white sm:text-2xl">
                     {group.title}
                   </h3>
-
-                  <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
                     {group.description}
                   </p>
                 </div>
               </div>
 
-              <div className="mt-6 divide-y divide-white/[0.07]">
+              <div className="mt-5 space-y-5">
                 {group.subGroups.map((subGroup) => (
                   <div
                     key={`${group.title}-${subGroup.label}`}
-                    className="grid gap-2.5 py-4 first:pt-0 last:pb-0 md:grid-cols-[120px_1fr]"
+                    className="border-t border-white/[0.07] pt-4 first:border-t-0 first:pt-0"
                   >
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue-soft)]">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--blue-soft)]">
                       {subGroup.label}
                     </p>
 
-                    <div className="flex flex-wrap gap-2.5">
+                    <div className="mt-3 flex flex-wrap gap-2">
                       {subGroup.skills.map((skill) => (
                         <SkillChip
                           key={`${group.title}-${subGroup.label}-${skill.name}`}
