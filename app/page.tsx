@@ -35,10 +35,9 @@ export default function Home() {
 
       <div className="relative z-10">
         <Navbar />
-
+        <div id="about">
         {/* MOBILE / TABLET HERO - desktop feel, scaled down */}
         <section
-          id="about"
           className="relative min-h-[760px] overflow-hidden px-5 pb-10 pt-20 lg:hidden"
         >
           <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12)_0%,rgba(147,197,253,0.07)_22%,rgba(29,78,216,0.035)_45%,transparent_70%),linear-gradient(180deg,#07101F_0%,#05070D_62%,#05070D_100%)]" />
@@ -250,7 +249,7 @@ export default function Home() {
             <div className="pointer-events-none absolute bottom-[108px] z-20 h-[105px] w-[600px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(7,16,29,0.90)_0%,rgba(7,16,29,0.70)_36%,rgba(7,16,29,0.30)_62%,transparent_100%)] blur-[32px]" />
           </div>
         </section>
-
+        </div>
         <ProjectSection />
         <Experience />
         <Skills />
