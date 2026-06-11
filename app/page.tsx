@@ -42,10 +42,11 @@ export default function Home() {
         <div id="about">
           {/* MOBILE / TABLET HERO - desktop feel, scaled down */}
           <section className="relative min-h-[760px] overflow-hidden px-5 pb-10 pt-20 lg:hidden">
-            <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12)_0%,rgba(147,197,253,0.07)_22%,rgba(29,78,216,0.035)_45%,transparent_70%),linear-gradient(180deg,#07101F_0%,#05070D_62%,#05070D_100%)]" />
+            <div className="pointer-events-none absolute bottom-[72px] left-1/2 z-[2] h-[132px] w-[124vw] max-w-[720px] -translate-x-1/2 rounded-[50%] border border-[var(--mobile-hero-oval-border)] bg-[image:var(--mobile-hero-oval)] shadow-[0_0_34px_rgba(59,130,246,0.14),inset_0_0_20px_rgba(96,165,250,0.08)] sm:bottom-[46px] sm:h-[150px]" />
 
-            <div className="pointer-events-none absolute left-1/2 top-11 -z-10 h-[270px] w-[560px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.11)_0%,rgba(147,197,253,0.07)_34%,transparent_78%)] blur-[36px]" />
-            <div className="pointer-events-none absolute left-[62%] top-[250px] -z-10 h-[260px] w-[330px] -translate-x-1/2 rounded-full bg-[var(--blue)]/10 blur-[70px]" />
+            <div className="pointer-events-none absolute bottom-[54px] left-1/2 z-[1] h-[118px] w-[118vw] max-w-[690px] -translate-x-1/2 rounded-[50%] bg-[image:var(--mobile-hero-oval)] opacity-80 blur-[24px]" />
+
+            <div className="pointer-events-none absolute bottom-[20px] left-1/2 z-[1] h-[130px] w-[104vw] max-w-[620px] -translate-x-1/2 rounded-full bg-[var(--hero-floor-cover)] opacity-70 blur-[48px]" />
 
             <div className="pointer-events-none absolute right-5 top-[255px] z-20 h-3.5 w-3.5 rounded-full bg-[var(--blue)] shadow-[0_0_22px_rgba(29,78,216,0.9),0_0_48px_rgba(29,78,216,0.5)] sm:right-[16%] sm:top-[300px]" />
 
@@ -68,7 +69,7 @@ export default function Home() {
                   fullstack experiments.
                 </p>
 
-                <div className="mt-5 inline-flex max-w-full items-center gap-1.5 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-1.5 text-[9px] text-emerald-600 dark:text-white sm:text-xs">
+                <div className="mt-5 inline-flex max-w-full items-center gap-1.5 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-1.5 text-[9px] text-emerald-500 sm:text-xs">
                   <span className="relative flex h-2 w-2 shrink-0">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/45" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
