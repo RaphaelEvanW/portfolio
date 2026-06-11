@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import ThemedIcon from "@/components/ThemedIcon";
 
 const THEME_STORAGE_KEY = "rew-portfolio-theme";
 
@@ -14,26 +15,46 @@ const navItems = [
 
 const sectionIds = ["about", "project", "experience", "skills", "contact"];
 
-function getInitialTheme(): "dark" | "light" {
+function getThemeSnapshot(): "dark" | "light" {
   if (typeof window === "undefined") return "dark";
 
-  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
   return savedTheme === "light" || savedTheme === "dark" ? savedTheme : "dark";
 }
 
+function getServerThemeSnapshot(): "dark" | "light" {
+  return "dark";
+}
+
+function subscribeTheme(callback: () => void) {
+  window.addEventListener("rew-theme-change", callback);
+  window.addEventListener("storage", callback);
+
+  return () => {
+    window.removeEventListener("rew-theme-change", callback);
+    window.removeEventListener("storage", callback);
+  };
+}
+
 export default function Navbar() {
-  const [theme, setTheme] = useState<"dark" | "light">(getInitialTheme);
+  const storedTheme = useSyncExternalStore(
+    subscribeTheme,
+    getThemeSnapshot,
+    getServerThemeSnapshot
+  );
+
   const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
-    document.documentElement.classList.toggle("light", theme === "light");
-    document.documentElement.style.colorScheme = theme;
-    localStorage.setItem(THEME_STORAGE_KEY, theme);
-  }, [theme]);
+    document.documentElement.classList.toggle("light", storedTheme === "light");
+    document.documentElement.style.colorScheme = storedTheme;
+  }, [storedTheme]);
 
   useEffect(() => {
     function handleScroll() {
-      const scrollPosition = window.scrollY + (window.innerWidth < 640 ? 120 : 150);
+      const scrollPosition =
+        window.scrollY + (window.innerWidth < 640 ? 120 : 150);
+
       const isNearBottom =
         window.innerHeight + window.scrollY >=
         document.documentElement.scrollHeight - 140;
@@ -47,6 +68,7 @@ export default function Navbar() {
 
       for (const sectionId of sectionIds) {
         const section = document.getElementById(sectionId);
+
         if (section && section.offsetTop <= scrollPosition) {
           currentSection = sectionId;
         }
@@ -66,15 +88,25 @@ export default function Navbar() {
   }, []);
 
   const toggleTheme = () => {
-    setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
+    const nextTheme = storedTheme === "dark" ? "light" : "dark";
+
+    window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    window.dispatchEvent(new Event("rew-theme-change"));
   };
 
+  const isLightTheme = storedTheme === "light";
+
+  const mobileThemeIconSrc = isLightTheme
+    ? "/logos/icon/sun_light_theme.png"
+    : "/logos/icon/moon_dark_theme.png";
+
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-white/[0.07] bg-[#05070D]/92 backdrop-blur-xl">
+    <header className="fixed top-0 z-50 w-full border-b border-[var(--border)] bg-[var(--background)]/65 backdrop-blur-xl transition-colors duration-300">
       <nav className="flex h-12 w-full items-center justify-between px-3.5 sm:h-16 sm:px-8 lg:px-10 xl:px-12 2xl:px-14">
         <a href="#about" aria-label="Go to homepage" className="shrink-0">
-          <Image
-            src="/logos/Transparent_REW_Dark_Theme.svg"
+          <ThemedIcon
+            darkSrc="/logos/Transparent_REW_Dark_Theme.svg"
+            lightSrc="/logos/Transparent_REW_Light_Theme.svg"
             alt="REW logo"
             width={200}
             height={54}
@@ -94,8 +126,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`group relative shrink-0 py-2 transition-all duration-300 ${
                     isActive
-                      ? "text-[var(--blue-soft)]"
-                      : "text-white hover:text-white hover:[text-shadow:0_0_10px_rgba(255,255,255,0.22)]"
+                      ? "text-[var(--blue)]"
+                      : "text-[var(--nav-text)] hover:text-[var(--nav-text-hover)]"
                   }`}
                 >
                   {item.label}
@@ -116,8 +148,8 @@ export default function Navbar() {
               onClick={() => setActiveSection("contact")}
               className={`hidden h-7 shrink-0 items-center justify-center rounded-lg border px-3 text-[8.5px] font-semibold transition min-[380px]:inline-flex sm:h-9 sm:px-4 sm:text-xs lg:h-10 lg:rounded-xl lg:px-5 lg:text-sm ${
                 activeSection === "contact"
-                  ? "border-[var(--blue)] bg-[var(--blue)]/15 text-white shadow-[0_0_20px_rgba(59,130,246,0.28)]"
-                  : "border-[var(--blue)] bg-white/[0.025] text-white hover:bg-[var(--blue)]/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.22)]"
+                  ? "border-[var(--blue)] bg-[var(--blue)] text-white shadow-[0_0_20px_rgba(59,130,246,0.28)]"
+                  : "border-[var(--blue)] bg-[var(--card)] text-[var(--nav-text)] hover:bg-[var(--blue)]/10 hover:text-[var(--nav-text-hover)] hover:shadow-[0_0_20px_rgba(59,130,246,0.22)]"
               }`}
             >
               Contact
@@ -128,46 +160,44 @@ export default function Navbar() {
             type="button"
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="relative inline-flex h-7 w-7 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[var(--blue)] bg-white/[0.025] transition hover:bg-[var(--blue)]/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.22)] sm:h-10 sm:w-[76px] sm:justify-start sm:p-1"
+            className="relative inline-flex h-7 w-7 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[var(--blue)] bg-[var(--surface-soft)] transition hover:bg-[var(--hover-surface)] hover:shadow-[0_0_20px_rgba(59,130,246,0.22)] sm:h-10 sm:w-[76px] sm:justify-start sm:p-1"
           >
             <span
               className={`hidden h-8 w-8 items-center justify-center rounded-full bg-[var(--blue)] shadow-[0_0_16px_rgba(29,78,216,0.45)] transition-transform duration-300 sm:absolute sm:left-1 sm:top-1 sm:flex ${
-                theme === "light" ? "sm:translate-x-9" : "sm:translate-x-0"
+                isLightTheme ? "sm:translate-x-9" : "sm:translate-x-0"
               }`}
             />
 
             <span className="relative z-10 hidden w-full grid-cols-2 items-center sm:grid">
               <span className="flex h-8 items-center justify-center">
-                <Image
-                  src="/logos/icon/moon_dark_theme.png"
+                <ThemedIcon
+                  darkSrc="/logos/icon/moon_dark_theme.png"
+                  lightSrc="/logos/icon/moon_light_theme.png"
                   alt="Dark mode"
                   width={15}
                   height={15}
                   className={`h-[15px] w-[15px] transition-opacity ${
-                    theme === "dark" ? "opacity-100" : "opacity-45"
+                    !isLightTheme ? "opacity-100" : "opacity-45"
                   }`}
                 />
               </span>
 
               <span className="flex h-8 items-center justify-center">
-                <Image
-                  src="/logos/icon/sun_dark_theme.png"
+                <ThemedIcon
+                  darkSrc="/logos/icon/sun_dark_theme.png"
+                  lightSrc="/logos/icon/sun_light_theme.png"
                   alt="Light mode"
                   width={15}
                   height={15}
                   className={`h-[15px] w-[15px] translate-x-[3px] transition-opacity ${
-                    theme === "light" ? "opacity-100" : "opacity-45"
+                    isLightTheme ? "opacity-100" : "opacity-45"
                   }`}
                 />
               </span>
             </span>
 
             <Image
-              src={
-                theme === "dark"
-                  ? "/logos/icon/moon_dark_theme.png"
-                  : "/logos/icon/sun_dark_theme.png"
-              }
+              src={mobileThemeIconSrc}
               alt=""
               width={14}
               height={14}

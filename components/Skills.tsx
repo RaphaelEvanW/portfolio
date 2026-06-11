@@ -123,7 +123,7 @@ const skillGroups: SkillGroup[] = [
 
 function SkillChip({ skill }: { skill: Skill }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.035] px-2.5 py-1.5 text-[11px] font-medium text-[var(--tag-text)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--blue)]/10 hover:text-white sm:gap-2 sm:px-3 sm:text-sm">
+    <span className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border-soft)] bg-[var(--tag-bg)] px-2.5 py-1.5 text-[11px] font-medium text-[var(--tag-text)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--hover-surface)] hover:text-[var(--blue)] sm:gap-2 sm:px-3 sm:text-sm">
       {skill.icon ? (
         <Image
           src={skill.icon}
@@ -149,7 +149,7 @@ export default function Skills() {
 
       <div className="relative">
         <div className="max-w-3xl">
-          <h2 className="text-[34px] font-semibold leading-tight tracking-tight text-white sm:text-5xl">
+          <h2 className="text-[34px] font-semibold leading-tight tracking-tight text-[var(--heading)] sm:text-5xl">
             Skills built through practical work
           </h2>
 
@@ -159,13 +159,13 @@ export default function Skills() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-3 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.025]">
+        <div className="mt-8 grid grid-cols-3 overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--surface-soft)] shadow-[var(--card-shadow)]">
           {skillGroups.map((group, index) => (
             <div
               key={group.title}
-              className="border-r border-white/[0.07] px-3 py-3 last:border-r-0 sm:px-5 sm:py-4"
+              className="border-r border-[var(--border-soft)] px-3 py-3 last:border-r-0 sm:px-5 sm:py-4"
             >
-              <p className="text-lg font-semibold leading-none text-white sm:text-2xl">
+              <p className="text-lg font-semibold leading-none text-[var(--heading)] sm:text-2xl">
                 0{index + 1}
               </p>
               <p className="mt-1 truncate text-[10px] font-medium text-[var(--muted)] sm:text-sm">
@@ -179,7 +179,7 @@ export default function Skills() {
           {skillGroups.map((group, index) => (
             <article
               key={group.title}
-              className="border-t border-white/[0.09] pt-5 lg:rounded-2xl lg:border lg:border-white/[0.08] lg:bg-[var(--card)]/38 lg:p-6"
+              className="border-t border-[var(--border-soft)] pt-5 lg:rounded-2xl lg:border lg:border-[var(--border-soft)] lg:bg-[var(--surface)] lg:p-6 lg:shadow-[var(--card-shadow)]"
             >
               <div className="flex items-start gap-3">
                 <span className="mt-1 h-6 w-1 shrink-0 rounded-full bg-[var(--blue)]" />
@@ -187,7 +187,7 @@ export default function Skills() {
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--blue-soft)]">
                     0{index + 1} / Skill Area
                   </p>
-                  <h3 className="mt-2 text-xl font-semibold tracking-tight text-white sm:text-2xl">
+                  <h3 className="mt-2 text-xl font-semibold tracking-tight text-[var(--heading)] sm:text-2xl">
                     {group.title}
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
@@ -200,7 +200,7 @@ export default function Skills() {
                 {group.subGroups.map((subGroup) => (
                   <div
                     key={`${group.title}-${subGroup.label}`}
-                    className="border-t border-white/[0.07] pt-4 first:border-t-0 first:pt-0"
+                    className="border-t border-[var(--border-soft)] pt-4 first:border-t-0 first:pt-0"
                   >
                     <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--blue-soft)]">
                       {subGroup.label}

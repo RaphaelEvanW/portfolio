@@ -53,7 +53,7 @@ export default function Experience() {
 
       <div className="relative">
         <div className="max-w-3xl">
-          <h2 className="text-[30px] font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h2 className="text-[30px] font-semibold leading-tight tracking-tight text-[var(--heading)] sm:text-4xl md:text-5xl">
             Personal Experiences
           </h2>
 
@@ -68,16 +68,16 @@ export default function Experience() {
           <div>
             <div className="mb-5 flex items-center gap-3">
               <span className="h-7 w-1 rounded-full bg-[var(--blue)]" />
-              <h3 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
+              <h3 className="text-xl font-semibold tracking-tight text-[var(--heading)] sm:text-2xl">
                 Professional Experience
               </h3>
             </div>
 
-            <article className="overflow-hidden rounded-2xl border border-white/[0.08] bg-[linear-gradient(145deg,rgba(17,24,39,0.54),rgba(7,11,20,0.86))] shadow-[0_18px_60px_rgba(0,0,0,0.16)]">
+            <article className="overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] shadow-[var(--card-shadow)]">
               <div className="p-5 sm:p-6 lg:p-7">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <h4 className="text-[22px] font-semibold leading-tight tracking-tight text-white sm:text-2xl">
+                    <h4 className="text-[22px] font-semibold leading-tight tracking-tight text-[var(--heading)] sm:text-2xl">
                       Automation Intern
                     </h4>
 
@@ -85,7 +85,7 @@ export default function Experience() {
                       <span className="font-semibold text-[var(--blue-soft)]">
                         PT Jababeka Tbk
                       </span>
-                      <span className="hidden h-4 w-px bg-white/[0.14] sm:block" />
+                      <span className="hidden h-4 w-px bg-[var(--border-soft)] sm:block" />
                       <span className="text-[var(--muted)]">
                         Feb 2026 – May 2026
                       </span>
@@ -106,7 +106,7 @@ export default function Experience() {
                   {professionalStacks.map((stack) => (
                     <span
                       key={stack.name}
-                      className="inline-flex items-center gap-2 rounded-lg border border-white/[0.08] bg-white/[0.035] px-2.5 py-1.5 text-xs font-medium text-[var(--tag-text)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--blue)]/10 hover:text-white"
+                      className="inline-flex items-center gap-2 rounded-lg border border-[var(--border-soft)] bg-[var(--tag-bg)] px-2.5 py-1.5 text-xs font-medium text-[var(--tag-text)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--hover-surface)] hover:text-[var(--blue)]"
                     >
                       {stack.icon ? (
                         <Image
@@ -122,7 +122,7 @@ export default function Experience() {
                   ))}
                 </div>
 
-                <div className="my-6 h-px w-full bg-white/[0.08]" />
+                <div className="my-6 h-px w-full bg-[var(--border-soft)]" />
 
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--blue-soft)]">
                   What I worked on
@@ -132,7 +132,7 @@ export default function Experience() {
                   {professionalPoints.map((point, index) => (
                     <li
                       key={point}
-                      className="grid grid-cols-[28px_1fr] gap-3 text-sm leading-6 text-[#CBD5E1] sm:text-[15px] sm:leading-7"
+                      className="grid grid-cols-[28px_1fr] gap-3 text-sm leading-6 text-[var(--muted)] sm:text-[15px] sm:leading-7"
                     >
                       <span className="pt-0.5 text-xs font-semibold text-[var(--blue-soft)]">
                         {String(index + 1).padStart(2, "0")}
@@ -149,7 +149,7 @@ export default function Experience() {
           <div>
             <div className="mb-5 flex items-center gap-3">
               <span className="h-7 w-1 rounded-full bg-[var(--blue)]" />
-              <h3 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
+              <h3 className="text-xl font-semibold tracking-tight text-[var(--heading)] sm:text-2xl">
                 Organizational Experience
               </h3>
             </div>
@@ -158,9 +158,9 @@ export default function Experience() {
               {organizations.map((item) => (
                 <article
                   key={`${item.role}-${item.organization}`}
-                  className="rounded-2xl border border-white/[0.08] bg-[var(--card)]/42 p-5 transition hover:border-[var(--blue)]/35 hover:bg-[var(--card)]/58 sm:p-6"
+                  className="rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] p-5 shadow-[var(--card-shadow)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--surface-strong)] sm:p-6"
                 >
-                  <h4 className="text-lg font-semibold tracking-tight text-white">
+                  <h4 className="text-lg font-semibold tracking-tight text-[var(--heading)]">
                     {item.role}
                   </h4>
 
@@ -168,7 +168,7 @@ export default function Experience() {
                     <span className="font-medium text-[var(--blue-soft)]">
                       {item.organization}
                     </span>
-                    <span className="hidden h-4 w-px bg-white/[0.14] sm:block" />
+                    <span className="hidden h-4 w-px bg-[var(--border-soft)] sm:block" />
                     <span className="text-[var(--muted)]">{item.period}</span>
                   </div>
 
@@ -176,7 +176,7 @@ export default function Experience() {
                     {item.points.map((point) => (
                       <li
                         key={point}
-                        className="flex gap-3 text-sm leading-6 text-[#CBD5E1]"
+                        className="flex gap-3 text-sm leading-6 text-[var(--muted)]"
                       >
                         <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--blue-soft)]" />
                         <span>{point}</span>
