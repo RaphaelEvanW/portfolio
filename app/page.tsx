@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import ProjectSection from "@/components/Project";
+import type { CSSProperties } from "react";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
@@ -41,16 +42,15 @@ export default function Home() {
         <Navbar />
         <div id="about">
           {/* MOBILE / TABLET HERO - desktop feel, scaled down */}
-          <section className="relative min-h-[760px] overflow-hidden px-5 pb-10 pt-20 lg:hidden">
-            <div className="pointer-events-none absolute bottom-[72px] left-1/2 z-[2] h-[132px] w-[124vw] max-w-[720px] -translate-x-1/2 rounded-[50%] border border-[var(--mobile-hero-oval-border)] bg-[image:var(--mobile-hero-oval)] shadow-[0_0_34px_rgba(59,130,246,0.14),inset_0_0_20px_rgba(96,165,250,0.08)] sm:bottom-[46px] sm:h-[150px]" />
+          <section className="relative min-h-[calc(100svh+80px)] overflow-hidden px-5 pb-12 pt-20 lg:hidden">
+            <div className="pointer-events-none absolute -left-32 -top-20 z-0 h-[420px] w-[520px] rotate-[18deg] bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.12)_0%,rgba(147,197,253,0.09)_24%,rgba(59,130,246,0.055)_44%,rgba(15,23,42,0.025)_66%,transparent_86%)] blur-[44px]" />
+            <div className="pointer-events-none absolute -right-32 -top-20 z-0 h-[420px] w-[520px] -rotate-[18deg] bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.13)_0%,rgba(147,197,253,0.09)_24%,rgba(59,130,246,0.055)_44%,rgba(15,23,42,0.025)_66%,transparent_86%)] blur-[44px]" />
+            <div className="pointer-events-none absolute left-1/2 top-[210px] z-0 h-[360px] w-[720px] -translate-x-1/2 rounded-full bg-[var(--blue)]/8 blur-[110px]" />
 
-            <div className="pointer-events-none absolute bottom-[54px] left-1/2 z-[1] h-[118px] w-[118vw] max-w-[690px] -translate-x-1/2 rounded-[50%] bg-[image:var(--mobile-hero-oval)] opacity-80 blur-[24px]" />
-
-            <div className="pointer-events-none absolute bottom-[20px] left-1/2 z-[1] h-[130px] w-[104vw] max-w-[620px] -translate-x-1/2 rounded-full bg-[var(--hero-floor-cover)] opacity-70 blur-[48px]" />
 
             <div className="pointer-events-none absolute right-5 top-[255px] z-20 h-3.5 w-3.5 rounded-full bg-[var(--blue)] shadow-[0_0_22px_rgba(29,78,216,0.9),0_0_48px_rgba(29,78,216,0.5)] sm:right-[16%] sm:top-[300px]" />
 
-            <div className="relative mx-auto h-[650px] max-w-[760px]">
+            <div className="relative mx-auto h-[720px] max-w-[760px]">
               <div className="absolute left-0 top-[138px] z-20 w-[61%] max-w-[330px] sm:top-[175px] sm:max-w-[390px]">
                 <p className="text-[21px] font-medium text-[var(--muted)] sm:text-3xl">
                   Hi, I&apos;m
@@ -145,41 +145,55 @@ export default function Home() {
                   className="object-contain object-bottom"
                   style={{
                     WebkitMaskImage:
-                      "linear-gradient(to top, transparent 0%, rgba(0,0,0,0.34) 4%, rgba(0,0,0,0.82) 12%, black 24%, black 100%)",
+                      "linear-gradient(to top, transparent 0%, rgba(0,0,0,0.55) 3%, rgba(0,0,0,0.9) 8%, black 16%, black 100%)",
                     maskImage:
-                      "linear-gradient(to top, transparent 0%, rgba(0,0,0,0.34) 4%, rgba(0,0,0,0.82) 12%, black 24%, black 100%)",
+                      "linear-gradient(to top, transparent 0%, rgba(0,0,0,0.55) 3%, rgba(0,0,0,0.9) 8%, black 16%, black 100%)",
                   }}
                 />
               </div>
 
-              <div className="pointer-events-none absolute bottom-[90px] left-1/2 z-0 h-[150px] w-[122vw] max-w-[720px] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.09)_0%,rgba(29,78,216,0.04)_44%,rgba(29,78,216,0.012)_66%,transparent_86%)] blur-[18px] sm:bottom-[54px] sm:h-[170px]" />
-              <div className="pointer-events-none absolute bottom-[70px] left-1/2 z-0 h-[92px] w-[116vw] max-w-[690px] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(96,165,250,0.055)_0%,rgba(29,78,216,0.024)_52%,transparent_84%)] blur-[34px]" />
-              <div className="pointer-events-none absolute bottom-[18px] left-1/2 z-[1] h-[170px] w-[104vw] max-w-[620px] -translate-x-1/2 rounded-full bg-[var(--hero-floor-cover)] blur-[58px]" />
+              <div className="pointer-events-none absolute left-1/2 top-[490px] z-[2] h-[124px] w-[98vw] max-w-[580px] -translate-x-1/2 rounded-[50%] border border-[var(--blue)]/24 bg-[image:var(--hero-floor-bg)] shadow-[0_0_42px_rgba(29,78,216,0.2),inset_0_0_20px_rgba(96,165,250,0.08)] sm:top-[545px] sm:h-[144px]" />
+
+              <div className="pointer-events-none absolute left-1/2 top-[506px] z-[1] h-[108px] w-[88vw] max-w-[520px] -translate-x-1/2 rounded-[50%] bg-[image:var(--hero-floor-blur)] opacity-90 blur-[26px] sm:top-[563px] sm:h-[124px]" />
+
+              <div className="pointer-events-none absolute left-1/2 top-[528px] z-[1] h-[128px] w-[78vw] max-w-[460px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.24)_0%,rgba(29,78,216,0.13)_38%,rgba(29,78,216,0.05)_62%,transparent_84%)] opacity-90 blur-[28px] sm:top-[586px]" />
             </div>
           </section>
 
           {/* DESKTOP HERO */}
-          <section className="relative mx-auto hidden min-h-screen max-w-[1920px] items-center gap-16 px-8 pt-10 lg:grid lg:grid-cols-[0.92fr_1.08fr] lg:px-14 xl:gap-20 2xl:px-20">
+          <section
+            className="relative mx-auto hidden min-h-[calc(88svh+180px)] w-full max-w-[1880px] items-center gap-[clamp(3rem,4vw,5rem)] px-[clamp(3.5rem,4vw,5rem)] pt-10 lg:grid lg:grid-cols-[0.92fr_1.08fr]"
+            style={
+              {
+                "--desktop-text-y": "-2.2rem",
+                "--desktop-photo-group-y": "-3.7rem",
+                "--desktop-photo-inner-y": "-2rem",
+              } as CSSProperties & Record<string, string>
+            }
+          >
             <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-full w-screen -translate-x-1/2 overflow-visible">
               <div className="absolute -left-24 -top-10 h-[720px] w-[980px] rotate-[18deg] bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.16)_0%,rgba(147,197,253,0.12)_24%,rgba(59,130,246,0.07)_44%,rgba(15,23,42,0.03)_66%,transparent_86%)] blur-[52px]" />
               <div className="absolute -right-24 -top-10 h-[720px] w-[980px] -rotate-[18deg] bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.17)_0%,rgba(147,197,253,0.12)_24%,rgba(59,130,246,0.07)_44%,rgba(15,23,42,0.03)_66%,transparent_86%)] blur-[52px]" />
               <div className="absolute left-1/2 top-[-60px] h-[320px] w-[820px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.07)_0%,rgba(147,197,253,0.04)_34%,transparent_78%)] blur-[38px]" />
               <div className="absolute left-1/2 top-[42%] h-[520px] w-[1080px] -translate-x-1/2 rounded-full bg-[var(--blue)]/7 blur-[120px]" />
-              <div className="absolute bottom-[206px] left-1/2 h-[210px] w-[74vw] max-w-[1780px] -translate-x-1/2 rounded-[50%] border border-[var(--blue)]/22 bg-[image:var(--hero-floor-bg)] shadow-[0_0_42px_rgba(29,78,216,0.18),inset_0_0_20px_rgba(96,165,250,0.06)]" />
-              <div className="absolute bottom-[134px] left-1/2 h-[180px] w-[66vw] max-w-[1120px] -translate-x-1/2 rounded-full bg-[image:var(--hero-floor-blur)] blur-[70px]" />
-              <div className="absolute bottom-[176px] left-1/2 h-[110px] w-[60vw] max-w-[980px] -translate-x-1/2 rounded-full bg-[var(--hero-floor-cover)] blur-3xl" />
+
+              <div className="absolute bottom-[clamp(206px,12vh,260px)] left-1/2 h-[clamp(170px,11vw,210px)] w-[min(72vw,1680px)] -translate-x-1/2 rounded-[50%] border border-[var(--blue)]/22 bg-[image:var(--hero-floor-bg)] shadow-[0_0_42px_rgba(29,78,216,0.18),inset_0_0_20px_rgba(96,165,250,0.06)]" />
+              <div className="absolute bottom-[clamp(134px,8vh,180px)] left-1/2 h-[clamp(140px,9vw,180px)] w-[min(60vw,1120px)] -translate-x-1/2 rounded-full bg-[image:var(--hero-floor-blur)] blur-[70px]" />
+              <div className="absolute bottom-[clamp(176px,10vh,220px)] left-1/2 h-[clamp(90px,6vw,110px)] w-[min(56vw,980px)] -translate-x-1/2 rounded-full bg-[var(--hero-floor-cover)] blur-3xl" />
             </div>
 
-            <div className="relative max-w-3xl lg:justify-self-center lg:pl-4 xl:pl-10">
-              <p className="text-3xl text-[var(--muted)] md:text-5xl">Hi, I’m</p>
+            <div className="relative max-w-3xl [transform:translateY(var(--desktop-text-y))] lg:justify-self-center lg:pl-[clamp(1rem,2vw,2.5rem)]">
+              <p className="text-[clamp(2rem,2.4vw,3rem)] text-[var(--muted)]">
+                Hi, I’m
+              </p>
 
-              <h1 className="mt-3 text-6xl font-semibold leading-[1.02] tracking-tight md:text-8xl">
+              <h1 className="mt-3 text-[clamp(4.5rem,5.2vw,6rem)] font-semibold leading-[1.02] tracking-tight">
                 Raphael Evan
                 <br />
                 Wijayanto<span className="text-[var(--blue)]">.</span>
               </h1>
 
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)]">
+              <p className="mt-8 max-w-2xl text-[clamp(1rem,0.95vw,1.125rem)] leading-8 text-[var(--muted)]">
                 An Informatics fresh graduate focused on backend development,
                 workflow automation, reporting pipelines, and AI. I build
                 practical projects from internship work, academic projects, and
@@ -191,7 +205,9 @@ export default function Home() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/45" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
                 </span>
-                <span className="font-medium">Currently Open to Work, Hit me Up!</span>
+                <span className="font-medium">
+                  Currently Open to Work, Hit me Up!
+                </span>
               </div>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -200,7 +216,13 @@ export default function Home() {
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[var(--blue)] px-7 text-sm font-medium text-white transition hover:bg-[var(--blue-hover)] hover:shadow-[0_0_24px_rgba(59,130,246,0.22)]"
                 >
                   <span>Check My Projects</span>
-                  <Image src="/logos/icon/right_arrow.svg" alt="" width={18} height={18} className="h-[18px] w-[18px]" />
+                  <Image
+                    src="/logos/icon/right_arrow.svg"
+                    alt=""
+                    width={18}
+                    height={18}
+                    className="h-[18px] w-[18px]"
+                  />
                 </a>
 
                 <a
@@ -210,12 +232,19 @@ export default function Home() {
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--card)]/70 px-6 text-sm font-medium text-[var(--foreground)] transition hover:border-[var(--blue)] hover:bg-[var(--blue)]/10"
                 >
                   <span>Download CV</span>
-                  <Image src="/logos/icon/download.svg" alt="" width={18} height={18} className="h-[18px] w-[18px]" />
+                  <Image
+                    src="/logos/icon/download.svg"
+                    alt=""
+                    width={18}
+                    height={18}
+                    className="h-[18px] w-[18px]"
+                  />
                 </a>
               </div>
 
               <div className="mt-10 flex items-center gap-4 text-sm font-medium text-[var(--muted)]">
                 <span>Find me here :</span>
+
                 <div className="flex items-center gap-3">
                   {socialLinks.map((item) => (
                     <a
@@ -238,10 +267,10 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative hidden h-[720px] items-end justify-center lg:flex lg:justify-self-center xl:translate-x-2">
-              <div className="absolute right-28 top-[52%] h-5 w-5 rounded-full bg-[var(--blue)] shadow-[0_0_24px_rgba(29,78,216,0.7),0_0_54px_rgba(29,78,216,0.35)]" />
+            <div className="relative hidden h-[clamp(650px,42vw,760px)] [transform:translateY(var(--desktop-photo-group-y))] items-end justify-center lg:flex lg:justify-self-center xl:translate-x-2">
+              <div className="absolute right-[clamp(0.5rem,2vw,2.5rem)] top-[45%] z-20 h-5 w-5 rounded-full bg-[var(--blue)] shadow-[0_0_24px_rgba(29,78,216,0.7),0_0_54px_rgba(29,78,216,0.35)]" />
 
-              <div className="relative z-10 h-[760px] w-[590px] -translate-y-16 xl:h-[790px] xl:w-[620px] xl:-translate-y-[4.5rem]">
+              <div className="relative z-10 h-[clamp(720px,43vw,790px)] w-[clamp(560px,33vw,620px)] [transform:translateY(var(--desktop-photo-inner-y))]">
                 <Image
                   src="/profile_pict.png"
                   alt="Raphael Evan Wijayanto"
