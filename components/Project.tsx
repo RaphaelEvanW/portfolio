@@ -512,10 +512,20 @@ function ProjectModal({
             </div>
 
             <div className="min-w-0 bg-[var(--surface-soft)] p-4 sm:p-6 lg:pt-16">
+              {project.imageCaptions ? (
+                <div className="mb-3 flex items-center justify-between gap-3 text-xs sm:text-sm">
+                  <p className="font-medium text-[var(--heading)]">
+                    {project.imageCaptions[activeImageIndex]}
+                  </p>
+                  <span className="shrink-0 tabular-nums text-[var(--muted)]">
+                    {String(activeImageIndex + 1).padStart(2, "0")} / {String(project.images.length).padStart(2, "0")}
+                  </span>
+                </div>
+              ) : null}
               <div className="relative flex h-[260px] w-full items-center justify-center overflow-hidden rounded-xl border border-[var(--border-soft)] bg-[var(--surface-strong)] sm:h-[430px]">
                 <Image
                   src={selectedImage}
-                  alt={project.title}
+                  alt={project.imageCaptions?.[activeImageIndex] ?? project.title}
                   fill
                   className="object-contain p-3"
                   sizes="(min-width: 1024px) 720px, 100vw"
@@ -531,6 +541,7 @@ function ProjectModal({
                         type="button"
                         onClick={() => setActiveImageIndex(index)}
                         aria-label={`Show ${project.title} image ${index + 1}`}
+                        title={project.imageCaptions?.[index]}
                         className={`relative h-16 w-28 shrink-0 cursor-pointer overflow-hidden rounded-lg border bg-[var(--surface-strong)] transition ${
                           activeImageIndex === index
                             ? "border-[var(--blue)] opacity-100 shadow-[0_0_18px_rgba(29,78,216,0.28)]"

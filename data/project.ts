@@ -19,6 +19,7 @@ export type Project = {
   shortDescription: string;
   description: string;
   images: string[];
+  imageCaptions?: string[];
   stacks: ProjectStack[];
   categories: ProjectCategory[];
   featured?: boolean;
@@ -34,18 +35,32 @@ export const projects: Project[] = [
     description:
       "Website profil Cipendawa Motor dibangun menggunakan Next.js, TypeScript, dan Tailwind CSS untuk menampilkan layanan, foto before-after, tiga cabang, kontak WhatsApp, serta widget Instagram dan Google Reviews. Alur reservasi mencakup pilihan layanan dan cabang, data pelanggan, lalu tanggal dan preferensi waktu. Mode demo berjalan tanpa penyimpanan, sedangkan mode backend meneruskan data melalui server Next.js ke API Go/Gin dan PostgreSQL lokal. Backend memvalidasi jadwal berdasarkan waktu Jakarta, mencegah reservasi ganda dengan idempotency key, dan menyimpan reservasi berstatus pending beserta catatan notifikasi WhatsApp simulasi dalam satu transaksi. Jadwal tetap dikonfirmasi manual oleh tim bengkel; panel admin dan pengiriman WhatsApp sungguhan belum diaktifkan.",
     images: [
-      "/projects/cipendawamotor/01-desktop-beranda.png",
-      "/projects/cipendawamotor/04-desktop-reservasi.png",
-      "/projects/cipendawamotor/03-desktop-layanan.png",
-      "/projects/cipendawamotor/02-desktop-before-after.png",
-      "/projects/cipendawamotor/05-mobile-beranda.png",
-      "/projects/cipendawamotor/08-mobile-reservasi.png",
-      "/projects/cipendawamotor/06-mobile-before-after.png",
-      "/projects/cipendawamotor/07-mobile-instagram.png",
-      "/projects/cipendawamotor/09-desktop-google-reviews.png",
-      "/projects/cipendawamotor/10-desktop-kontak.png",
-      "/projects/cipendawamotor/11-mobile-google-reviews.png",
-      "/projects/cipendawamotor/12-mobile-kontak.png",
+      "/projects/cipendawamotor/01-beranda-desktop.png",
+      "/projects/cipendawamotor/02-profil-desktop.png",
+      "/projects/cipendawamotor/03-instagram-desktop.png",
+      "/projects/cipendawamotor/04-layanan-desktop.png",
+      "/projects/cipendawamotor/05-ulasan-desktop.png",
+      "/projects/cipendawamotor/06-lokasi-desktop.png",
+      "/projects/cipendawamotor/07-kontak-desktop.png",
+      "/projects/cipendawamotor/08-reservasi-layanan-desktop.png",
+      "/projects/cipendawamotor/09-reservasi-data-desktop.png",
+      "/projects/cipendawamotor/10-reservasi-jadwal-desktop.png",
+      "/projects/cipendawamotor/11-beranda-mobile.png",
+      "/projects/cipendawamotor/12-reservasi-mobile.png",
+    ],
+    imageCaptions: [
+      "Beranda · Desktop",
+      "Profil & hasil pekerjaan · Desktop",
+      "Instagram · Desktop",
+      "Layanan · Desktop",
+      "Ulasan pelanggan · Desktop",
+      "Lokasi cabang · Desktop",
+      "Kontak · Desktop",
+      "Reservasi 1/3: layanan & cabang · Desktop",
+      "Reservasi 2/3: data pelanggan · Desktop",
+      "Reservasi 3/3: jadwal kunjungan · Desktop",
+      "Beranda · Mobile",
+      "Reservasi · Mobile",
     ],
     metrics: [
       { label: "Scope", value: "Company Profile & Reservation" },

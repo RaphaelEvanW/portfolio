@@ -23,6 +23,9 @@ const professionalStacks = [
 const professionalExperiences: {
   role: string;
   company: string;
+  logo: string;
+  logoClassName?: string;
+  watermarkClassName: string;
   period: string;
   badge: string;
   summary: string;
@@ -32,6 +35,9 @@ const professionalExperiences: {
   {
     role: "IT Programmer",
     company: "PT Sari Tirta Group",
+    logo: "/logos/icon/saritirta.png",
+    watermarkClassName:
+      "bottom-6 right-6 aspect-[6331/2712] w-[min(62%,220px)] sm:bottom-7 sm:right-8 sm:w-[min(44%,280px)]",
     period: "Aug 2026 – Present",
     badge: "Current Role",
     summary:
@@ -56,6 +62,10 @@ const professionalExperiences: {
   {
     role: "Automation Intern",
     company: "PT Jababeka Tbk",
+    logo: "/logos/icon/jababeka.png",
+    logoClassName: "object-contain scale-110",
+    watermarkClassName:
+      "bottom-5 right-5 size-[170px] sm:bottom-6 sm:right-7 sm:size-[200px]",
     period: "Feb 2026 – May 2026",
     badge: "4 Months",
     summary:
@@ -121,19 +131,37 @@ export default function Experience() {
 
             <div className="grid gap-5">
               {professionalExperiences.map((experience) => (
-                <article key={experience.company} className="overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] shadow-[var(--card-shadow)]">
-                  <div className="p-5 sm:p-6 lg:p-7">
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
+                <article key={experience.company} className="relative isolate overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] shadow-[var(--card-shadow)]">
+                  <div aria-hidden="true" className={`pointer-events-none absolute ${experience.watermarkClassName}`}>
+                    <Image
+                      src={experience.logo}
+                      alt=""
+                      fill
+                      sizes="(min-width: 640px) 280px, 220px"
+                      className="object-contain opacity-[0.22] blur-[1px] [.light_&]:opacity-[0.14]"
+                    />
+                  </div>
+
+                  <div className="relative z-10 p-5 sm:p-6 lg:p-7">
+                    <div className="flex items-center gap-3 sm:gap-5">
+                      <div className="relative h-16 w-[88px] shrink-0 overflow-hidden rounded-xl bg-white sm:h-20 sm:w-36">
+                        <Image
+                          src={experience.logo}
+                          alt=""
+                          fill
+                          sizes="(min-width: 640px) 144px, 88px"
+                          className={experience.logoClassName ?? "object-contain p-2 sm:p-3"}
+                        />
+                      </div>
+                      <div className="min-w-0">
                         <h4 className="text-[22px] font-semibold leading-tight tracking-tight text-[var(--heading)] sm:text-2xl">
                           {experience.role}
                         </h4>
 
-                        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-                          <span className="font-semibold text-[var(--blue-soft)]">
-                            {experience.company}
-                          </span>
-                          <span className="hidden h-4 w-px bg-[var(--border-soft)] sm:block" />
+                        <p className="mt-1.5 text-sm font-semibold text-[var(--blue-soft)] sm:text-base">
+                          {experience.company}
+                        </p>
+                        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs sm:text-sm">
                           <span className="text-[var(--muted)]">
                             {experience.period}
                           </span>
