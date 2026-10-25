@@ -23,8 +23,46 @@ export type Project = {
   categories: ProjectCategory[];
   featured?: boolean;
   metrics: ProjectMetric[];
+  websiteUrl?: string;
 };
 export const projects: Project[] = [
+  {
+    title: "Cipendawa Motor Website",
+    categories: ["Fullstack"],
+    shortDescription:
+      "Website profil bengkel mobil dengan galeri hasil pekerjaan dan reservasi tiga langkah, dilengkapi mode demo serta backend Go dan PostgreSQL untuk showcase lokal.",
+    description:
+      "Website profil Cipendawa Motor dibangun menggunakan Next.js, TypeScript, dan Tailwind CSS untuk menampilkan layanan, foto before-after, tiga cabang, kontak WhatsApp, serta widget Instagram dan Google Reviews. Alur reservasi mencakup pilihan layanan dan cabang, data pelanggan, lalu tanggal dan preferensi waktu. Mode demo berjalan tanpa penyimpanan, sedangkan mode backend meneruskan data melalui server Next.js ke API Go/Gin dan PostgreSQL lokal. Backend memvalidasi jadwal berdasarkan waktu Jakarta, mencegah reservasi ganda dengan idempotency key, dan menyimpan reservasi berstatus pending beserta catatan notifikasi WhatsApp simulasi dalam satu transaksi. Jadwal tetap dikonfirmasi manual oleh tim bengkel; panel admin dan pengiriman WhatsApp sungguhan belum diaktifkan.",
+    images: [
+      "/projects/cipendawamotor/01-desktop-beranda.png",
+      "/projects/cipendawamotor/04-desktop-reservasi.png",
+      "/projects/cipendawamotor/03-desktop-layanan.png",
+      "/projects/cipendawamotor/02-desktop-before-after.png",
+      "/projects/cipendawamotor/05-mobile-beranda.png",
+      "/projects/cipendawamotor/08-mobile-reservasi.png",
+      "/projects/cipendawamotor/06-mobile-before-after.png",
+      "/projects/cipendawamotor/07-mobile-instagram.png",
+      "/projects/cipendawamotor/09-desktop-google-reviews.png",
+      "/projects/cipendawamotor/10-desktop-kontak.png",
+      "/projects/cipendawamotor/11-mobile-google-reviews.png",
+      "/projects/cipendawamotor/12-mobile-kontak.png",
+    ],
+    metrics: [
+      { label: "Scope", value: "Company Profile & Reservation" },
+      { label: "Modes", value: "Browser Demo / Local Backend" },
+      { label: "Notification", value: "WhatsApp Simulation" },
+    ],
+    stacks: [
+      { name: "Next.js", icon: "/logos/icon/stack/nextjs.png" },
+      { name: "TypeScript", icon: "/logos/icon/stack/typescript.png" },
+      { name: "Go", icon: "/logos/icon/stack/go.png" },
+      { name: "PostgreSQL", icon: "/logos/icon/stack/postgresql.png" },
+      { name: "Tailwind CSS", icon: "/logos/icon/stack/tailwind.png" },
+      { name: "Gin", icon: "/logos/icon/stack/gin.png" },
+      { name: "GORM" },
+    ],
+    websiteUrl: "https://cipendawamotorid.vercel.app",
+  },
   {
     title: "Automation Onboarding & Offboarding Karyawan",
     categories: ["Workflow & Automation"],

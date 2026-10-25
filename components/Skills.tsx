@@ -32,6 +32,7 @@ const skillGroups: SkillGroup[] = [
           { name: "Java", icon: "/logos/icon/stack/java.png" },
           { name: "PHP", icon: "/logos/icon/stack/php.png" },
           { name: "Kotlin", icon: "/logos/icon/stack/kotlin.png" },
+          { name: "OpenEdge ABL" },
         ],
       },
       {
@@ -84,6 +85,8 @@ const skillGroups: SkillGroup[] = [
           { name: "Batch scripts" },
           { name: "Task Scheduler" },
           { name: "Docker", icon: "/logos/icon/stack/docker.png" },
+          { name: "Progress OpenEdge" },
+          { name: "AppSheet" },
         ],
       },
     ],
@@ -115,6 +118,8 @@ const skillGroups: SkillGroup[] = [
         skills: [
           { name: "AWS", icon: "/logos/icon/stack/aws.png" },
           { name: "SAP S/4HANA", icon: "/logos/icon/stack/sap.png" },
+          { name: "WordPress" },
+          { name: "WooCommerce" },
         ],
       },
     ],
@@ -154,8 +159,8 @@ export default function Skills() {
           </h2>
 
           <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:text-base">
-            A focused toolkit shaped by internship work, academic projects, and
-            personal experiments — grouped by how I actually use them.
+            A focused toolkit shaped by professional work, internship experience,
+            academic projects, and personal builds — grouped by how I use them.
           </p>
         </div>
 

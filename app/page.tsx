@@ -63,10 +63,10 @@ export default function Home() {
                 </h1>
 
                 <p className="mt-5 max-w-[210px] text-[11px] leading-[1.75] text-[var(--muted)] min-[390px]:max-w-[230px] min-[390px]:text-xs sm:max-w-[340px] sm:text-sm sm:leading-7">
-                  An Informatics fresh graduate focused on backend development,
-                  workflow automation, reporting pipelines, and AI. I build
-                  practical projects from internship work, academic projects, and
-                  fullstack experiments.
+                  An Informatics graduate and IT Programmer at PT Sari Tirta
+                  Group, building business tools, reporting pipelines, and
+                  digital workflows. My work also spans backend development,
+                  fullstack projects, and applied AI.
                 </p>
 
                 <div className="mt-5 inline-flex max-w-full items-center gap-1.5 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-1.5 text-[9px] text-emerald-500 sm:text-xs">
@@ -194,10 +194,10 @@ export default function Home() {
               </h1>
 
               <p className="mt-8 max-w-2xl text-[clamp(1rem,0.95vw,1.125rem)] leading-8 text-[var(--muted)]">
-                An Informatics fresh graduate focused on backend development,
-                workflow automation, reporting pipelines, and AI. I build
-                practical projects from internship work, academic projects, and
-                fullstack experiments.
+                An Informatics graduate and IT Programmer at PT Sari Tirta
+                Group, building business tools, reporting pipelines, and
+                digital workflows. My work also spans backend development,
+                fullstack projects, and applied AI.
               </p>
 
               <div className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3.5 py-1.5 text-sm text-emerald-600">

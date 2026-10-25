@@ -501,6 +501,14 @@ function ProjectModal({
                   ))}
                 </div>
               </div>
+
+              {project.websiteUrl ? (
+                <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
+                  <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-[var(--blue)] px-4 py-2 text-white transition hover:bg-[var(--blue-hover)]">
+                    View website
+                  </a>
+                </div>
+              ) : null}
             </div>
 
             <div className="min-w-0 bg-[var(--surface-soft)] p-4 sm:p-6 lg:pt-16">
