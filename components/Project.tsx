@@ -502,11 +502,18 @@ function ProjectModal({
                 </div>
               </div>
 
-              {project.websiteUrl ? (
+              {project.websiteUrl || project.githubUrl ? (
                 <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
-                  <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-[var(--blue)] px-4 py-2 text-white transition hover:bg-[var(--blue-hover)]">
-                    View website
-                  </a>
+                  {project.websiteUrl ? (
+                    <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-[var(--blue)] px-4 py-2 text-white transition hover:bg-[var(--blue-hover)]">
+                      View website
+                    </a>
+                  ) : null}
+                  {project.githubUrl ? (
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-[var(--blue)] px-4 py-2 text-white transition hover:bg-[var(--blue-hover)]">
+                      View GitHub
+                    </a>
+                  ) : null}
                 </div>
               ) : null}
             </div>

@@ -25,8 +25,31 @@ export type Project = {
   featured?: boolean;
   metrics: ProjectMetric[];
   websiteUrl?: string;
+  githubUrl?: string;
 };
 export const projects: Project[] = [
+  {
+    title: "AutoPulse Captions",
+    categories: ["AI Integrated", "Workflow & Automation"],
+    shortDescription:
+      "Engine auto-caption video Bahasa Indonesia dan Inggris dengan subtitle 2–3 kata, highlight kata aktif, dan koreksi transkripsi yang belajar dari revisi pengguna.",
+    description:
+      "AutoPulse Captions mengotomatisasi pembuatan subtitle video menggunakan faster-whisper, pengelompokan 2–3 kata per baris, dan highlight kata aktif berwarna emas melalui preset GoldPulse. Browser Word Inspector memungkinkan pengguna mengoreksi kata serta timestamp, lalu Mini-ML berbasis konteks n-gram dan fonetik mempelajari revisi tersebut untuk transkripsi berikutnya. Pipeline mendukung Bahasa Indonesia, Inggris, terjemahan Indonesia ke Inggris, pemilihan model sesuai GPU/CPU, serta burn-in subtitle ASS menggunakan FFmpeg untuk video portrait, landscape, dan square.",
+    images: ["/projects/autopulse-captions/cover.png"],
+    imageCaptions: ["AutoPulse Captions · Concept cover"],
+    metrics: [
+      { label: "Languages", value: "Indonesian & English" },
+      { label: "Captions", value: "2–3 Words / Active Highlight" },
+      { label: "Correction", value: "Self-Learning Mini-ML" },
+    ],
+    stacks: [
+      { name: "Python", icon: "/logos/icon/stack/python.png" },
+      { name: "faster-whisper" },
+      { name: "FFmpeg" },
+      { name: "HTML / JavaScript" },
+    ],
+    githubUrl: "https://github.com/RaphaelEvanW/autopulse-captions",
+  },
   {
     title: "Cipendawa Motor Website",
     categories: ["Fullstack"],
