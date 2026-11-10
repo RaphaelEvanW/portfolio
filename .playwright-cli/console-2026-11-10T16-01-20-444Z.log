@@ -93,3 +93,48 @@
 [ 4302020ms] [LOG] [HMR] connected @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
 [ 4302335ms] [WARNING] Image with src "http://127.0.0.1:3001/logos/Transparent_REW_Dark_Theme.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
 [ 4302399ms] [WARNING] Image with src "http://127.0.0.1:3001/logos/Transparent_REW_Light_Theme.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4604834ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4605059ms] [LOG] [Fast Refresh] done in 333ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4605165ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4605283ms] [LOG] [Fast Refresh] done in 223ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4605406ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4605434ms] [LOG] [Fast Refresh] done in 129ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4605567ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4605615ms] [LOG] [Fast Refresh] done in 182ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4605732ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4605766ms] [LOG] [Fast Refresh] done in 150ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4606022ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4606104ms] [LOG] [Fast Refresh] done in 190ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4606107ms] [WARNING] Image with src "/profile_pict.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative. @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4618196ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4618277ms] [LOG] [Fast Refresh] done in 190ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4640673ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4640704ms] [LOG] [Fast Refresh] done in 137ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4641532ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4641549ms] [LOG] [Fast Refresh] done in 130ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4698862ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4698886ms] [LOG] [Fast Refresh] done in 131ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4699027ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4699059ms] [LOG] [HMR] connected @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4699384ms] [WARNING] Image with src "http://127.0.0.1:3001/logos/Transparent_REW_Dark_Theme.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4699386ms] [WARNING] Image with src "/profile_pict.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative. @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4699455ms] [WARNING] Image with src "http://127.0.0.1:3001/logos/Transparent_REW_Light_Theme.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4719409ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3001/_next/webpack-hmr?id=OGRqMmnIpOW152P20ukLD' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[ 4720423ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3001/_next/webpack-hmr?id=OGRqMmnIpOW152P20ukLD' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[ 4721440ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3001/_next/webpack-hmr?id=OGRqMmnIpOW152P20ukLD' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[ 4722442ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3001/_next/webpack-hmr?id=OGRqMmnIpOW152P20ukLD' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[ 4724674ms] [LOG] [HMR] connected @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4728392ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4728470ms] [LOG] [HMR] connected @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4728956ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4728977ms] [WARNING] Image with src "http://127.0.0.1:3001/logos/Transparent_REW_Dark_Theme.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4729093ms] [LOG] [Fast Refresh] done in 250ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4729113ms] [WARNING] Image with src "http://127.0.0.1:3001/logos/Transparent_REW_Light_Theme.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4744651ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4744701ms] [LOG] [Fast Refresh] done in 154ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4744841ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4744918ms] [LOG] [HMR] connected @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4745237ms] [WARNING] Image with src "http://127.0.0.1:3001/logos/Transparent_REW_Dark_Theme.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4745303ms] [WARNING] Image with src "http://127.0.0.1:3001/logos/Transparent_REW_Light_Theme.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4757012ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 4757065ms] [LOG] [Fast Refresh] done in 154ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
