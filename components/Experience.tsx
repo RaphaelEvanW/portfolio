@@ -104,7 +104,6 @@ export default function Experience() {
       id="experience"
       className="relative mx-auto max-w-[1440px] px-4 py-16 sm:px-8 md:py-24 lg:px-14 xl:px-16"
     >
-      <div className="pointer-events-none absolute right-10 top-20 hidden h-72 w-72 rounded-full bg-[var(--blue)]/8 blur-3xl lg:block" />
 
       <div className="relative">
         <div className="max-w-3xl">
@@ -123,7 +122,7 @@ export default function Experience() {
           {/* Professional Experience */}
           <div>
             <div className="mb-5 flex items-center gap-3">
-              <span className="h-7 w-1 rounded-full bg-[var(--blue)]" />
+              <span className="h-7 w-1 rounded-full bg-[var(--accent)]" />
               <h3 className="text-xl font-semibold tracking-tight text-[var(--heading)] sm:text-2xl">
                 Professional Experience
               </h3>
@@ -131,7 +130,7 @@ export default function Experience() {
 
             <div className="grid gap-5">
               {professionalExperiences.map((experience) => (
-                <article key={experience.company} className="relative isolate overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] shadow-[var(--card-shadow)]">
+                <article key={experience.company} className="relative isolate overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)]">
                   <div aria-hidden="true" className={`pointer-events-none absolute ${experience.watermarkClassName}`}>
                     <Image
                       src={experience.logo}
@@ -158,14 +157,14 @@ export default function Experience() {
                           {experience.role}
                         </h4>
 
-                        <p className="mt-1.5 text-sm font-semibold text-[var(--blue-soft)] sm:text-base">
+                        <p className="mt-1.5 text-sm font-semibold text-[var(--mint-text)] sm:text-base">
                           {experience.company}
                         </p>
                         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs sm:text-sm">
                           <span className="text-[var(--muted)]">
                             {experience.period}
                           </span>
-                          <span className="rounded-full border border-[var(--blue)]/25 bg-[var(--blue)]/10 px-2.5 py-1 text-xs font-semibold text-[var(--blue-soft)]">
+                          <span className="rounded-full border border-[var(--accent)]/25 bg-[var(--accent)]/10 px-2.5 py-1 text-xs font-semibold text-[var(--mint-text)]">
                             {experience.badge}
                           </span>
                         </div>
@@ -180,7 +179,7 @@ export default function Experience() {
                       {experience.stacks.map((stack) => (
                         <span
                           key={stack.name}
-                          className="inline-flex items-center gap-2 rounded-lg border border-[var(--border-soft)] bg-[var(--tag-bg)] px-2.5 py-1.5 text-xs font-medium text-[var(--tag-text)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--hover-surface)] hover:text-[var(--blue)]"
+                          className="inline-flex items-center gap-2 rounded-lg border border-[var(--border-soft)] bg-[var(--tag-bg)] px-2.5 py-1.5 text-xs font-medium text-[var(--tag-text)] transition hover:border-[var(--accent)]/35 hover:bg-[var(--hover-surface)] hover:text-[var(--interactive-text)]"
                         >
                           {stack.icon ? (
                             <Image
@@ -198,7 +197,7 @@ export default function Experience() {
 
                 <div className="my-6 h-px w-full bg-[var(--border-soft)]" />
 
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--blue-soft)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--mint-text)]">
                   What I worked on
                 </p>
 
@@ -208,7 +207,7 @@ export default function Experience() {
                       key={point}
                       className="grid grid-cols-[28px_1fr] gap-3 text-sm leading-6 text-[var(--muted)] sm:text-[15px] sm:leading-7"
                     >
-                      <span className="pt-0.5 text-xs font-semibold text-[var(--blue-soft)]">
+                      <span className="pt-0.5 text-xs font-semibold text-[var(--mint-text)]">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <span>{point}</span>
@@ -224,7 +223,7 @@ export default function Experience() {
           {/* Organizational Experience */}
           <div>
             <div className="mb-5 flex items-center gap-3">
-              <span className="h-7 w-1 rounded-full bg-[var(--blue)]" />
+              <span className="h-7 w-1 rounded-full bg-[var(--accent)]" />
               <h3 className="text-xl font-semibold tracking-tight text-[var(--heading)] sm:text-2xl">
                 Organizational Experience
               </h3>
@@ -234,14 +233,14 @@ export default function Experience() {
               {organizations.map((item) => (
                 <article
                   key={`${item.role}-${item.organization}`}
-                  className="rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] p-5 shadow-[var(--card-shadow)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--surface-strong)] sm:p-6"
+                  className="rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] p-5 transition hover:border-[var(--accent)]/35 hover:bg-[var(--surface-strong)] sm:p-6"
                 >
                   <h4 className="text-lg font-semibold tracking-tight text-[var(--heading)]">
                     {item.role}
                   </h4>
 
                   <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-                    <span className="font-medium text-[var(--blue-soft)]">
+                    <span className="font-medium text-[var(--mint-text)]">
                       {item.organization}
                     </span>
                     <span className="hidden h-4 w-px bg-[var(--border-soft)] sm:block" />
@@ -254,7 +253,7 @@ export default function Experience() {
                         key={point}
                         className="flex gap-3 text-sm leading-6 text-[var(--muted)]"
                       >
-                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--blue-soft)]" />
+                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--mint-text)]" />
                         <span>{point}</span>
                       </li>
                     ))}

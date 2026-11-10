@@ -126,17 +126,17 @@ export default function Navbar() {
                   href={item.href}
                   className={`group relative shrink-0 py-2 transition-all duration-300 ${
                     isActive
-                      ? "text-[var(--blue)]"
+                      ? "text-[var(--interactive-text)]"
                       : "text-[var(--nav-text)] hover:text-[var(--nav-text-hover)]"
                   }`}
                 >
                   {item.label}
 
                   <span
-                    className={`absolute bottom-1 left-0 h-px bg-[var(--blue)] transition-all duration-300 ${
+                    className={`absolute bottom-1 left-0 h-px bg-[var(--accent)] transition-all duration-300 ${
                       isActive
-                        ? "w-full shadow-[0_0_12px_rgba(29,78,216,0.85)]"
-                        : "w-0 group-hover:w-full group-hover:shadow-[0_0_12px_rgba(29,78,216,0.85)]"
+                        ? "w-full "
+                        : "w-0 group-hover:w-full "
                     }`}
                   />
                 </a>
@@ -148,8 +148,8 @@ export default function Navbar() {
               onClick={() => setActiveSection("contact")}
               className={`hidden h-7 shrink-0 items-center justify-center rounded-lg border px-3 text-[8.5px] font-semibold transition min-[380px]:inline-flex sm:h-9 sm:px-4 sm:text-xs lg:h-10 lg:rounded-xl lg:px-5 lg:text-sm ${
                 activeSection === "contact"
-                  ? "border-[var(--blue)] bg-[var(--blue)] text-white shadow-[0_0_20px_rgba(59,130,246,0.28)]"
-                  : "border-[var(--blue)] bg-[var(--card)] text-[var(--nav-text)] hover:bg-[var(--blue)]/10 hover:text-[var(--nav-text-hover)] hover:shadow-[0_0_20px_rgba(59,130,246,0.22)]"
+                  ? "border-[var(--accent)] bg-[var(--accent)] text-white "
+                  : "border-[var(--accent)] bg-[var(--card)] text-[var(--nav-text)] hover:bg-[var(--accent)]/10 hover:text-[var(--nav-text-hover)] "
               }`}
             >
               Contact
@@ -160,10 +160,10 @@ export default function Navbar() {
             type="button"
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="relative inline-flex h-7 w-7 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[var(--blue)] bg-[var(--surface-soft)] transition hover:bg-[var(--hover-surface)] hover:shadow-[0_0_20px_rgba(59,130,246,0.22)] sm:h-10 sm:w-[76px] sm:justify-start sm:p-1"
+            className="relative inline-flex h-7 w-7 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[var(--accent)] bg-[var(--surface-soft)] transition hover:bg-[var(--hover-surface)] sm:h-10 sm:w-[76px] sm:justify-start sm:p-1"
           >
             <span
-              className={`hidden h-8 w-8 items-center justify-center rounded-full bg-[var(--blue)] shadow-[0_0_16px_rgba(29,78,216,0.45)] transition-transform duration-300 sm:absolute sm:left-1 sm:top-1 sm:flex ${
+              className={`hidden h-8 w-8 items-center justify-center rounded-full bg-[var(--accent)] transition-transform duration-300 sm:absolute sm:left-1 sm:top-1 sm:flex ${
                 isLightTheme ? "sm:translate-x-9" : "sm:translate-x-0"
               }`}
             />

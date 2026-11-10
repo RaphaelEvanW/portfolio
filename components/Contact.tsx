@@ -32,14 +32,13 @@ export default function Contact() {
       id="contact"
       className="relative mx-auto max-w-[1440px] px-6 pb-24 pt-20 sm:px-10 lg:px-14 xl:px-16"
     >
-      <div className="pointer-events-none absolute bottom-16 right-20 hidden h-72 w-72 rounded-full bg-[var(--blue)]/7 blur-3xl lg:block" />
 
       <div className="relative border-t border-[var(--border-soft)] pt-16">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <h2 className="mt-3 max-w-xl text-4xl font-semibold tracking-tight text-[var(--heading)] md:text-5xl">
               Let’s Work Together
-              <span className="text-[var(--blue)]"> !</span>
+              <span className="text-[var(--accent)]"> !</span>
             </h2>
 
             <p className="mt-5 max-w-xl text-base leading-7 text-[var(--muted)]">
@@ -59,10 +58,10 @@ export default function Contact() {
                     ? "noopener noreferrer"
                     : undefined
                 }
-                className="group flex items-center justify-between gap-6 border-b border-[var(--border-soft)] py-5 transition hover:border-[var(--blue)]/40"
+                className="group flex items-center justify-between gap-6 border-b border-[var(--border-soft)] py-5 transition hover:border-[var(--accent)]/40"
               >
                 <div className="flex min-w-0 items-center gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[var(--border-soft)] bg-[var(--icon-surface)] transition group-hover:border-[var(--blue)]/40 group-hover:bg-[var(--hover-surface)]">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[var(--border-soft)] bg-[var(--icon-surface)] transition group-hover:border-[var(--accent)]/40 group-hover:bg-[var(--hover-surface)]">
                     <ThemedIcon
                       darkSrc={link.darkIcon}
                       lightSrc={link.lightIcon}
