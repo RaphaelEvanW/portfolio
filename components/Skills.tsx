@@ -32,6 +32,7 @@ const skillGroups: SkillGroup[] = [
           { name: "Java", icon: "/logos/icon/stack/java.png" },
           { name: "PHP", icon: "/logos/icon/stack/php.png" },
           { name: "Kotlin", icon: "/logos/icon/stack/kotlin.png" },
+          { name: "OpenEdge ABL" },
         ],
       },
       {
@@ -84,6 +85,8 @@ const skillGroups: SkillGroup[] = [
           { name: "Batch scripts" },
           { name: "Task Scheduler" },
           { name: "Docker", icon: "/logos/icon/stack/docker.png" },
+          { name: "Progress OpenEdge" },
+          { name: "AppSheet" },
         ],
       },
     ],
@@ -115,6 +118,8 @@ const skillGroups: SkillGroup[] = [
         skills: [
           { name: "AWS", icon: "/logos/icon/stack/aws.png" },
           { name: "SAP S/4HANA", icon: "/logos/icon/stack/sap.png" },
+          { name: "WordPress" },
+          { name: "WooCommerce" },
         ],
       },
     ],
@@ -123,7 +128,7 @@ const skillGroups: SkillGroup[] = [
 
 function SkillChip({ skill }: { skill: Skill }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border-soft)] bg-[var(--tag-bg)] px-2.5 py-1.5 text-[11px] font-medium text-[var(--tag-text)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--hover-surface)] hover:text-[var(--blue)] sm:gap-2 sm:px-3 sm:text-sm">
+    <span className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border-soft)] bg-[var(--tag-bg)] px-2.5 py-1.5 text-[11px] font-medium text-[var(--tag-text)] transition hover:border-[var(--accent)]/35 hover:bg-[var(--hover-surface)] hover:text-[var(--interactive-text)] sm:gap-2 sm:px-3 sm:text-sm">
       {skill.icon ? (
         <Image
           src={skill.icon}
@@ -144,8 +149,6 @@ export default function Skills() {
       id="skills"
       className="relative mx-auto max-w-[1500px] px-4 py-20 sm:px-8 sm:py-24 lg:px-14 xl:px-16"
     >
-      <div className="pointer-events-none absolute right-16 top-20 hidden h-80 w-80 rounded-full bg-[var(--blue)]/8 blur-3xl lg:block" />
-      <div className="pointer-events-none absolute left-10 bottom-20 hidden h-72 w-72 rounded-full bg-[var(--blue-soft)]/5 blur-3xl lg:block" />
 
       <div className="relative">
         <div className="max-w-3xl">
@@ -154,40 +157,36 @@ export default function Skills() {
           </h2>
 
           <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:text-base">
-            A focused toolkit shaped by internship work, academic projects, and
-            personal experiments — grouped by how I actually use them.
+            A focused toolkit shaped by professional work, internship experience,
+            academic projects, and personal builds — grouped by how I use them.
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-3 overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--surface-soft)] shadow-[var(--card-shadow)]">
+        <nav className="skill-glass-nav" aria-label="Skill categories">
           {skillGroups.map((group, index) => (
-            <div
-              key={group.title}
-              className="border-r border-[var(--border-soft)] px-3 py-3 last:border-r-0 sm:px-5 sm:py-4"
-            >
-              <p className="text-lg font-semibold leading-none text-[var(--heading)] sm:text-2xl">
-                0{index + 1}
-              </p>
-              <p className="mt-1 truncate text-[10px] font-medium text-[var(--muted)] sm:text-sm">
-                {group.title.split(" & ")[0]}
-              </p>
-            </div>
+            <a key={group.title} href={`#skill-area-${index + 1}`} className="skill-glass-link">
+              <span className="skill-glass-number" aria-hidden="true">0{index + 1}</span>
+              <span className="skill-glass-copy">
+                <span className="skill-glass-title">{group.title}</span>
+                <span className="skill-glass-detail">
+                  {group.subGroups.map((subGroup) => subGroup.label).join(" / ")}
+                </span>
+              </span>
+            </a>
           ))}
-        </div>
+        </nav>
 
         <div className="mt-9 space-y-9 lg:grid lg:grid-cols-3 lg:gap-5 lg:space-y-0">
           {skillGroups.map((group, index) => (
             <article
+              id={`skill-area-${index + 1}`}
               key={group.title}
-              className="border-t border-[var(--border-soft)] pt-5 lg:rounded-2xl lg:border lg:border-[var(--border-soft)] lg:bg-[var(--surface)] lg:p-6 lg:shadow-[var(--card-shadow)]"
+              className="skill-glass-card"
             >
               <div className="flex items-start gap-3">
-                <span className="mt-1 h-6 w-1 shrink-0 rounded-full bg-[var(--blue)]" />
+                <span className="mt-1 h-6 w-1 shrink-0 rounded-full bg-[var(--accent)]" />
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--blue-soft)]">
-                    0{index + 1} / Skill Area
-                  </p>
-                  <h3 className="mt-2 text-xl font-semibold tracking-tight text-[var(--heading)] sm:text-2xl">
+                  <h3 className="text-xl font-semibold tracking-tight text-[var(--heading)] sm:text-2xl">
                     {group.title}
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
@@ -202,7 +201,7 @@ export default function Skills() {
                     key={`${group.title}-${subGroup.label}`}
                     className="border-t border-[var(--border-soft)] pt-4 first:border-t-0 first:pt-0"
                   >
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--blue-soft)]">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--mint-text)]">
                       {subGroup.label}
                     </p>
 

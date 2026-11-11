@@ -24,39 +24,10 @@ const filters: ("All" | ProjectCategory)[] = [
   "Fullstack",
 ];
 
-const categoryStyles: Record<
-  ProjectCategory,
-  {
-    badge: string;
-    dot: string;
-    glow: string;
-    ring: string;
-  }
-> = {
-  "Workflow & Automation": {
-    badge: "border-cyan-400/30 bg-cyan-400/10 text-cyan-500",
-    dot: "bg-cyan-400",
-    glow: "from-cyan-500/18",
-    ring: "group-hover:border-cyan-400/40",
-  },
-  "AI Integrated": {
-    badge: "border-violet-400/30 bg-violet-400/10 text-violet-500",
-    dot: "bg-violet-400",
-    glow: "from-violet-500/18",
-    ring: "group-hover:border-violet-400/40",
-  },
-  "AI Research": {
-    badge: "border-fuchsia-400/30 bg-fuchsia-400/10 text-fuchsia-500",
-    dot: "bg-fuchsia-400",
-    glow: "from-fuchsia-500/18",
-    ring: "group-hover:border-fuchsia-400/40",
-  },
-  Fullstack: {
-    badge: "border-amber-400/30 bg-amber-400/10 text-amber-500",
-    dot: "bg-amber-400",
-    glow: "from-amber-500/18",
-    ring: "group-hover:border-amber-400/40",
-  },
+const categoryStyle = {
+  badge: "border-[var(--mint-border)] bg-[var(--tag-bg)] text-[var(--tag-text)]",
+  dot: "bg-[var(--mint-text)]",
+  ring: "group-hover:border-[var(--mint)]/40",
 };
 
 const approachSteps = [
@@ -64,25 +35,25 @@ const approachSteps = [
     title: "Understand",
     description: "Define the problem, goal, constraints, and expected output.",
     icon: Search,
-    accent: "border-cyan-400/20 bg-cyan-400/10 text-cyan-500",
+    accent: "border-[var(--mint)]/25 bg-[var(--mint)]/10 text-[var(--mint-text)]",
   },
   {
     title: "Structure",
     description: "Plan the data flow, UI flow, workflow, or model pipeline.",
     icon: GitBranch,
-    accent: "border-violet-400/20 bg-violet-400/10 text-violet-500",
+    accent: "border-[var(--mint)]/25 bg-[var(--mint)]/10 text-[var(--mint-text)]",
   },
   {
     title: "Build",
     description: "Implement the core features with practical and maintainable tools.",
     icon: Code2,
-    accent: "border-blue-400/20 bg-blue-400/10 text-blue-500",
+    accent: "border-[var(--mint)]/25 bg-[var(--mint)]/10 text-[var(--mint-text)]",
   },
   {
     title: "Improve",
     description: "Test the result, fix issues, document decisions, and refine output.",
     icon: BadgeCheck,
-    accent: "border-emerald-400/20 bg-emerald-400/10 text-emerald-500",
+    accent: "border-[var(--mint)]/25 bg-[var(--mint)]/10 text-[var(--mint-text)]",
   },
 ];
 
@@ -118,17 +89,16 @@ export default function ProjectSection() {
       id="project"
       className="relative w-full px-3.5 pb-20 pt-14 sm:px-8 sm:pb-24 sm:pt-20 lg:px-14 xl:px-20 2xl:px-28"
     >
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_42%_0%,rgba(29,78,216,0.16),transparent_30%),radial-gradient(circle_at_85%_26%,rgba(167,139,250,0.08),transparent_24%)]" />
 
       <div className="mx-auto grid max-w-[1880px] gap-5 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.72fr)] lg:items-end">
         <div className="max-w-2xl">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--blue-soft)] sm:text-sm">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--mint-text)] sm:text-sm">
             Personal Projects
           </p>
 
           <h2 className="mt-3 text-[28px] font-semibold leading-tight tracking-tight text-[var(--heading)] min-[390px]:text-[32px] sm:text-4xl md:text-5xl">
             Practical work, not just UI{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-violet-300 bg-clip-text text-transparent">
+            <span className="text-[var(--heading)]">
               experiments.
             </span>
           </h2>
@@ -143,23 +113,22 @@ export default function ProjectSection() {
         <div className="project-thumbnail-scroll -mx-1 flex gap-2 overflow-x-auto px-1 pb-1 sm:flex-wrap sm:justify-start sm:overflow-visible lg:justify-end">
           {filters.map((filter) => {
             const isActive = activeFilter === filter;
-            const style = filter !== "All" ? categoryStyles[filter] : null;
+            const style = categoryStyle;
 
             return (
               <button
                 key={filter}
                 type="button"
                 onClick={() => setActiveFilter(filter)}
+                aria-pressed={isActive}
                 className={`inline-flex h-7 shrink-0 items-center gap-1.5 rounded-full border px-2.5 text-[9px] font-semibold transition sm:h-9 sm:px-4 sm:text-sm ${
                   isActive
-                    ? filter === "All"
-                      ? "border-[var(--blue)] bg-[var(--blue)] text-white shadow-[0_0_18px_rgba(29,78,216,0.25)]"
-                      : style?.badge
-                    : "border-[var(--border-soft)] bg-[var(--surface-soft)] text-[var(--muted)] hover:border-[var(--blue)]/40 hover:bg-[var(--hover-surface)] hover:text-[var(--blue)]"
+                    ? "border-[var(--accent)] bg-[var(--accent)] text-white"
+                    : "border-[var(--border-soft)] bg-[var(--surface-soft)] text-[var(--muted)] hover:border-[var(--accent)]/40 hover:bg-[var(--hover-surface)] hover:text-[var(--interactive-text)]"
                 }`}
               >
                 {filter !== "All" ? (
-                  <span className={`h-1.5 w-1.5 rounded-full ${style?.dot ?? "bg-[var(--blue-soft)]"}`} />
+                  <span className={`h-1.5 w-1.5 rounded-full ${style?.dot ?? "bg-[var(--mint-text)]"}`} />
                 ) : null}
                 {filter}
               </button>
@@ -168,24 +137,24 @@ export default function ProjectSection() {
         </div>
       </div>
 
-      <div className="mx-auto mt-5 grid max-w-[1880px] grid-cols-3 gap-2 rounded-2xl border border-[var(--border-soft)] bg-[var(--surface-soft)] p-2 shadow-[var(--card-shadow)] sm:mt-8 sm:gap-4 sm:rounded-3xl sm:p-4">
+      <div className="mx-auto mt-5 grid max-w-[1880px] grid-cols-3 gap-2 rounded-2xl border border-[var(--border-soft)] bg-[var(--surface-soft)] p-2 sm:mt-8 sm:gap-4 sm:rounded-3xl sm:p-4">
         <ProjectStat
           label="Projects"
           value={projects.length.toString()}
           icon={FolderKanban}
-          accent="text-cyan-500 border-cyan-400/20 bg-cyan-400/10"
+          accent="text-[var(--mint-text)] border-[var(--mint)]/25 bg-[var(--mint)]/10"
         />
         <ProjectStat
           label="Categories"
           value={new Set(projects.flatMap((project) => project.categories)).size.toString()}
           icon={Layers3}
-          accent="text-violet-500 border-violet-400/20 bg-violet-400/10"
+          accent="text-[var(--mint-text)] border-[var(--mint)]/25 bg-[var(--mint)]/10"
         />
         <ProjectStat
           label="Focus"
           value="Practical Builds"
           icon={Rocket}
-          accent="text-blue-500 border-blue-400/20 bg-blue-400/10"
+          accent="text-[var(--mint-text)] border-[var(--mint)]/25 bg-[var(--mint)]/10"
         />
       </div>
 
@@ -229,13 +198,13 @@ export default function ProjectSection() {
         })}
       </div>
 
-      <div className="mx-auto mt-8 hidden max-w-[1880px] overflow-hidden rounded-3xl border border-[var(--border-soft)] bg-[var(--surface)] p-6 shadow-[var(--card-shadow)] md:block">
+      <div className="mx-auto mt-8 hidden max-w-[1880px] overflow-hidden rounded-3xl border border-[var(--border-soft)] bg-[var(--surface)] p-6 md:block">
         <div className="relative">
-          <div className="pointer-events-none absolute left-[250px] top-1/2 hidden h-px w-[calc(100%-290px)] -translate-y-1/2 bg-gradient-to-r from-cyan-400/20 via-violet-400/20 to-emerald-400/20 lg:block" />
+          <div className="pointer-events-none absolute left-[250px] top-1/2 hidden h-px w-[calc(100%-290px)] -translate-y-1/2 bg-[var(--mint)]/15 lg:block" />
 
           <div className="grid gap-6 lg:grid-cols-[230px_minmax(0,1fr)] lg:items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--blue-soft)]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--mint-text)]">
                 Process
               </p>
               <h3 className="mt-3 text-2xl font-semibold tracking-tight text-[var(--heading)]">
@@ -253,12 +222,12 @@ export default function ProjectSection() {
                 return (
                   <div
                     key={step.title}
-                    className="group relative rounded-2xl border border-[var(--border-soft)] bg-[var(--surface-soft)] p-4 transition hover:-translate-y-1 hover:border-[var(--blue)]/35 hover:bg-[var(--hover-surface)]"
+                    className="group relative rounded-2xl border border-[var(--border-soft)] bg-[var(--surface-soft)] p-4 transition hover:-translate-y-1 hover:border-[var(--accent)]/35 hover:bg-[var(--hover-surface)]"
                   >
                     <div className={`mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl border ${step.accent}`}>
                       <Icon className="h-5 w-5" />
                     </div>
-                    <p className="text-sm font-semibold text-[var(--blue-soft)]">0{index + 1}</p>
+                    <p className="text-sm font-semibold text-[var(--mint-text)]">0{index + 1}</p>
                     <h4 className="mt-2 text-base font-semibold text-[var(--heading)]">{step.title}</h4>
                     <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{step.description}</p>
                   </div>
@@ -294,7 +263,7 @@ function ProjectStat({
   accent: string;
 }) {
   return (
-    <div className="group flex items-center gap-2 rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-2 transition hover:-translate-y-0.5 hover:border-[var(--blue)]/35 hover:bg-[var(--hover-surface)] sm:gap-4 sm:rounded-2xl sm:p-4">
+    <div className="group flex items-center gap-2 rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-2 transition hover:-translate-y-0.5 hover:border-[var(--accent)]/35 hover:bg-[var(--hover-surface)] sm:gap-4 sm:rounded-2xl sm:p-4">
       <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border sm:h-12 sm:w-12 sm:rounded-2xl ${accent}`}>
         <Icon className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
       </div>
@@ -319,7 +288,7 @@ function CategoryBadges({
   return (
     <div className={`flex flex-wrap gap-1.5 sm:gap-2 ${className}`}>
       {categories.map((category) => {
-        const style = categoryStyles[category];
+        const style = categoryStyle;
 
         return (
           <span
@@ -348,8 +317,7 @@ function ProjectCard({
   variant?: "featured" | "side" | "standard" | "imageFocus";
   className?: string;
 }) {
-  const primaryCategory = project.categories[0];
-  const primaryStyle = categoryStyles[primaryCategory];
+  const primaryStyle = categoryStyle;
   const isFeatured = variant === "featured";
   const isSide = variant === "side";
   const isImageFocus = variant === "imageFocus";
@@ -368,9 +336,8 @@ function ProjectCard({
     <button
       type="button"
       onClick={() => onOpen(project)}
-      className={`group relative cursor-pointer overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] text-left shadow-[var(--card-shadow)] transition duration-300 hover:-translate-y-1 hover:border-[var(--blue)]/35 hover:bg-[var(--surface-strong)] sm:rounded-[1.65rem] ${primaryStyle.ring} ${className}`}
+      className={`group relative cursor-pointer overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] text-left transition duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/35 hover:bg-[var(--surface-strong)] sm:rounded-[1.65rem] ${primaryStyle.ring} ${className}`}
     >
-      <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${primaryStyle.glow} via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100`} />
 
       <div className={`relative grid h-full ${isFeatured ? "grid-cols-[1.08fr_0.92fr]" : ""}`}>
         <div className={`relative w-full overflow-hidden bg-[var(--surface-strong)] ${imageHeightClass}`}>
@@ -385,8 +352,8 @@ function ProjectCard({
           <div className="absolute inset-0 border-b border-[var(--border-soft)]" />
 
           {isFeatured ? (
-            <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full border border-amber-300/45 bg-black/45 px-2 py-1 text-[8px] font-semibold text-amber-200 shadow-[0_0_24px_rgba(251,191,36,0.22)] backdrop-blur-md sm:left-4 sm:top-4 sm:gap-2 sm:px-3 sm:py-1.5 sm:text-xs">
-              <Star className="h-3 w-3 fill-amber-200 text-amber-200 sm:h-3.5 sm:w-3.5" />
+            <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full border border-[var(--mint)] bg-[var(--mint)] px-2 py-1 text-[8px] font-semibold text-[var(--on-mint)] sm:left-4 sm:top-4 sm:gap-2 sm:px-3 sm:py-1.5 sm:text-xs">
+              <Star className="h-3 w-3 fill-[var(--on-mint)] text-[var(--on-mint)] sm:h-3.5 sm:w-3.5" />
               Featured
             </span>
           ) : null}
@@ -424,7 +391,7 @@ function ProjectCard({
             ))}
           </div>
 
-          <div className="mt-auto flex items-center justify-end gap-1.5 pt-3 text-[9px] font-semibold text-[var(--blue-soft)] opacity-80 transition group-hover:translate-x-1 group-hover:opacity-100 sm:gap-2 sm:pt-6 sm:text-sm">
+          <div className="mt-auto flex items-center justify-end gap-1.5 pt-3 text-[9px] font-semibold text-[var(--mint-text)] opacity-80 transition group-hover:translate-x-1 group-hover:opacity-100 sm:gap-2 sm:pt-6 sm:text-sm">
             View case study
             <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
           </div>
@@ -460,7 +427,7 @@ function ProjectModal({
           type="button"
           onClick={onClose}
           aria-label="Close project detail"
-          className="absolute right-3 top-3 z-20 inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] text-xl text-[var(--heading)] transition hover:border-[var(--blue)] hover:bg-[var(--hover-surface)] sm:right-4 sm:top-4 sm:h-10 sm:w-10"
+          className="absolute right-3 top-3 z-20 inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] text-xl text-[var(--heading)] transition hover:border-[var(--accent)] hover:bg-[var(--hover-surface)] sm:right-4 sm:top-4 sm:h-10 sm:w-10"
         >
           ×
         </button>
@@ -468,7 +435,7 @@ function ProjectModal({
         <div className="project-modal-scroll max-h-[90vh] overflow-y-auto overflow-x-hidden">
           <div className="grid min-w-0 lg:grid-cols-[390px_minmax(0,1fr)]">
             <div className="min-w-0 border-b border-[var(--border-soft)] p-5 pt-14 sm:p-8 sm:pt-16 lg:border-b-0 lg:border-r lg:border-[var(--border-soft)]">
-              <p className="text-sm font-medium tracking-wide text-[var(--blue-soft)]">Project Detail</p>
+              <p className="text-sm font-medium tracking-wide text-[var(--mint-text)]">Project Detail</p>
               <CategoryBadges categories={project.categories} className="mt-4" />
 
               <h3 className="mt-3 text-2xl font-semibold leading-tight tracking-tight text-[var(--heading)] sm:text-3xl">
@@ -501,13 +468,38 @@ function ProjectModal({
                   ))}
                 </div>
               </div>
+
+              {project.websiteUrl || project.githubUrl ? (
+                <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
+                  {project.websiteUrl ? (
+                    <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-[var(--accent)] px-4 py-2 text-white transition hover:bg-[var(--accent-hover)]">
+                      View website
+                    </a>
+                  ) : null}
+                  {project.githubUrl ? (
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-[var(--accent)] px-4 py-2 text-white transition hover:bg-[var(--accent-hover)]">
+                      View GitHub
+                    </a>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
 
             <div className="min-w-0 bg-[var(--surface-soft)] p-4 sm:p-6 lg:pt-16">
+              {project.imageCaptions ? (
+                <div className="mb-3 flex items-center justify-between gap-3 text-xs sm:text-sm">
+                  <p className="font-medium text-[var(--heading)]">
+                    {project.imageCaptions[activeImageIndex]}
+                  </p>
+                  <span className="shrink-0 tabular-nums text-[var(--muted)]">
+                    {String(activeImageIndex + 1).padStart(2, "0")} / {String(project.images.length).padStart(2, "0")}
+                  </span>
+                </div>
+              ) : null}
               <div className="relative flex h-[260px] w-full items-center justify-center overflow-hidden rounded-xl border border-[var(--border-soft)] bg-[var(--surface-strong)] sm:h-[430px]">
                 <Image
                   src={selectedImage}
-                  alt={project.title}
+                  alt={project.imageCaptions?.[activeImageIndex] ?? project.title}
                   fill
                   className="object-contain p-3"
                   sizes="(min-width: 1024px) 720px, 100vw"
@@ -523,10 +515,11 @@ function ProjectModal({
                         type="button"
                         onClick={() => setActiveImageIndex(index)}
                         aria-label={`Show ${project.title} image ${index + 1}`}
+                        title={project.imageCaptions?.[index]}
                         className={`relative h-16 w-28 shrink-0 cursor-pointer overflow-hidden rounded-lg border bg-[var(--surface-strong)] transition ${
                           activeImageIndex === index
-                            ? "border-[var(--blue)] opacity-100 shadow-[0_0_18px_rgba(29,78,216,0.28)]"
-                            : "border-[var(--border-soft)] opacity-60 hover:border-[var(--blue)]/40 hover:opacity-100"
+                            ? "border-[var(--accent)] opacity-100 "
+                            : "border-[var(--border-soft)] opacity-60 hover:border-[var(--accent)]/40 hover:opacity-100"
                         }`}
                       >
                         <Image src={image} alt="" fill className="object-cover" sizes="112px" />

@@ -1,0 +1,489 @@
+- generic [active] [ref=f31e1]:
+  - main [ref=f31e2]:
+    - generic [ref=f31e3]:
+      - navigation [ref=f31e5]:
+        - link "Go to homepage" [ref=f31e6] [cursor=pointer]:
+          - /url: "#about"
+          - img "REW logo" [ref=f31e7]
+        - generic [ref=f31e8]:
+          - generic [ref=f31e9]:
+            - link "About" [ref=f31e10] [cursor=pointer]:
+              - /url: "#about"
+            - link "Projects" [ref=f31e12] [cursor=pointer]:
+              - /url: "#project"
+            - link "Experience" [ref=f31e13] [cursor=pointer]:
+              - /url: "#experience"
+            - link "Skills" [ref=f31e14] [cursor=pointer]:
+              - /url: "#skills"
+            - link "Contact" [ref=f31e15] [cursor=pointer]:
+              - /url: "#contact"
+          - button "Toggle theme" [ref=f31e16] [cursor=pointer]:
+            - generic [ref=f31e18]:
+              - img "Dark mode" [ref=f31e20]
+              - img "Light mode" [ref=f31e22]
+      - region [ref=f31e23]:
+        - generic [ref=f31e24]:
+          - paragraph [ref=f31e25]: Hi, I’m Raphael.
+          - heading "Raphael Evan Wijayanto." [level=1] [ref=f31e26]: Raphael EvanWijayanto.
+          - paragraph [ref=f31e27]: Software development.Automation. Applied AI.
+          - paragraph [ref=f31e28]: IT Programmer at PT Sari Tirta Group and Informatics graduate. I build business tools, reporting pipelines, and digital workflows that make everyday work easier.
+          - generic [ref=f31e29]:
+            - link "Explore projects" [ref=f31e30] [cursor=pointer]:
+              - /url: "#project"
+            - link "Download CV" [ref=f31e31] [cursor=pointer]:
+              - /url: https://docs.google.com/document/d/1sE3iVw4tDQXasHTtrjlYV9iAkNZH3syEk4LLC9J9JSs/export?format=pdf
+          - generic "Social links" [ref=f31e32]:
+            - generic [ref=f31e33]: Find me here
+            - link "GitHub" [ref=f31e34] [cursor=pointer]:
+              - /url: https://github.com/RaphaelEvanW
+            - link "LinkedIn" [ref=f31e36] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/raphael-e-wijayanto/
+            - link "Email" [ref=f31e38] [cursor=pointer]:
+              - /url: mailto:raphael.wijayanto@gmail.com
+          - generic "Core technologies" [ref=f31e40]:
+            - generic [ref=f31e41]: Python
+            - generic [ref=f31e42]: Go
+            - generic [ref=f31e43]: React / Next.js
+            - generic [ref=f31e44]: Camunda BPMN
+            - generic [ref=f31e45]: n8n
+            - generic [ref=f31e46]: PostgreSQL
+        - figure "Raphael and areas of work" [ref=f31e47]:
+          - generic [ref=f31e48]:
+            - generic [aria-hidden]: REW
+            - img "Raphael Evan Wijayanto" [ref=f31e50]
+            - generic [ref=f31e51]:
+              - strong [ref=f31e52]: Automation pipelines
+              - text: KNIME, n8n, Camunda
+            - generic [ref=f31e53]:
+              - strong [ref=f31e54]: Fullstack projects
+              - text: Web apps from DB to UI
+            - strong [ref=f31e57]: Open to opportunities
+      - generic [ref=f31e58]:
+        - generic [ref=f31e59]:
+          - generic [ref=f31e60]:
+            - paragraph [ref=f31e61]: Personal Projects
+            - heading "Practical work, not just UI experiments." [level=2] [ref=f31e62]
+            - paragraph [ref=f31e63]: A collection of internship work, academic research, automation workflows, and fullstack experiments focused on practical implementation, structured output, and technical learning.
+          - generic [ref=f31e64]:
+            - button "All" [pressed] [ref=f31e65]
+            - button "Workflow & Automation" [ref=f31e66]
+            - button "AI Integrated" [ref=f31e68]
+            - button "AI Research" [ref=f31e70]
+            - button "Fullstack" [ref=f31e72]
+        - generic [ref=f31e74]:
+          - generic [ref=f31e79]:
+            - paragraph [ref=f31e80]: "7"
+            - paragraph [ref=f31e81]: Projects
+          - generic [ref=f31e88]:
+            - paragraph [ref=f31e89]: "4"
+            - paragraph [ref=f31e90]: Categories
+          - generic [ref=f31e98]:
+            - paragraph [ref=f31e99]: Practical Builds
+            - paragraph [ref=f31e100]: Focus
+        - generic [ref=f31e101]:
+          - 'button "Implementasi OpenPose dengan Long Short-Term Memory (LSTM) untuk Deteksi Kejadian Jatuh Berbasis Keypoints Featured AI Research Implementasi OpenPose dengan Long Short-Term Memory (LSTM) untuk Deteksi Kejadian Jatuh Berbasis Keypoints Proyek skripsi berbasis OpenPose dan LSTM untuk deteksi kejadian jatuh dari keypoints video. Dataset: UR Fall Detection Dataset Method: OpenPose + LSTM Focus: Deep Learning Python AI Research LSTM PyTorch View case study" [ref=f31e102] [cursor=pointer]':
+            - generic [ref=f31e103]:
+              - generic [ref=f31e104]:
+                - img "Implementasi OpenPose dengan Long Short-Term Memory (LSTM) untuk Deteksi Kejadian Jatuh Berbasis Keypoints" [ref=f31e105]
+                - generic [ref=f31e108]: Featured
+              - generic [ref=f31e111]:
+                - generic [ref=f31e112]: AI Research
+                - heading "Implementasi OpenPose dengan Long Short-Term Memory (LSTM) untuk Deteksi Kejadian Jatuh Berbasis Keypoints" [level=3] [ref=f31e115]
+                - paragraph [ref=f31e116]: Proyek skripsi berbasis OpenPose dan LSTM untuk deteksi kejadian jatuh dari keypoints video.
+                - generic [ref=f31e117]:
+                  - generic [ref=f31e118]:
+                    - generic [ref=f31e120]: "Dataset:"
+                    - generic [ref=f31e121]: UR Fall Detection Dataset
+                  - generic [ref=f31e122]:
+                    - generic [ref=f31e124]: "Method:"
+                    - generic [ref=f31e125]: OpenPose + LSTM
+                  - generic [ref=f31e126]:
+                    - generic [ref=f31e128]: "Focus:"
+                    - generic [ref=f31e129]: Deep Learning
+                - generic [ref=f31e130]:
+                  - generic [ref=f31e131]: Python
+                  - generic [ref=f31e132]: AI Research
+                  - generic [ref=f31e133]: LSTM
+                  - generic [ref=f31e134]: PyTorch
+                - generic [ref=f31e135]: View case study
+          - 'button "AutoPulse Captions AI Integrated Workflow & Automation AutoPulse Captions Engine auto-caption video Bahasa Indonesia dan Inggris dengan subtitle 2–3 kata, highlight kata aktif, dan koreksi transkripsi yang belajar dari revisi pengguna. Languages: Indonesian & English Captions: 2–3 Words / Active Highlight Python faster-whisper FFmpeg View case study" [ref=f31e139] [cursor=pointer]':
+            - generic [ref=f31e140]:
+              - img "AutoPulse Captions" [ref=f31e142]
+              - generic [ref=f31e145]:
+                - generic [ref=f31e146]:
+                  - generic [ref=f31e147]: AI Integrated
+                  - generic [ref=f31e149]: Workflow & Automation
+                - heading "AutoPulse Captions" [level=3] [ref=f31e151]
+                - paragraph [ref=f31e152]: Engine auto-caption video Bahasa Indonesia dan Inggris dengan subtitle 2–3 kata, highlight kata aktif, dan koreksi transkripsi yang belajar dari revisi pengguna.
+                - generic [ref=f31e153]:
+                  - generic [ref=f31e154]:
+                    - generic [ref=f31e156]: "Languages:"
+                    - generic [ref=f31e157]: Indonesian & English
+                  - generic [ref=f31e158]:
+                    - generic [ref=f31e160]: "Captions:"
+                    - generic [ref=f31e161]: 2–3 Words / Active Highlight
+                - generic [ref=f31e162]:
+                  - generic [ref=f31e163]: Python
+                  - generic [ref=f31e164]: faster-whisper
+                  - generic [ref=f31e165]: FFmpeg
+                - generic [ref=f31e166]: View case study
+          - 'button "Cipendawa Motor Website Fullstack Cipendawa Motor Website Website profil bengkel mobil dengan galeri hasil pekerjaan dan reservasi tiga langkah, dilengkapi mode demo serta backend Go dan PostgreSQL untuk showcase lokal. Scope: Company Profile & Reservation Modes: Browser Demo / Local Backend Next.js TypeScript Go View case study" [ref=f31e170] [cursor=pointer]':
+            - generic [ref=f31e171]:
+              - img "Cipendawa Motor Website" [ref=f31e173]
+              - generic [ref=f31e176]:
+                - generic [ref=f31e177]: Fullstack
+                - heading "Cipendawa Motor Website" [level=3] [ref=f31e180]
+                - paragraph [ref=f31e181]: Website profil bengkel mobil dengan galeri hasil pekerjaan dan reservasi tiga langkah, dilengkapi mode demo serta backend Go dan PostgreSQL untuk showcase lokal.
+                - generic [ref=f31e182]:
+                  - generic [ref=f31e183]:
+                    - generic [ref=f31e185]: "Scope:"
+                    - generic [ref=f31e186]: Company Profile & Reservation
+                  - generic [ref=f31e187]:
+                    - generic [ref=f31e189]: "Modes:"
+                    - generic [ref=f31e190]: Browser Demo / Local Backend
+                - generic [ref=f31e191]:
+                  - generic [ref=f31e192]: Next.js
+                  - generic [ref=f31e193]: TypeScript
+                  - generic [ref=f31e194]: Go
+                - generic [ref=f31e195]: View case study
+          - 'button "Automation Onboarding & Offboarding Karyawan Workflow & Automation Automation Onboarding & Offboarding Karyawan Workflow automation untuk proses onboarding dan offboarding karyawan menggunakan BPMN, Camunda, dan integrasi osTicket. Scope: Onboarding & Offboarding Flow: BPMN Workflow Python Camunda Docker View case study" [ref=f31e199] [cursor=pointer]':
+            - generic [ref=f31e200]:
+              - img "Automation Onboarding & Offboarding Karyawan" [ref=f31e202]
+              - generic [ref=f31e205]:
+                - generic [ref=f31e206]: Workflow & Automation
+                - heading "Automation Onboarding & Offboarding Karyawan" [level=3] [ref=f31e209]
+                - paragraph [ref=f31e210]: Workflow automation untuk proses onboarding dan offboarding karyawan menggunakan BPMN, Camunda, dan integrasi osTicket.
+                - generic [ref=f31e211]:
+                  - generic [ref=f31e212]:
+                    - generic [ref=f31e214]: "Scope:"
+                    - generic [ref=f31e215]: Onboarding & Offboarding
+                  - generic [ref=f31e216]:
+                    - generic [ref=f31e218]: "Flow:"
+                    - generic [ref=f31e219]: BPMN Workflow
+                - generic [ref=f31e220]:
+                  - generic [ref=f31e221]: Python
+                  - generic [ref=f31e222]: Camunda
+                  - generic [ref=f31e223]: Docker
+                - generic [ref=f31e224]: View case study
+          - 'button "Nessus Auto Report Workflow & Automation AI Integrated Nessus Auto Report Workflow ETL untuk memproses data Nessus dan menghasilkan laporan PDF/XLSX yang terstruktur. Output: PDF & XLSX Process: ETL Pipeline Python KNIME PostgreSQL View case study" [ref=f31e228] [cursor=pointer]':
+            - generic [ref=f31e229]:
+              - img "Nessus Auto Report" [ref=f31e231]
+              - generic [ref=f31e234]:
+                - generic [ref=f31e235]:
+                  - generic [ref=f31e236]: Workflow & Automation
+                  - generic [ref=f31e238]: AI Integrated
+                - heading "Nessus Auto Report" [level=3] [ref=f31e240]
+                - paragraph [ref=f31e241]: Workflow ETL untuk memproses data Nessus dan menghasilkan laporan PDF/XLSX yang terstruktur.
+                - generic [ref=f31e242]:
+                  - generic [ref=f31e243]:
+                    - generic [ref=f31e245]: "Output:"
+                    - generic [ref=f31e246]: PDF & XLSX
+                  - generic [ref=f31e247]:
+                    - generic [ref=f31e249]: "Process:"
+                    - generic [ref=f31e250]: ETL Pipeline
+                - generic [ref=f31e251]:
+                  - generic [ref=f31e252]: Python
+                  - generic [ref=f31e253]: KNIME
+                  - generic [ref=f31e254]: PostgreSQL
+                - generic [ref=f31e255]: View case study
+          - 'button "Kalilinux Auto Report Workflow & Automation AI Integrated Kalilinux Auto Report Workflow ETL untuk memproses data Kali Linux dan menghasilkan laporan PDF/XLSX yang terstruktur. Output: PDF & XLSX Process: ETL Pipeline Python KNIME PostgreSQL View case study" [ref=f31e259] [cursor=pointer]':
+            - generic [ref=f31e260]:
+              - img "Kalilinux Auto Report" [ref=f31e262]
+              - generic [ref=f31e265]:
+                - generic [ref=f31e266]:
+                  - generic [ref=f31e267]: Workflow & Automation
+                  - generic [ref=f31e269]: AI Integrated
+                - heading "Kalilinux Auto Report" [level=3] [ref=f31e271]
+                - paragraph [ref=f31e272]: Workflow ETL untuk memproses data Kali Linux dan menghasilkan laporan PDF/XLSX yang terstruktur.
+                - generic [ref=f31e273]:
+                  - generic [ref=f31e274]:
+                    - generic [ref=f31e276]: "Output:"
+                    - generic [ref=f31e277]: PDF & XLSX
+                  - generic [ref=f31e278]:
+                    - generic [ref=f31e280]: "Process:"
+                    - generic [ref=f31e281]: ETL Pipeline
+                - generic [ref=f31e282]:
+                  - generic [ref=f31e283]: Python
+                  - generic [ref=f31e284]: KNIME
+                  - generic [ref=f31e285]: PostgreSQL
+                - generic [ref=f31e286]: View case study
+          - 'button "Automation CV Screening (AI Based) using N8N Workflow & Automation AI Integrated Automation CV Screening (AI Based) using N8N Workflow AI untuk membantu proses CV screening dengan reasoning dan output laporan kandidat. Output: PDF Report Flow: AI Screening N8N Javascript Docker View case study" [ref=f31e290] [cursor=pointer]':
+            - generic [ref=f31e291]:
+              - img "Automation CV Screening (AI Based) using N8N" [ref=f31e293]
+              - generic [ref=f31e296]:
+                - generic [ref=f31e297]:
+                  - generic [ref=f31e298]: Workflow & Automation
+                  - generic [ref=f31e300]: AI Integrated
+                - heading "Automation CV Screening (AI Based) using N8N" [level=3] [ref=f31e302]
+                - paragraph [ref=f31e303]: Workflow AI untuk membantu proses CV screening dengan reasoning dan output laporan kandidat.
+                - generic [ref=f31e304]:
+                  - generic [ref=f31e305]:
+                    - generic [ref=f31e307]: "Output:"
+                    - generic [ref=f31e308]: PDF Report
+                  - generic [ref=f31e309]:
+                    - generic [ref=f31e311]: "Flow:"
+                    - generic [ref=f31e312]: AI Screening
+                - generic [ref=f31e313]:
+                  - generic [ref=f31e314]: N8N
+                  - generic [ref=f31e315]: Javascript
+                  - generic [ref=f31e316]: Docker
+                - generic [ref=f31e317]: View case study
+        - generic [ref=f31e323]:
+          - generic [ref=f31e324]:
+            - paragraph [ref=f31e325]: Process
+            - heading "How I approach and build projects" [level=3] [ref=f31e326]
+            - paragraph [ref=f31e327]: From problem framing to implementation, testing, and refinement.
+          - generic [ref=f31e328]:
+            - generic [ref=f31e329]:
+              - paragraph [ref=f31e334]: "01"
+              - heading "Understand" [level=4] [ref=f31e335]
+              - paragraph [ref=f31e336]: Define the problem, goal, constraints, and expected output.
+            - generic [ref=f31e337]:
+              - paragraph [ref=f31e343]: "02"
+              - heading "Structure" [level=4] [ref=f31e344]
+              - paragraph [ref=f31e345]: Plan the data flow, UI flow, workflow, or model pipeline.
+            - generic [ref=f31e346]:
+              - paragraph [ref=f31e352]: "03"
+              - heading "Build" [level=4] [ref=f31e353]
+              - paragraph [ref=f31e354]: Implement the core features with practical and maintainable tools.
+            - generic [ref=f31e355]:
+              - paragraph [ref=f31e360]: "04"
+              - heading "Improve" [level=4] [ref=f31e361]
+              - paragraph [ref=f31e362]: Test the result, fix issues, document decisions, and refine output.
+      - generic [ref=f31e364]:
+        - generic [ref=f31e365]:
+          - heading "Personal Experiences" [level=2] [ref=f31e366]
+          - paragraph [ref=f31e367]: Current programming work, internship experience, and organizational roles involving business systems, automation, documentation, and operational support.
+        - generic [ref=f31e368]:
+          - generic [ref=f31e369]:
+            - heading "Professional Experience" [level=3] [ref=f31e372]
+            - generic [ref=f31e373]:
+              - article [ref=f31e374]:
+                - generic [ref=f31e375]:
+                  - generic [ref=f31e378]:
+                    - heading "IT Programmer" [level=4] [ref=f31e379]
+                    - paragraph [ref=f31e380]: PT Sari Tirta Group
+                    - generic [ref=f31e381]:
+                      - generic [ref=f31e382]: Aug 2026 – Present
+                      - generic [ref=f31e383]: Current Role
+                  - paragraph [ref=f31e384]: Developing internal business tools, procurement reports, and digital workflows in Central Jakarta.
+                  - generic [ref=f31e385]:
+                    - generic [ref=f31e386]: Progress OpenEdge ABL
+                    - generic [ref=f31e387]: React
+                    - generic [ref=f31e388]: Vue.js
+                    - generic [ref=f31e389]: Docker
+                    - generic [ref=f31e390]: AppSheet
+                    - generic [ref=f31e391]: WordPress
+                    - generic [ref=f31e392]: WooCommerce
+                    - generic [ref=f31e393]: CSV / XLSX
+                  - paragraph [ref=f31e395]: What I worked on
+                  - list [ref=f31e396]:
+                    - listitem [ref=f31e397]:
+                      - generic [ref=f31e398]: "01"
+                      - generic [ref=f31e399]: Built a desktop procurement reporting application using Progress OpenEdge ABL, with date-based database queries and CSV/XLSX exports for PR, PO, and receiving data.
+                    - listitem [ref=f31e400]:
+                      - generic [ref=f31e401]: "02"
+                      - generic [ref=f31e402]: Developing an AppSheet security patrol application with QR-based shift and checkpoint scanning, plus patrol status recording.
+                    - listitem [ref=f31e403]:
+                      - generic [ref=f31e404]: "03"
+                      - generic [ref=f31e405]: Set up an ongoing WordPress and WooCommerce e-commerce project, including plugins, payment and shipping gateway installation, and frontend UI development.
+                    - listitem [ref=f31e406]:
+                      - generic [ref=f31e407]: "04"
+                      - generic [ref=f31e408]: Debugged and fixed a backend issue in the company's existing procurement web application.
+              - article [ref=f31e409]:
+                - generic [ref=f31e410]:
+                  - generic [ref=f31e413]:
+                    - heading "Automation Intern" [level=4] [ref=f31e414]
+                    - paragraph [ref=f31e415]: PT Jababeka Tbk
+                    - generic [ref=f31e416]:
+                      - generic [ref=f31e417]: Feb 2026 – May 2026
+                      - generic [ref=f31e418]: 4 Months
+                  - paragraph [ref=f31e419]: Worked on internal IT automation, reporting workflows, scheduled execution, and technical documentation during internship.
+                  - generic [ref=f31e420]:
+                    - generic [ref=f31e421]: Camunda
+                    - generic [ref=f31e422]: Python
+                    - generic [ref=f31e423]: Zeebe
+                    - generic [ref=f31e424]: KNIME
+                    - generic [ref=f31e425]: Task Scheduler
+                    - generic [ref=f31e426]: openpyxl
+                    - generic [ref=f31e427]: Docker
+                    - generic [ref=f31e428]: PostgreSQL
+                  - paragraph [ref=f31e430]: What I worked on
+                  - list [ref=f31e431]:
+                    - listitem [ref=f31e432]:
+                      - generic [ref=f31e433]: "01"
+                      - generic [ref=f31e434]: Built and maintained BPMN workflow automation using Camunda and Python Zeebe workers.
+                    - listitem [ref=f31e435]:
+                      - generic [ref=f31e436]: "02"
+                      - generic [ref=f31e437]: Worked on onboarding and offboarding automation workflow design.
+                    - listitem [ref=f31e438]:
+                      - generic [ref=f31e439]: "03"
+                      - generic [ref=f31e440]: Automated reporting pipelines using KNIME and Python for Nessus and Kali Linux reports.
+                    - listitem [ref=f31e441]:
+                      - generic [ref=f31e442]: "04"
+                      - generic [ref=f31e443]: Generated structured PDF/XLSX reports using wkhtmltopdf, pdfkit, and openpyxl.
+                    - listitem [ref=f31e444]:
+                      - generic [ref=f31e445]: "05"
+                      - generic [ref=f31e446]: Managed scheduled execution using Windows Task Scheduler and batch scripts.
+                    - listitem [ref=f31e447]:
+                      - generic [ref=f31e448]: "06"
+                      - generic [ref=f31e449]: Created technical documentation for automation and reporting workflows.
+          - generic [ref=f31e450]:
+            - heading "Organizational Experience" [level=3] [ref=f31e453]
+            - generic [ref=f31e454]:
+              - article [ref=f31e455]:
+                - heading "Logistic Staff" [level=4] [ref=f31e456]
+                - generic [ref=f31e457]:
+                  - generic [ref=f31e458]: Himpunan Mahasiswa Teknik Informatika
+                  - generic [ref=f31e460]: Mar 2023 – May 2024
+                - list [ref=f31e461]:
+                  - listitem [ref=f31e462]:
+                    - generic [ref=f31e464]: Supported logistics planning and preparation for student organization activities.
+                  - listitem [ref=f31e465]:
+                    - generic [ref=f31e467]: Coordinated equipment, event needs, and on-site execution with the team.
+                  - listitem [ref=f31e468]:
+                    - generic [ref=f31e470]: Helped maintain event readiness through task tracking and communication.
+              - article [ref=f31e471]:
+                - heading "Technical & Mentor" [level=4] [ref=f31e472]
+                - generic [ref=f31e473]:
+                  - generic [ref=f31e474]: New Student Orientation
+                  - generic [ref=f31e476]: May 2023 – Aug 2023
+                - list [ref=f31e477]:
+                  - listitem [ref=f31e478]:
+                    - generic [ref=f31e480]: Assisted technical preparation and mentoring activities for new students.
+                  - listitem [ref=f31e481]:
+                    - generic [ref=f31e483]: Helped coordinate activity flow and communication during orientation.
+                  - listitem [ref=f31e484]:
+                    - generic [ref=f31e486]: Supported event execution in a structured and collaborative way.
+      - generic [ref=f31e488]:
+        - generic [ref=f31e489]:
+          - heading "Skills built through practical work" [level=2] [ref=f31e490]
+          - paragraph [ref=f31e491]: A focused toolkit shaped by professional work, internship experience, academic projects, and personal builds — grouped by how I use them.
+        - generic [ref=f31e492]:
+          - generic [ref=f31e493]:
+            - paragraph [ref=f31e494]: "01"
+            - paragraph [ref=f31e495]: Development
+          - generic [ref=f31e496]:
+            - paragraph [ref=f31e497]: "02"
+            - paragraph [ref=f31e498]: Automation
+          - generic [ref=f31e499]:
+            - paragraph [ref=f31e500]: "03"
+            - paragraph [ref=f31e501]: Data, Tools
+        - generic [ref=f31e502]:
+          - article [ref=f31e503]:
+            - generic [ref=f31e506]:
+              - paragraph [ref=f31e507]: 01 / Skill Area
+              - heading "Development" [level=3] [ref=f31e508]
+              - paragraph [ref=f31e509]: Languages, frameworks, and web technologies I use to build application features, interfaces, APIs, and backend logic.
+            - generic [ref=f31e510]:
+              - generic [ref=f31e511]:
+                - paragraph [ref=f31e512]: Languages
+                - generic [ref=f31e513]:
+                  - generic [ref=f31e514]: Python
+                  - generic [ref=f31e516]: JavaScript
+                  - generic [ref=f31e518]: TypeScript
+                  - generic [ref=f31e520]: Go
+                  - generic [ref=f31e522]: Java
+                  - generic [ref=f31e524]: PHP
+                  - generic [ref=f31e526]: Kotlin
+                  - generic [ref=f31e528]: OpenEdge ABL
+              - generic [ref=f31e530]:
+                - paragraph [ref=f31e531]: Frontend
+                - generic [ref=f31e532]:
+                  - generic [ref=f31e533]: React
+                  - generic [ref=f31e535]: Next.js
+                  - generic [ref=f31e537]: Tailwind
+                  - generic [ref=f31e539]: HTML5
+                  - generic [ref=f31e541]: CSS3
+              - generic [ref=f31e543]:
+                - paragraph [ref=f31e544]: Backend
+                - generic [ref=f31e545]:
+                  - generic [ref=f31e546]: Node.js
+                  - generic [ref=f31e548]: Gin
+                  - generic [ref=f31e550]: Django
+                  - generic [ref=f31e552]: Spring Boot
+                  - generic [ref=f31e554]: REST API
+          - article [ref=f31e556]:
+            - generic [ref=f31e559]:
+              - paragraph [ref=f31e560]: 02 / Skill Area
+              - heading "Automation & Reporting" [level=3] [ref=f31e561]
+              - paragraph [ref=f31e562]: Workflow automation, scheduled execution, and structured reporting from internship work.
+            - generic [ref=f31e563]:
+              - generic [ref=f31e564]:
+                - paragraph [ref=f31e565]: Workflow
+                - generic [ref=f31e566]:
+                  - generic [ref=f31e567]: Camunda
+                  - generic [ref=f31e569]: KNIME
+                  - generic [ref=f31e571]: N8N
+              - generic [ref=f31e573]:
+                - paragraph [ref=f31e574]: Reporting
+                - generic [ref=f31e575]:
+                  - generic [ref=f31e576]: Python
+                  - generic [ref=f31e578]: PDF/XLSX generation
+                  - generic [ref=f31e580]: Power BI
+                  - generic [ref=f31e582]: Tableau
+              - generic [ref=f31e584]:
+                - paragraph [ref=f31e585]: Execution
+                - generic [ref=f31e586]:
+                  - generic [ref=f31e587]: Batch scripts
+                  - generic [ref=f31e589]: Task Scheduler
+                  - generic [ref=f31e591]: Docker
+                  - generic [ref=f31e593]: Progress OpenEdge
+                  - generic [ref=f31e595]: AppSheet
+          - article [ref=f31e597]:
+            - generic [ref=f31e600]:
+              - paragraph [ref=f31e601]: 03 / Skill Area
+              - heading "Data, Tools & Platforms" [level=3] [ref=f31e602]
+              - paragraph [ref=f31e603]: Database work, API testing, version control, design, cloud basics, and enterprise-system exposure.
+            - generic [ref=f31e604]:
+              - generic [ref=f31e605]:
+                - paragraph [ref=f31e606]: Database
+                - generic [ref=f31e607]:
+                  - generic [ref=f31e608]: PostgreSQL
+                  - generic [ref=f31e610]: MySQL
+                  - generic [ref=f31e612]: NoSQL
+              - generic [ref=f31e614]:
+                - paragraph [ref=f31e615]: Tools
+                - generic [ref=f31e616]:
+                  - generic [ref=f31e617]: Git
+                  - generic [ref=f31e619]: Postman
+                  - generic [ref=f31e621]: Figma
+                  - generic [ref=f31e623]: Docker
+              - generic [ref=f31e625]:
+                - paragraph [ref=f31e626]: Platforms
+                - generic [ref=f31e627]:
+                  - generic [ref=f31e628]: AWS
+                  - generic [ref=f31e630]: SAP S/4HANA
+                  - generic [ref=f31e632]: WordPress
+                  - generic [ref=f31e634]: WooCommerce
+      - generic [ref=f31e638]:
+        - generic [ref=f31e639]:
+          - heading "Let’s Work Together !" [level=2] [ref=f31e640]
+          - paragraph [ref=f31e641]: I’m open to fresh graduate opportunities around software development, workflow automation, reporting systems, and AI-related engineering work.
+        - generic [ref=f31e642]:
+          - link "Email raphael.wijayanto@gmail.com" [ref=f31e643] [cursor=pointer]:
+            - /url: mailto:raphael.wijayanto@gmail.com
+            - generic [ref=f31e646]:
+              - paragraph [ref=f31e647]: Email
+              - paragraph [ref=f31e648]: raphael.wijayanto@gmail.com
+          - link "LinkedIn Raphael Evan Wijayanto" [ref=f31e649] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/raphael-e-wijayanto/
+            - generic [ref=f31e652]:
+              - paragraph [ref=f31e653]: LinkedIn
+              - paragraph [ref=f31e654]: Raphael Evan Wijayanto
+          - link "GitHub RaphaelEvanW" [ref=f31e655] [cursor=pointer]:
+            - /url: https://github.com/RaphaelEvanW
+            - generic [ref=f31e658]:
+              - paragraph [ref=f31e659]: GitHub
+              - paragraph [ref=f31e660]: RaphaelEvanW
+      - generic [ref=f31e662]:
+        - generic [ref=f31e663]:
+          - paragraph [ref=f31e664]: Raphael Evan Wijayanto
+          - paragraph [ref=f31e665]: Portfolio 2026
+        - generic [ref=f31e666]:
+          - paragraph [ref=f31e667]: Built with Next.js, TypeScript, and Tailwind CSS.
+          - generic [ref=f31e668]:
+            - link "Back to top" [ref=f31e669] [cursor=pointer]:
+              - /url: "#about"
+            - generic [ref=f31e671]: © 2026
+  - button "Open Next.js Dev Tools" [ref=f31e677] [cursor=pointer]

@@ -22,7 +22,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <a
               href="#about"
-              className="transition hover:text-[var(--blue)]"
+              className="transition hover:text-[var(--interactive-text)]"
             >
               Back to top
             </a>

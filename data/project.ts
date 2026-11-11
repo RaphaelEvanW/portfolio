@@ -19,12 +19,88 @@ export type Project = {
   shortDescription: string;
   description: string;
   images: string[];
+  imageCaptions?: string[];
   stacks: ProjectStack[];
   categories: ProjectCategory[];
   featured?: boolean;
   metrics: ProjectMetric[];
+  websiteUrl?: string;
+  githubUrl?: string;
 };
 export const projects: Project[] = [
+  {
+    title: "AutoPulse Captions",
+    categories: ["AI Integrated", "Workflow & Automation"],
+    shortDescription:
+      "Engine auto-caption video Bahasa Indonesia dan Inggris dengan subtitle 2–3 kata, highlight kata aktif, dan koreksi transkripsi yang belajar dari revisi pengguna.",
+    description:
+      "AutoPulse Captions mengotomatisasi pembuatan subtitle video menggunakan faster-whisper, pengelompokan 2–3 kata per baris, dan highlight kata aktif berwarna emas melalui preset GoldPulse. Browser Word Inspector memungkinkan pengguna mengoreksi kata serta timestamp, lalu Mini-ML berbasis konteks n-gram dan fonetik mempelajari revisi tersebut untuk transkripsi berikutnya. Pipeline mendukung Bahasa Indonesia, Inggris, terjemahan Indonesia ke Inggris, pemilihan model sesuai GPU/CPU, serta burn-in subtitle ASS menggunakan FFmpeg untuk video portrait, landscape, dan square.",
+    images: ["/projects/autopulse-captions/cover.png"],
+    imageCaptions: ["AutoPulse Captions · Concept cover"],
+    metrics: [
+      { label: "Languages", value: "Indonesian & English" },
+      { label: "Captions", value: "2–3 Words / Active Highlight" },
+      { label: "Correction", value: "Self-Learning Mini-ML" },
+    ],
+    stacks: [
+      { name: "Python", icon: "/logos/icon/stack/python.png" },
+      { name: "faster-whisper" },
+      { name: "FFmpeg" },
+      { name: "HTML / JavaScript" },
+    ],
+    githubUrl: "https://github.com/RaphaelEvanW/autopulse-captions",
+  },
+  {
+    title: "Cipendawa Motor Website",
+    categories: ["Fullstack"],
+    shortDescription:
+      "Website profil bengkel mobil dengan galeri hasil pekerjaan dan reservasi tiga langkah, dilengkapi mode demo serta backend Go dan PostgreSQL untuk showcase lokal.",
+    description:
+      "Website profil Cipendawa Motor dibangun menggunakan Next.js, TypeScript, dan Tailwind CSS untuk menampilkan layanan, foto before-after, tiga cabang, kontak WhatsApp, serta widget Instagram dan Google Reviews. Alur reservasi mencakup pilihan layanan dan cabang, data pelanggan, lalu tanggal dan preferensi waktu. Mode demo berjalan tanpa penyimpanan, sedangkan mode backend meneruskan data melalui server Next.js ke API Go/Gin dan PostgreSQL lokal. Backend memvalidasi jadwal berdasarkan waktu Jakarta, mencegah reservasi ganda dengan idempotency key, dan menyimpan reservasi berstatus pending beserta catatan notifikasi WhatsApp simulasi dalam satu transaksi. Jadwal tetap dikonfirmasi manual oleh tim bengkel; panel admin dan pengiriman WhatsApp sungguhan belum diaktifkan.",
+    images: [
+      "/projects/cipendawamotor/01-beranda-desktop.png",
+      "/projects/cipendawamotor/02-profil-desktop.png",
+      "/projects/cipendawamotor/03-instagram-desktop.png",
+      "/projects/cipendawamotor/04-layanan-desktop.png",
+      "/projects/cipendawamotor/05-ulasan-desktop.png",
+      "/projects/cipendawamotor/06-lokasi-desktop.png",
+      "/projects/cipendawamotor/07-kontak-desktop.png",
+      "/projects/cipendawamotor/08-reservasi-layanan-desktop.png",
+      "/projects/cipendawamotor/09-reservasi-data-desktop.png",
+      "/projects/cipendawamotor/10-reservasi-jadwal-desktop.png",
+      "/projects/cipendawamotor/11-beranda-mobile.png",
+      "/projects/cipendawamotor/12-reservasi-mobile.png",
+    ],
+    imageCaptions: [
+      "Beranda · Desktop",
+      "Profil & hasil pekerjaan · Desktop",
+      "Instagram · Desktop",
+      "Layanan · Desktop",
+      "Ulasan pelanggan · Desktop",
+      "Lokasi cabang · Desktop",
+      "Kontak · Desktop",
+      "Reservasi 1/3: layanan & cabang · Desktop",
+      "Reservasi 2/3: data pelanggan · Desktop",
+      "Reservasi 3/3: jadwal kunjungan · Desktop",
+      "Beranda · Mobile",
+      "Reservasi · Mobile",
+    ],
+    metrics: [
+      { label: "Scope", value: "Company Profile & Reservation" },
+      { label: "Modes", value: "Browser Demo / Local Backend" },
+      { label: "Notification", value: "WhatsApp Simulation" },
+    ],
+    stacks: [
+      { name: "Next.js", icon: "/logos/icon/stack/nextjs.png" },
+      { name: "TypeScript", icon: "/logos/icon/stack/typescript.png" },
+      { name: "Go", icon: "/logos/icon/stack/go.png" },
+      { name: "PostgreSQL", icon: "/logos/icon/stack/postgresql.png" },
+      { name: "Tailwind CSS", icon: "/logos/icon/stack/tailwind.png" },
+      { name: "Gin", icon: "/logos/icon/stack/gin.png" },
+      { name: "GORM" },
+    ],
+    websiteUrl: "https://cipendawamotorid.vercel.app",
+  },
   {
     title: "Automation Onboarding & Offboarding Karyawan",
     categories: ["Workflow & Automation"],

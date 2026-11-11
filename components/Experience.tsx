@@ -20,6 +20,61 @@ const professionalStacks = [
   { name: "PostgreSQL", icon: "/logos/icon/stack/postgresql.png" },
 ];
 
+const professionalExperiences: {
+  role: string;
+  company: string;
+  logo: string;
+  logoClassName?: string;
+  watermarkClassName: string;
+  period: string;
+  badge: string;
+  summary: string;
+  stacks: { name: string; icon?: string }[];
+  points: string[];
+}[] = [
+  {
+    role: "IT Programmer",
+    company: "PT Sari Tirta Group",
+    logo: "/logos/icon/saritirta.png",
+    watermarkClassName:
+      "bottom-6 right-6 aspect-[6331/2712] w-[min(62%,220px)] sm:bottom-7 sm:right-8 sm:w-[min(44%,280px)]",
+    period: "Aug 2026 – Present",
+    badge: "Current Role",
+    summary:
+      "Developing internal business tools, procurement reports, and digital workflows in Central Jakarta.",
+    stacks: [
+      { name: "Progress OpenEdge ABL" },
+      { name: "React", icon: "/logos/icon/stack/react.png" },
+      { name: "Vue.js" },
+      { name: "Docker", icon: "/logos/icon/stack/docker.png" },
+      { name: "AppSheet" },
+      { name: "WordPress" },
+      { name: "WooCommerce" },
+      { name: "CSV / XLSX" },
+    ],
+    points: [
+      "Built a desktop procurement reporting application using Progress OpenEdge ABL, with date-based database queries and CSV/XLSX exports for PR, PO, and receiving data.",
+      "Developing an AppSheet security patrol application with QR-based shift and checkpoint scanning, plus patrol status recording.",
+      "Set up an ongoing WordPress and WooCommerce e-commerce project, including plugins, payment and shipping gateway installation, and frontend UI development.",
+      "Debugged and fixed a backend issue in the company's existing procurement web application.",
+    ],
+  },
+  {
+    role: "Automation Intern",
+    company: "PT Jababeka Tbk",
+    logo: "/logos/icon/jababeka.png",
+    logoClassName: "object-contain scale-110",
+    watermarkClassName:
+      "bottom-5 right-5 size-[170px] sm:bottom-6 sm:right-7 sm:size-[200px]",
+    period: "Feb 2026 – May 2026",
+    badge: "4 Months",
+    summary:
+      "Worked on internal IT automation, reporting workflows, scheduled execution, and technical documentation during internship.",
+    stacks: professionalStacks,
+    points: professionalPoints,
+  },
+];
+
 const organizations = [
   {
     role: "Logistic Staff",
@@ -49,7 +104,6 @@ export default function Experience() {
       id="experience"
       className="relative mx-auto max-w-[1440px] px-4 py-16 sm:px-8 md:py-24 lg:px-14 xl:px-16"
     >
-      <div className="pointer-events-none absolute right-10 top-20 hidden h-72 w-72 rounded-full bg-[var(--blue)]/8 blur-3xl lg:block" />
 
       <div className="relative">
         <div className="max-w-3xl">
@@ -58,8 +112,9 @@ export default function Experience() {
           </h2>
 
           <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:text-base">
-            Internship and organizational experience where I worked on technical
-            implementation, documentation, coordination, and operational support.
+            Current programming work, internship experience, and organizational
+            roles involving business systems, automation, documentation, and
+            operational support.
           </p>
         </div>
 
@@ -67,74 +122,92 @@ export default function Experience() {
           {/* Professional Experience */}
           <div>
             <div className="mb-5 flex items-center gap-3">
-              <span className="h-7 w-1 rounded-full bg-[var(--blue)]" />
+              <span className="h-7 w-1 rounded-full bg-[var(--accent)]" />
               <h3 className="text-xl font-semibold tracking-tight text-[var(--heading)] sm:text-2xl">
                 Professional Experience
               </h3>
             </div>
 
-            <article className="overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] shadow-[var(--card-shadow)]">
-              <div className="p-5 sm:p-6 lg:p-7">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
-                    <h4 className="text-[22px] font-semibold leading-tight tracking-tight text-[var(--heading)] sm:text-2xl">
-                      Automation Intern
-                    </h4>
-
-                    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-                      <span className="font-semibold text-[var(--blue-soft)]">
-                        PT Jababeka Tbk
-                      </span>
-                      <span className="hidden h-4 w-px bg-[var(--border-soft)] sm:block" />
-                      <span className="text-[var(--muted)]">
-                        Feb 2026 – May 2026
-                      </span>
-                      <span className="rounded-full border border-[var(--blue)]/25 bg-[var(--blue)]/10 px-2.5 py-1 text-xs font-semibold text-[var(--blue-soft)]">
-                        4 Months
-                      </span>
-                    </div>
+            <div className="grid gap-5">
+              {professionalExperiences.map((experience) => (
+                <article key={experience.company} className="relative isolate overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)]">
+                  <div aria-hidden="true" className={`pointer-events-none absolute ${experience.watermarkClassName}`}>
+                    <Image
+                      src={experience.logo}
+                      alt=""
+                      fill
+                      sizes="(min-width: 640px) 280px, 220px"
+                      className="object-contain opacity-[0.22] blur-[1px] [.light_&]:opacity-[0.14]"
+                    />
                   </div>
-                </div>
 
-                <p className="mt-5 max-w-3xl text-sm leading-7 text-[var(--muted)] sm:text-[15px]">
-                  Worked on internal IT automation, reporting workflows,
-                  scheduled execution, and technical documentation during
-                  internship.
-                </p>
-
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {professionalStacks.map((stack) => (
-                    <span
-                      key={stack.name}
-                      className="inline-flex items-center gap-2 rounded-lg border border-[var(--border-soft)] bg-[var(--tag-bg)] px-2.5 py-1.5 text-xs font-medium text-[var(--tag-text)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--hover-surface)] hover:text-[var(--blue)]"
-                    >
-                      {stack.icon ? (
+                  <div className="relative z-10 p-5 sm:p-6 lg:p-7">
+                    <div className="flex items-center gap-3 sm:gap-5">
+                      <div className="relative h-16 w-[88px] shrink-0 overflow-hidden rounded-xl bg-white sm:h-20 sm:w-36">
                         <Image
-                          src={stack.icon}
+                          src={experience.logo}
                           alt=""
-                          width={14}
-                          height={14}
-                          className="h-3.5 w-3.5 object-contain opacity-85"
+                          fill
+                          sizes="(min-width: 640px) 144px, 88px"
+                          className={experience.logoClassName ?? "object-contain p-2 sm:p-3"}
                         />
-                      ) : null}
-                      {stack.name}
-                    </span>
-                  ))}
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="text-[22px] font-semibold leading-tight tracking-tight text-[var(--heading)] sm:text-2xl">
+                          {experience.role}
+                        </h4>
+
+                        <p className="mt-1.5 text-sm font-semibold text-[var(--mint-text)] sm:text-base">
+                          {experience.company}
+                        </p>
+                        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs sm:text-sm">
+                          <span className="text-[var(--muted)]">
+                            {experience.period}
+                          </span>
+                          <span className="rounded-full border border-[var(--accent)]/25 bg-[var(--accent)]/10 px-2.5 py-1 text-xs font-semibold text-[var(--mint-text)]">
+                            {experience.badge}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p className="mt-5 max-w-3xl text-sm leading-7 text-[var(--muted)] sm:text-[15px]">
+                      {experience.summary}
+                    </p>
+
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {experience.stacks.map((stack) => (
+                        <span
+                          key={stack.name}
+                          className="inline-flex items-center gap-2 rounded-lg border border-[var(--border-soft)] bg-[var(--tag-bg)] px-2.5 py-1.5 text-xs font-medium text-[var(--tag-text)] transition hover:border-[var(--accent)]/35 hover:bg-[var(--hover-surface)] hover:text-[var(--interactive-text)]"
+                        >
+                          {stack.icon ? (
+                            <Image
+                              src={stack.icon}
+                              alt=""
+                              width={14}
+                              height={14}
+                              className="h-3.5 w-3.5 object-contain opacity-85"
+                            />
+                          ) : null}
+                          {stack.name}
+                        </span>
+                    ))}
                 </div>
 
                 <div className="my-6 h-px w-full bg-[var(--border-soft)]" />
 
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--blue-soft)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--mint-text)]">
                   What I worked on
                 </p>
 
                 <ul className="mt-5 grid gap-4 lg:grid-cols-2">
-                  {professionalPoints.map((point, index) => (
+                  {experience.points.map((point, index) => (
                     <li
                       key={point}
                       className="grid grid-cols-[28px_1fr] gap-3 text-sm leading-6 text-[var(--muted)] sm:text-[15px] sm:leading-7"
                     >
-                      <span className="pt-0.5 text-xs font-semibold text-[var(--blue-soft)]">
+                      <span className="pt-0.5 text-xs font-semibold text-[var(--mint-text)]">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <span>{point}</span>
@@ -143,12 +216,14 @@ export default function Experience() {
                 </ul>
               </div>
             </article>
+            ))}
+            </div>
           </div>
 
           {/* Organizational Experience */}
           <div>
             <div className="mb-5 flex items-center gap-3">
-              <span className="h-7 w-1 rounded-full bg-[var(--blue)]" />
+              <span className="h-7 w-1 rounded-full bg-[var(--accent)]" />
               <h3 className="text-xl font-semibold tracking-tight text-[var(--heading)] sm:text-2xl">
                 Organizational Experience
               </h3>
@@ -158,14 +233,14 @@ export default function Experience() {
               {organizations.map((item) => (
                 <article
                   key={`${item.role}-${item.organization}`}
-                  className="rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] p-5 shadow-[var(--card-shadow)] transition hover:border-[var(--blue)]/35 hover:bg-[var(--surface-strong)] sm:p-6"
+                  className="rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] p-5 transition hover:border-[var(--accent)]/35 hover:bg-[var(--surface-strong)] sm:p-6"
                 >
                   <h4 className="text-lg font-semibold tracking-tight text-[var(--heading)]">
                     {item.role}
                   </h4>
 
                   <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-                    <span className="font-medium text-[var(--blue-soft)]">
+                    <span className="font-medium text-[var(--mint-text)]">
                       {item.organization}
                     </span>
                     <span className="hidden h-4 w-px bg-[var(--border-soft)] sm:block" />
@@ -178,7 +253,7 @@ export default function Experience() {
                         key={point}
                         className="flex gap-3 text-sm leading-6 text-[var(--muted)]"
                       >
-                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--blue-soft)]" />
+                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--mint-text)]" />
                         <span>{point}</span>
                       </li>
                     ))}
