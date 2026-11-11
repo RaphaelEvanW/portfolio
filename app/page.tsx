@@ -1,4 +1,6 @@
 import Image from "next/image";
+import "./hero.css";
+import { ArrowDownToLine, ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ProjectSection from "@/components/Project";
 import Experience from "@/components/Experience";
@@ -11,25 +13,12 @@ const cvDownloadUrl =
   "https://docs.google.com/document/d/1sE3iVw4tDQXasHTtrjlYV9iAkNZH3syEk4LLC9J9JSs/export?format=pdf";
 
 const socialLinks = [
-  {
-    label: "GitHub",
-    href: "https://github.com/RaphaelEvanW",
-    darkIcon: "/logos/icon/github_dark_theme.svg",
-    lightIcon: "/logos/icon/github_light_theme.svg",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/raphael-e-wijayanto/",
-    darkIcon: "/logos/icon/linkedin_dark_theme.svg",
-    lightIcon: "/logos/icon/linkedin_light_theme.svg",
-  },
-  {
-    label: "Email",
-    href: "mailto:raphael.wijayanto@gmail.com",
-    darkIcon: "/logos/icon/email_dark_theme.svg",
-    lightIcon: "/logos/icon/email_light_theme.svg",
-  },
+  { label: "GitHub", href: "https://github.com/RaphaelEvanW", icon: "github" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/raphael-e-wijayanto/", icon: "linkedin" },
+  { label: "Email", href: "mailto:raphael.wijayanto@gmail.com", icon: "email" },
 ];
+
+const stack = ["Python", "Go", "React / Next.js", "Camunda BPMN", "n8n", "PostgreSQL"];
 
 export default function Home() {
   return (
@@ -37,74 +26,76 @@ export default function Home() {
       <div className="site-atmosphere" aria-hidden="true" />
       <div className="relative z-10">
         <Navbar />
-        <section id="about" className="hero-section" aria-labelledby="hero-heading">
-          <div className="hero-copy">
-            <p className="hero-intro">Hi, I’m Raphael.</p>
-            <h1 id="hero-heading" className="hero-name">
-              Raphael Evan<br />Wijayanto<span className="text-[var(--accent)]">.</span>
-            </h1>
-            <p className="hero-role">Software development.<br />Automation. Applied AI.</p>
-            <p className="hero-description">
-              IT Programmer at PT Sari Tirta Group and Informatics graduate.
-              I build business tools, reporting pipelines, and digital workflows
-              that make everyday work easier.
-            </p>
-            <div className="hero-actions">
-              <a href="#project" className="hero-primary">
-                Explore projects
-                <Image src="/logos/icon/right_arrow.svg" alt="" width={18} height={18} className="hero-action-icon" />
-              </a>
-              <a href={cvDownloadUrl} target="_blank" rel="noopener noreferrer" className="hero-secondary">
-                Download CV
-                <Image src="/logos/icon/download.svg" alt="" width={17} height={17} className="hero-download-icon" />
-              </a>
-            </div>
-            <div className="hero-socials" aria-label="Social links">
-              <span>Find me here</span>
-              {socialLinks.map((item) => (
-                <a key={item.label} href={item.href} aria-label={item.label} title={item.label}
-                  target={item.href.startsWith("http") ? "_blank" : undefined}
-                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                >
-                  <ThemedIcon darkSrc={item.darkIcon} lightSrc={item.lightIcon}
-                    alt="" width={17} height={17} className="h-[17px] w-[17px]" />
-                  <span className="sr-only">{item.label}</span>
+        <section id="about" className="rew-hero" aria-labelledby="rew-hero-title">
+          <div className="rew-hero-layout">
+            <div className="rew-hero-copy">
+              <p className="rew-hero-greeting">Hi, I&apos;m</p>
+              <h1 id="rew-hero-title">Raphael Evan<br className="rew-hero-desktop-break" /> Wijayanto<span>.</span></h1>
+              <p className="rew-hero-tagline">Software development.<br className="rew-hero-desktop-break" /> <span>Automation. Applied AI.</span></p>
+              <p className="rew-hero-description">
+                IT Programmer at PT Sari Tirta Group and Informatics graduate.
+                I build business tools, reporting pipelines, and digital workflows
+                that make everyday work easier.
+              </p>
+              <div className="rew-hero-actions">
+                <a href="#project" className="rew-hero-button rew-hero-button-primary">
+                  Explore projects <ArrowUpRight size={18} aria-hidden="true" />
                 </a>
-              ))}
+                <a href={cvDownloadUrl} target="_blank" rel="noopener noreferrer" className="rew-hero-button rew-hero-button-secondary">
+                  Download CV <ArrowDownToLine size={17} aria-hidden="true" />
+                </a>
+              </div>
+              <div className="rew-hero-socials" aria-label="Social links">
+                <span>Find me here</span>
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    aria-label={item.label}
+                    title={item.label}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  >
+                    <ThemedIcon
+                      darkSrc={`/logos/icon/${item.icon}_dark_theme.svg`}
+                      lightSrc={`/logos/icon/${item.icon}_light_theme.svg`}
+                      alt="" width={18} height={18}
+                    />
+                  </a>
+                ))}
+              </div>
+              <ul className="rew-hero-stack" aria-label="Technologies I work with">
+                {stack.map((name) => <li key={name}>{name}</li>)}
+              </ul>
             </div>
-            <div className="hero-stack" aria-label="Core technologies">
-              {["Python", "Go", "React / Next.js", "Camunda BPMN", "n8n", "PostgreSQL"].map((stack) => (
-                <span key={stack}>{stack}</span>
-              ))}
-            </div>
-          </div>
-          <figure className="hero-figure" aria-label="Raphael and areas of work">
-            <div className="hero-stage">
-              <div className="hero-watermark" aria-hidden="true">REW</div>
-              <div className="hero-ring" aria-hidden="true" />
-              <Image src="/profile_pict.png" alt="Raphael Evan Wijayanto"
-                fill preload sizes="(min-width: 1440px) 600px, (min-width: 901px) 48vw, (min-width: 640px) 560px, 95vw"
-                className="hero-photo" />
-              <div className="hero-chip hero-chip-automation">
+            <div className="rew-hero-stage">
+              <div className="rew-hero-watermark" aria-hidden="true">REW</div>
+              <div className="rew-hero-ring" aria-hidden="true" />
+              <div className="rew-hero-portrait">
+                <Image src="/profile_pict.png" alt="Raphael Evan Wijayanto" fill preload sizes="(max-width: 600px) 90vw, (max-width: 900px) 440px, 46vw" />
+              </div>
+              <div className="rew-hero-chip rew-hero-chip-automation">
                 <strong>Automation pipelines</strong>
                 <span>KNIME, n8n, Camunda</span>
               </div>
-              <div className="hero-chip hero-chip-fullstack">
+              <div className="rew-hero-chip rew-hero-chip-fullstack">
                 <strong>Fullstack projects</strong>
                 <span>Web apps from DB to UI</span>
               </div>
-              <div className="hero-chip hero-chip-availability">
-                <span className="hero-status-dot" aria-hidden="true" />
+              <a href="#contact" className="rew-hero-chip rew-hero-chip-availability">
+                <span className="availability-dot" aria-hidden="true" />
                 <strong>Open to opportunities</strong>
-              </div>
+              </a>
             </div>
-          </figure>
+          </div>
         </section>
         <ProjectSection />
         <Experience />
         <Skills />
-        <Contact />
-        <Footer />
+        <div className="bg-[radial-gradient(ellipse_100vw_85%_at_75%_100%,var(--section-green-light),transparent_72%)] [&>footer]:border-t-0">
+          <Contact />
+          <Footer />
+        </div>
       </div>
     </main>
   );
