@@ -148,8 +148,8 @@ export default function Navbar() {
               onClick={() => setActiveSection("contact")}
               className={`hidden h-7 shrink-0 items-center justify-center rounded-lg border px-3 text-[8.5px] font-semibold transition min-[380px]:inline-flex sm:h-9 sm:px-4 sm:text-xs lg:h-10 lg:rounded-xl lg:px-5 lg:text-sm ${
                 activeSection === "contact"
-                  ? "border-[var(--accent)] bg-[var(--accent)] text-white "
-                  : "border-[var(--accent)] bg-[var(--card)] text-[var(--nav-text)] hover:bg-[var(--accent)]/10 hover:text-[var(--nav-text-hover)] "
+                  ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--interactive-text)] "
+                  : "border-[var(--accent)] bg-transparent text-[var(--nav-text)] hover:bg-[var(--accent)]/10 hover:text-[var(--nav-text-hover)] "
               }`}
             >
               Contact

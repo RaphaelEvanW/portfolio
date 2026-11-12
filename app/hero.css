@@ -32,18 +32,18 @@
 
 html.light .rew-hero {
   color-scheme: light;
-  --background: #fbf7f8;
-  --background-soft: #f4ebee;
-  --foreground: #24161c;
-  --muted: #6c555e;
-  --heading: #24161c;
+  --background: #f2f6f8;
+  --background-soft: #e6eef1;
+  --foreground: #1f3036;
+  --muted: #4c626b;
+  --heading: #1f3036;
   --card: #ffffff;
   --border: #e1cdd4;
   --surface: #ffffff;
-  --surface-soft: rgba(112, 43, 64, 0.04);
+  --surface-soft: #e6eef1;
   --surface-strong: #f4ebee;
   --border-soft: rgba(112, 43, 64, 0.16);
-  --icon-surface: #f4ebee;
+  --icon-surface: #e6eef1;
   --hover-surface: #f6e0e5;
   --section-line: #e1cdd4;
   --blue: #c81832;
@@ -53,10 +53,10 @@ html.light .rew-hero {
   --nav-text-hover: #c81832;
   --tag-bg: #f8e0e6;
   --tag-text: #a5102a;
-  --rew-hero-wine: #eaa2b0;
-  --rew-hero-green: rgba(148, 214, 180, 0.83);
+  --rew-hero-wine: rgba(215, 116, 133, 0.276);
+  --rew-hero-green: rgba(90, 183, 134, 0.45);
   --rew-hero-mint: #22654f;
-  --chip-surface: rgba(240, 250, 245, 0.95);
+  --chip-surface: rgba(255, 255, 255, 0.72);
   --chip-border: rgba(34, 101, 79, 0.22);
 }
 
@@ -86,7 +86,7 @@ html.light .rew-hero {
 .rew-hero-socials a { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--border-soft); border-radius: 10px; background: var(--surface-soft); transition: background 180ms, border-color 180ms; }
 .rew-hero-socials a:hover { background: var(--hover-surface); border-color: var(--blue); }
 .rew-hero-stack { display: flex; gap: 8px; flex-wrap: wrap; padding: 0; margin: 30px 0 0; list-style: none; }
-.rew-hero-stack li { padding: 7px 12px; border: 1px solid var(--chip-border); border-radius: 99px; background: var(--chip-surface); color: var(--rew-hero-mint); font-size: 12px; white-space: nowrap; }
+.rew-hero-stack li { padding: 7px 12px; border: 1px solid var(--chip-border); border-radius: 99px; background: color-mix(in srgb, var(--chip-surface) 55.25%, transparent); color: var(--rew-hero-mint); font-size: 12px; white-space: nowrap; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2); -webkit-backdrop-filter: blur(12px) saturate(150%); backdrop-filter: blur(12px) saturate(150%); }
 .rew-hero-stage { position: relative; align-self: stretch; min-height: 580px; }
 .rew-hero-watermark { position: absolute; z-index: 0; top: 3%; left: 50%; transform: translateX(-50%); color: transparent; -webkit-text-stroke: 1px color-mix(in srgb, var(--foreground) 20%, transparent); font-size: clamp(120px, 15.4vw, 240px); font-weight: 800; line-height: 1; letter-spacing: 0.02em; }
 .rew-hero-ring { position: absolute; left: 50%; top: 51%; width: 83%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle at 50% 40%, var(--rew-hero-green) 15%, transparent 74%); }
@@ -116,6 +116,7 @@ html.light .rew-hero {
 @media (max-width: 900px) {
   .rew-hero { isolation: isolate; background: none; }
   .rew-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse 65% 65% at 0% 0%, var(--rew-hero-wine), transparent 75%), radial-gradient(ellipse 40% 65% at 88% 52%, var(--rew-hero-green), transparent 82%), var(--background); mask-image: linear-gradient(to bottom, #000 calc(100% - 120px), transparent); }
+  html.light .rew-hero::before { background: radial-gradient(ellipse 53.95% 65% at 0% 0%, var(--rew-hero-wine), transparent 75%), radial-gradient(ellipse 33.2% 65% at 88% 52%, var(--rew-hero-green), transparent 82%), var(--background); }
   /* Keep the following section steady when mobile browser bars expand or collapse. */
   .rew-hero-layout { display: flex; flex-direction: column-reverse; justify-content: flex-end; align-items: stretch; min-height: 100svh; gap: 4px; padding: calc(85px + 8svh) 6vw 48px; }
   .rew-hero-stage { --stage-height: clamp(320px, 47vw, 430px); flex: none; align-self: center; width: 100%; max-width: 520px; height: var(--stage-height); min-height: 0; margin-top: calc(var(--stage-height) * 0.2); }

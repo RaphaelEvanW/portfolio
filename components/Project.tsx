@@ -293,7 +293,7 @@ function CategoryBadges({
         return (
           <span
             key={category}
-            className={`inline-flex w-fit items-center gap-1.5 rounded-full border font-semibold ${style.badge} ${
+            className={`tech-pill inline-flex w-fit items-center gap-1.5 rounded-full border border-[var(--mint-border)]/65 bg-[var(--tag-bg)]/[0.5525] text-[var(--tag-text)] shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-md backdrop-saturate-150 font-semibold ${
               compact ? "px-2 py-0.5 text-[7.5px] sm:px-3 sm:py-1 sm:text-xs" : "px-3 py-1 text-xs"
             }`}
           >
@@ -382,7 +382,7 @@ function ProjectCard({
 
           <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-5 sm:gap-2">
             {project.stacks.slice(0, isFeatured ? 4 : 3).map((stack) => (
-              <span key={stack.name} className="inline-flex items-center gap-1 rounded-md border border-[var(--border-soft)] bg-[var(--tag-bg)] px-1.5 py-1 text-[8px] font-medium text-[var(--tag-text)] sm:gap-2 sm:rounded-lg sm:px-3 sm:py-1.5 sm:text-xs">
+              <span key={stack.name} className="tech-pill inline-flex items-center gap-1 rounded-md border border-[var(--border-soft)]/65 bg-[var(--tag-bg)]/[0.5525] shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-md backdrop-saturate-150 px-1.5 py-1 text-[8px] font-medium text-[var(--tag-text)] sm:gap-2 sm:rounded-lg sm:px-3 sm:py-1.5 sm:text-xs">
                 {stack.icon ? (
                   <Image src={stack.icon} alt="" width={14} height={14} className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                 ) : null}
@@ -459,7 +459,7 @@ function ProjectModal({
                 <p className="text-sm font-medium text-[var(--heading)]">Tech stack</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {project.stacks.map((stack) => (
-                    <span key={stack.name} className="inline-flex items-center gap-2 rounded-lg border border-[var(--border-soft)] bg-[var(--tag-bg)] px-3 py-1.5 text-sm font-medium text-[var(--tag-text)]">
+                    <span key={stack.name} className="tech-pill inline-flex items-center gap-2 rounded-lg border border-[var(--border-soft)]/65 bg-[var(--tag-bg)]/[0.5525] shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-md backdrop-saturate-150 px-3 py-1.5 text-sm font-medium text-[var(--tag-text)]">
                       {stack.icon ? (
                         <Image src={stack.icon} alt="" width={16} height={16} className="h-4 w-4" />
                       ) : null}

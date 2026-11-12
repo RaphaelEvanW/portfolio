@@ -128,7 +128,7 @@ const skillGroups: SkillGroup[] = [
 
 function SkillChip({ skill }: { skill: Skill }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border-soft)] bg-[var(--tag-bg)] px-2.5 py-1.5 text-[11px] font-medium text-[var(--tag-text)] transition hover:border-[var(--accent)]/35 hover:bg-[var(--hover-surface)] hover:text-[var(--interactive-text)] sm:gap-2 sm:px-3 sm:text-sm">
+    <span className="tech-pill inline-flex items-center gap-1.5 rounded-lg border border-[var(--border-soft)]/65 bg-[var(--tag-bg)]/[0.5525] px-2.5 py-1.5 text-[11px] font-medium text-[var(--tag-text)] shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-md backdrop-saturate-150 transition hover:border-[var(--accent)]/35 hover:bg-[var(--hover-surface)]/[0.6375] hover:text-[var(--interactive-text)] sm:gap-2 sm:px-3 sm:text-sm">
       {skill.icon ? (
         <Image
           src={skill.icon}

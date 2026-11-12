@@ -61,7 +61,7 @@ export default function Contact() {
                 className="group flex items-center justify-between gap-6 border-b border-[var(--border-soft)] py-5 transition hover:border-[var(--accent)]/40"
               >
                 <div className="flex min-w-0 items-center gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[var(--border-soft)] bg-[var(--icon-surface)] transition group-hover:border-[var(--accent)]/40 group-hover:bg-[var(--hover-surface)]">
+                  <span className="contact-icon-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[var(--border-soft)]/65 bg-[var(--icon-surface)]/[0.5525] shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-md backdrop-saturate-150 transition group-hover:border-[var(--accent)]/40 group-hover:bg-[var(--hover-surface)]/[0.6375]">
                     <ThemedIcon
                       darkSrc={link.darkIcon}
                       lightSrc={link.lightIcon}

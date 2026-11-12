@@ -179,7 +179,7 @@ export default function Experience() {
                       {experience.stacks.map((stack) => (
                         <span
                           key={stack.name}
-                          className="inline-flex items-center gap-2 rounded-lg border border-[var(--border-soft)] bg-[var(--tag-bg)] px-2.5 py-1.5 text-xs font-medium text-[var(--tag-text)] transition hover:border-[var(--accent)]/35 hover:bg-[var(--hover-surface)] hover:text-[var(--interactive-text)]"
+                          className="tech-pill inline-flex items-center gap-2 rounded-lg border border-[var(--border-soft)]/65 bg-[var(--tag-bg)]/[0.5525] shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-md backdrop-saturate-150 px-2.5 py-1.5 text-xs font-medium text-[var(--tag-text)] transition hover:border-[var(--accent)]/35 hover:bg-[var(--hover-surface)]/[0.6375] hover:text-[var(--interactive-text)]"
                         >
                           {stack.icon ? (
                             <Image
